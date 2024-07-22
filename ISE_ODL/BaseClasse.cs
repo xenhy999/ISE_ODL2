@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ISE_ODL.Menu;
+
+namespace ISE_ODL
+{
+    internal static class BaseClasse
+    {
+        public static MenuPrincipale_VM MenuPrincipale_VM { get; set; } = new MenuPrincipale_VM(new Odl.CreaOdl());
+    }
+}
