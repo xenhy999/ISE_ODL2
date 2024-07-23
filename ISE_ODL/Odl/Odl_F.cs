@@ -4,8 +4,8 @@
     {
         public static Odl_VM Create()
         {
-            AggiungiOdl aggiungiOdl = new AggiungiOdl();
-            AggiornaOdl aggiornaOdl = new AggiornaOdl();
+            AggiungiOdl aggiungiOdl = new();
+            AggiornaOdl aggiornaOdl = new();
             Odl_VM odl_VM = new(new Odl_M(), aggiungiOdl, aggiornaOdl);
             aggiungiOdl.OdlDaAggiungere = odl_VM;
             aggiornaOdl.OdlDaAggiornare = odl_VM;
@@ -19,7 +19,7 @@
             odl_VM.Note = Note;
             return odl_VM;
         }
-        public static Odl_VM CreateWithData(string Id, string Cliente, string Note, bool Stato, List<DateTime>  OrariInizio, List<DateTime> OrariFine, List<TimeSpan> DurataOrari)
+        public static Odl_VM CreateWithData(string Id, string Cliente, string Note, bool Stato, List<DateTime> OrariInizio, List<DateTime> OrariFine, List<TimeSpan> DurataOrari)
         {
             Odl_VM odl_VM = Create();
             odl_VM.Id = Id;
