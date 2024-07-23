@@ -8,12 +8,12 @@ using System.Windows.Input;
 
 namespace ISE_ODL
 {
-    internal abstract class BaseBinding : INotifyPropertyChanged
+    public /*internal*/ abstract class BaseBinding : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-    internal abstract class BaseCommand : ICommand
+    public /*internal*/ abstract class BaseCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
         public void OnRaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);

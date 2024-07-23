@@ -13,5 +13,6 @@ namespace ISE_ODL
     public partial class MenuPrincipale_V : Window
     {
         public MenuPrincipale_V() => InitializeComponent();
+        private void Button_Click(object sender, RoutedEventArgs e) => Close();
     }
 }

@@ -19,19 +19,37 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <ListBox ItemsSource="{Binding Commisioni}" Width="100" Height="100">
-                
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3">
+            <!--<DataGrid ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}" Width="500" Height="300" FontSize="20" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="1*"/>
+                    <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}" Width="1*"/>
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="1*"/>
+                    <DataGridTextColumn Header="Note" Binding="{Binding Orari}" Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>-->
+            <ListBox  ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}" Width="800" Height="300" FontSize="20" HorizontalAlignment="Center">
             </ListBox>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <Button Command="{Binding DefinisciOdl}" Width="200" Height="100"> Definisci Odl</Button>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button Command="{Binding DefinisciOdl}"> Definisci Odl</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <Button Command="{Binding EliminaOdl}" >Elimina Odl</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Button Command="{Binding ModificaOdl}" >Modifica Odl</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <Button Command="{Binding Esci}" Click="Button_Click"> Esci</Button>
         </StackPanel>
     </Grid>
 </Window>

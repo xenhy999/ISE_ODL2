@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISE_ODL.Odl
 {
-    internal class AggiungiOdl : BaseCommand
+    public/*internal*/ class AggiungiOdl : BaseCommand
     {
         public Odl_VM OdlDaAggiungere;
-        public override void Execute(object parameter)
-        {
-        BaseClasse.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiungere);
-        }
+        public override void Execute(object parameter) => BaseClasse.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiungere);
     }
 }

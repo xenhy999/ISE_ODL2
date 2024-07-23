@@ -7,12 +7,22 @@
              d:DataContext="{d:DesignInstance Type=local:Odl_VM}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Horizontal">
-        <TextBlock>ID</TextBlock>
-        <TextBlock Text="{Binding Id}"/>
-        <TextBlock>Cliente</TextBlock>
-        <TextBlock Text="{Binding Cliente}"/>
-        <TextBlock>Note</TextBlock>
-        <TextBlock Text="{Binding Note}"/>
+    <StackPanel HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontWeight="Bold" Text=" Id "/>
+            <TextBlock Text="{Binding Id}"/>
+            <TextBlock FontWeight="Bold" Text=" Cliente: "/>
+            <TextBlock Text="{Binding Cliente}"/>
+            <TextBlock FontWeight="Bold" Text=" Note: "/>
+            <TextBlock Text="{Binding Note}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontWeight="Bold" Text=" Orario di inizio: "/>
+            <ListBox ItemsSource="{Binding OrariInizio}" FontSize="10" />
+            <TextBlock FontWeight="Bold" Text=" Orario di fine: " />
+            <ListBox ItemsSource="{Binding OrariFine}" FontSize="10" />
+            <TextBlock FontWeight="Bold" Text=" Durata: " />
+            <ListBox ItemsSource="{Binding DurataOrari}" FontSize="10" />
+        </StackPanel>
     </StackPanel>
 </UserControl>

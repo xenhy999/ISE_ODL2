@@ -1,9 +1,24 @@
 ﻿<Application x:Class="ISE_ODL.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ISE_ODL.Menu"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime" 
+             xmlns:converters="clr-namespace:ISE_ODL.Converter"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <sys:Boolean x:Key="True">True</sys:Boolean>
+        <sys:Boolean x:Key="False">False</sys:Boolean>
+        <converters:BoolToVisibility x:Key="BoolToVisibility"/>
+        <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="bold"/>
+        </Style>
     </Application.Resources>
 </Application>

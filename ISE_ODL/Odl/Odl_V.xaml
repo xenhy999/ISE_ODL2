@@ -24,6 +24,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock>ID</TextBlock>
@@ -40,7 +41,12 @@
         </StackPanel>
         <StackPanel Grid.Row="3">
             <TextBlock>ID</TextBlock>
-            <Button Command="{Binding AggiungiOdl}" Click="Button_Click">Aggiungi </Button>
+            <Button Command="{Binding AggiungiOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi </Button>
+            <Button Command="{Binding AggiornaOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource BoolToVisibility}}" Click="Button_Click">Aggiorna</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <TextBlock>Attiva</TextBlock>
+            <CheckBox IsChecked="{Binding Stato}"/>
         </StackPanel>
     </Grid>
 </Window>
