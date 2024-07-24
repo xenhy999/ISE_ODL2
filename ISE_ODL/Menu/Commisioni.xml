@@ -8,18 +8,31 @@
     <Completata>false</Completata>
     <OrariInizio>
       <dateTime>2024-07-24T15:29:33.754498+02:00</dateTime>
+      <dateTime>2024-07-24T17:50:57.6688758+02:00</dateTime>
     </OrariInizio>
     <OrariFine>
       <dateTime>2024-07-24T15:29:34.2782573+02:00</dateTime>
+      <dateTime>2024-07-24T17:50:58.40087+02:00</dateTime>
     </OrariFine>
     <DurataOrari>
       <TimeSpan>PT0.5217555S</TimeSpan>
+      <TimeSpan>PT0.7312826S</TimeSpan>
     </DurataOrari>
   </Odl_M>
   <Odl_M>
     <Id>dd</Id>
     <Cliente>ss</Cliente>
     <Note>ss</Note>
+    <Stato>false</Stato>
+    <Completata>false</Completata>
+    <OrariInizio />
+    <OrariFine />
+    <DurataOrari />
+  </Odl_M>
+  <Odl_M>
+    <Id>FFFFFFFFF</Id>
+    <Cliente>FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</Cliente>
+    <Note />
     <Stato>false</Stato>
     <Completata>false</Completata>
     <OrariInizio />

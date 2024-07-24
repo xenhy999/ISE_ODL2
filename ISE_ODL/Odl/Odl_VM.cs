@@ -42,11 +42,15 @@ namespace ISE_ODL.Odl
                 {
                     OrariInizio.Add(DateTime.Now);
                     OrarioUltimoOdlIniziato = DateTime.Now;
+                    ObjContainer.MenuPrincipale_VM.OdlInEsecuzione = true;
+                    OnPropertyChanged(nameof(Stato));
                 }
                 else
                 {
                     OrariFine.Add(DateTime.Now);
                     DurataOrari.Add(DateTime.Now.Subtract(OrarioUltimoOdlIniziato));
+                    ObjContainer.MenuPrincipale_VM.OdlInEsecuzione = false;
+                    OnPropertyChanged(nameof(Stato));
                 }
             }
         }

@@ -22,7 +22,7 @@ namespace ISE_ODL.Menu
                 EliminaOdl.OnRaiseCanExecuteChanged();
             }
         }
-        public bool OdlInEsecuzione { get; set; }
+        public bool OdlInEsecuzione { get; set; } = false;
         public MenuPrincipale_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl, Esci esci)
         {
             DefinisciOdl = definisciOdl;
