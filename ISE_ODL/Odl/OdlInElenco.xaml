@@ -76,7 +76,7 @@
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Cliente: "/>
-            <TextBlock Text="{Binding Cliente}"/>
+            <TextBlock Text="{Binding Cliente}"/> 
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="2" >
             <TextBlock FontWeight="Bold" Text=" Note: "/>
