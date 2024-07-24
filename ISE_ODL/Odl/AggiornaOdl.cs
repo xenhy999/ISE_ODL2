@@ -11,8 +11,8 @@ namespace ISE_ODL.Odl
         public Odl_VM OdlDaAggiornare;
         public override void Execute(object parameter)
         {
-            BaseClasse.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiornare);
-            BaseClasse.MenuPrincipale_VM.Commisioni.Remove(BaseClasse.MenuPrincipale_VM.OdlSelezionata);
+            ObjContainer.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiornare);
+            ObjContainer.MenuPrincipale_VM.Commisioni.Remove(ObjContainer.MenuPrincipale_VM.OdlSelezionata);
         }
     }
 }

@@ -7,9 +7,15 @@
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
         <sys:Boolean x:Key="False">False</sys:Boolean>
+
+
+        <Brush x:Key="Grigio">#78716C</Brush>
+        
+        
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
-        <Style TargetType="Button">
+        <converters:DateTimeToString x:Key="DateTimeToString"/>
+        <!--<Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="3"/>
             <Setter Property="Width" Value="150"/>
@@ -19,6 +25,97 @@
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="FontWeight" Value="bold"/>
+        </Style>-->
+        <!--<Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="RowBackground" Value="LightGray"/>
+            <Setter Property="AlternatingRowBackground" Value="WhiteSmoke"/>
+            <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="DarkSlateGray"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="BorderThickness" Value="0.5"/>
+                        <Setter Property="BorderBrush" Value="LightGray"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#222831"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Margin" Value="2"/>
+                        <Setter Property="Background" Value="#222831"/>
+                        <Setter Property="BorderBrush" Value="#222831"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Foreground" Value="white"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border Background="{TemplateBinding Background}"
+                                            >
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          Content="{TemplateBinding Content}"
+                                                          Margin="{TemplateBinding Padding}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#2196F3"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightBlue"/>
+                                <Setter Property="Foreground" Value="black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="SlateBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Foreground" Value="LightGray"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

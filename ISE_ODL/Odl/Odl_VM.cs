@@ -1,17 +1,31 @@
-﻿namespace ISE_ODL.Odl
+﻿using System.Collections.ObjectModel;
+
+namespace ISE_ODL.Odl
 {
     /*internal*/
     public class Odl_VM : BaseBinding
     {
-        public Odl_M Odl_M;
-        private List<DateTime> orariInizio = [];
-        private List<DateTime> orariFine = [];
-        private List<DateTime> durataOrari = [];
-        public List<DateTime> OrariInizio { get => Odl_M.OrariInizio; set => Odl_M.OrariInizio = value; }
-        public List<DateTime> OrariFine { get => Odl_M.OrariFine; set => Odl_M.OrariFine = value; }
-        public List<TimeSpan> DurataOrari { get => Odl_M.DurataOrari; set => Odl_M.DurataOrari = value; }
+        public Odl_M Odl_M { get; private set; }
+
+        private ObservableCollection<DateTime> orariInizio = [];
+        private ObservableCollection<DateTime> orariFine = [];
+        private ObservableCollection<TimeSpan> durataOrari = [];
+        public ObservableCollection<DateTime> OrariInizio { get => Odl_M.OrariInizio; set => Odl_M.OrariInizio = value; }
+        public ObservableCollection<DateTime> OrariFine { get => Odl_M.OrariFine; set => Odl_M.OrariFine = value; }
+        public ObservableCollection<TimeSpan> DurataOrari { get => Odl_M.DurataOrari; set => Odl_M.DurataOrari = value; }
         public DateTime OrarioUltimoOdlIniziato;
+        private bool mostraAltro;
+
         public bool OdlInModifica { get; set; }
+        public bool MostraAltro
+        {
+            get => mostraAltro;
+            set
+            {
+                mostraAltro = value;
+                OnPropertyChanged(nameof(MostraAltro));
+            }
+        }
         public AggiungiOdl AggiungiOdl { get; set; }
         public AggiornaOdl AggiornaOdl { get; set; }
         public string Id { get => Odl_M.Id; set => Odl_M.Id = value; }
@@ -42,6 +56,7 @@
             AggiungiOdl = aggiungiOdl;
             AggiornaOdl = aggiornaOdl;
         }
-        public static explicit operator Odl_VM(Odl_M v) => Odl_F.CreateWithData(v.Id, v.Cliente, v.Note, v.Stato, v.OrariInizio, v.OrariFine, v.DurataOrari);
+
+        //public static explicit operator Odl_VM(Odl_M v) => Odl_F.CreateWithData(v.Id, v.Cliente, v.Note, v.Stato, v.OrariInizio, v.OrariFine, v.DurataOrari);
     }
 }

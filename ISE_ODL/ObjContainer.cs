@@ -7,7 +7,7 @@ using ISE_ODL.Menu;
 
 namespace ISE_ODL
 {
-    internal static class BaseClasse
+    internal static class ObjContainer
     {
         public static MenuPrincipale_VM MenuPrincipale_VM { get; set; } =
             new MenuPrincipale_VM(new Odl.CreaOdl(), new Odl.EliminaOdl(), new Odl.ModificaOdl(), new Esci());

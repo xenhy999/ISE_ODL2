@@ -9,6 +9,6 @@ namespace ISE_ODL.Odl
     public/*internal*/ class AggiungiOdl : BaseCommand
     {
         public Odl_VM OdlDaAggiungere;
-        public override void Execute(object parameter) => BaseClasse.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiungere);
+        public override void Execute(object parameter) => ObjContainer.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiungere);
     }
 }

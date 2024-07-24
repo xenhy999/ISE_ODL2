@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Commisioni xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Odl_M>
-    <Id>745387485</Id>
-    <Cliente>python</Cliente>
-    <Note>fa schifo</Note>
+    <Id>dd</Id>
+    <Cliente>ss</Cliente>
+    <Note>dd</Note>
     <Stato>false</Stato>
     <Completata>false</Completata>
     <OrariInizio>
-      <dateTime>2024-07-23T17:26:08.3409434+02:00</dateTime>
+      <dateTime>2024-07-24T15:29:33.754498+02:00</dateTime>
     </OrariInizio>
     <OrariFine>
-      <dateTime>2024-07-23T17:26:16.8887465+02:00</dateTime>
+      <dateTime>2024-07-24T15:29:34.2782573+02:00</dateTime>
     </OrariFine>
     <DurataOrari>
-      <TimeSpan>PT8.5478055S</TimeSpan>
+      <TimeSpan>PT0.5217555S</TimeSpan>
     </DurataOrari>
   </Odl_M>
   <Odl_M>
-    <Id>111</Id>
-    <Cliente>c#</Cliente>
-    <Note>è 100 volte meglio </Note>
+    <Id>dd</Id>
+    <Cliente>ss</Cliente>
+    <Note>ss</Note>
     <Stato>false</Stato>
     <Completata>false</Completata>
     <OrariInizio />

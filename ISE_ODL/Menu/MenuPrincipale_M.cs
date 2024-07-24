@@ -6,7 +6,7 @@ namespace ISE_ODL.Menu
 {
     public class MenuPrincipale_M : BaseBinding
     {
-        [XmlElement("Odl_M")]
-        public ObservableCollection<Odl_M> Commisioni_M { get; set; } = [];
+        //[XmlElement("Odl_M")]
+        //public ObservableCollection<Odl_M> Commisioni_M { get; set; } = [];
     }
 }

@@ -7,22 +7,95 @@
              d:DataContext="{d:DesignInstance Type=local:Odl_VM}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel HorizontalAlignment="Center">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock FontWeight="Bold" Text=" Id "/>
+    <UserControl.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Width" Value="Auto"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        <Style TargetType="ToggleButton">
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{StaticResource Grigio}"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="{StaticResource Grigio}"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        <DataTemplate DataType="{x:Type local:Odl_VM.OrariInizio}">
+            <local:OrariInizioInElenco/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" >
+            <TextBlock FontWeight="Bold" Text=" Id: "/>
             <TextBlock Text="{Binding Id}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Cliente: "/>
             <TextBlock Text="{Binding Cliente}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2" >
             <TextBlock FontWeight="Bold" Text=" Note: "/>
             <TextBlock Text="{Binding Note}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Grid.Column="3" >
+            <TextBlock FontWeight="Bold" Text=" In attività: "/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,5,15,5">
+            <CheckBox IsChecked="{Binding Stato}" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
+            <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
+        </StackPanel>
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
             <TextBlock FontWeight="Bold" Text=" Orario di inizio: "/>
-            <ListBox ItemsSource="{Binding OrariInizio}" FontSize="10" />
+            <ListBox ItemsSource="{Binding OrariInizio}" FontSize="10"/>
             <TextBlock FontWeight="Bold" Text=" Orario di fine: " />
             <ListBox ItemsSource="{Binding OrariFine}" FontSize="10" />
             <TextBlock FontWeight="Bold" Text=" Durata: " />
             <ListBox ItemsSource="{Binding DurataOrari}" FontSize="10" />
+        </StackPanel>-->
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
+            <TextBlock FontWeight="Bold" Text=" Orario di inizio: "/>
+            <ListBox ItemsSource="{Binding OrariInizio}" FontSize="10"/>
         </StackPanel>
-    </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
+            <TextBlock FontWeight="Bold" Text=" Orario di fine: " />
+            <ListBox ItemsSource="{Binding OrariFine}" FontSize="10" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
+            <TextBlock FontWeight="Bold" Text=" Durata: " />
+            <ListBox ItemsSource="{Binding DurataOrari}" FontSize="10" />
+        </StackPanel>
+    </Grid>
 </UserControl>

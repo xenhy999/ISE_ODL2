@@ -10,6 +10,7 @@ namespace ISE_ODL.Menu
         public EliminaOdl EliminaOdl { get; set; }
         public ModificaOdl ModificaOdl { get; set; }
         public Esci Esci { get; set; }
+
         private Odl_VM odlSelezionata;
         public Odl_VM OdlSelezionata
         {
