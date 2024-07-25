@@ -6,7 +6,7 @@ namespace ISE_ODL
 {
     public partial class MenuPrincipale_V : Window
     {
-        private const string fileName = @"C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\ISE_ODL\Menu\Commisioni.json";
+        private static readonly string fileName = @$"{AppDomain.CurrentDomain.BaseDirectory}\Commisioni.json";
 
         public MenuPrincipale_V() => InitializeComponent();
         private void Button_Click(object sender, RoutedEventArgs e) => Close();
