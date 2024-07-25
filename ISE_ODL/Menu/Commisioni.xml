@@ -35,8 +35,17 @@
     <Note />
     <Stato>false</Stato>
     <Completata>false</Completata>
-    <OrariInizio />
-    <OrariFine />
-    <DurataOrari />
+    <OrariInizio>
+      <dateTime>2024-07-24T23:13:55.139734+02:00</dateTime>
+      <dateTime>2024-07-24T23:13:59.7239943+02:00</dateTime>
+    </OrariInizio>
+    <OrariFine>
+      <dateTime>2024-07-24T23:13:55.7124215+02:00</dateTime>
+      <dateTime>2024-07-24T23:14:00.1922055+02:00</dateTime>
+    </OrariFine>
+    <DurataOrari>
+      <TimeSpan>PT0.571531S</TimeSpan>
+      <TimeSpan>PT0.4681609S</TimeSpan>
+    </DurataOrari>
   </Odl_M>
 </Commisioni>

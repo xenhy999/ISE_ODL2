@@ -12,18 +12,8 @@ namespace ISE_ODL.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)value && ObjContainer.MenuPrincipale_VM.OdlInEsecuzione) return true;
-            return false;
-            //if ((bool)value)
-            //{
-            //    if (ObjContainer.MenuPrincipale_VM.OdlInEsecuzione) return true;
-            //    else return false;
-            //}
-            //else
-            //{
-            //    if (ObjContainer.MenuPrincipale_VM.OdlInEsecuzione) return false;
-            //    else return true;
-            //}
+            if ((bool)value == ObjContainer.MenuPrincipale_VM.OdlInEsecuzione) return true;
+            else return false;
 
         }
 

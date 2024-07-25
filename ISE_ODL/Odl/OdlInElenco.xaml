@@ -17,10 +17,12 @@
             <Setter Property="Height" Value="Auto"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="HorizontalAlignment" Value="center"/>
-            <Setter Property="Background" Value="{StaticResource Grigio}"/>
+            <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Palette_1}"/>
+            <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalAlignment" Value="center"/>
@@ -57,8 +59,10 @@
 
         </Style>
     </UserControl.Resources>
+    
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="150"/>
@@ -71,27 +75,31 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
+            <TextBlock FontWeight="Bold" Text=" Done: "/>
+            <TextBlock Text="{Binding Completata}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Id: "/>
             <TextBlock Text="{Binding Id}"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" >
+        <StackPanel Grid.Row="0" Grid.Column="2" >
             <TextBlock FontWeight="Bold" Text=" Cliente: "/>
             <TextBlock Text="{Binding Cliente}"/> 
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="2" >
+        <StackPanel Grid.Row="0" Grid.Column="3" >
             <TextBlock FontWeight="Bold" Text=" Note: "/>
             <TextBlock Text="{Binding Note}"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="3" >
+        <StackPanel Grid.Row="0" Grid.Column="4" >
             <TextBlock FontWeight="Bold" Text=" In attività: "/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,5,15,5">
-            <CheckBox IsChecked="{Binding Stato}"/>
+        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0,5,15,5">
+            <CheckBox IsChecked="{Binding Stato}" IsEnabled="{Binding Stato,Converter={StaticResource EsecuzioneOdl}}"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
+        <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
         </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6">
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>

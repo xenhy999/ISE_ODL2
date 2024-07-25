@@ -7,7 +7,19 @@
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
         <sys:Boolean x:Key="False">False</sys:Boolean>
+        
+        
         <Brush x:Key="Grigio">#78716C</Brush>
+        <Brush x:Key="Grigio_Chiaro">#9E9E9E</Brush>
+
+        <Brush x:Key="White_Neutral"> #EEEEEE</Brush>
+        <Brush x:Key="Black_Neutral">#000000</Brush>
+        <Brush x:Key="Palette_1">#1B262C</Brush>
+        <Brush x:Key="Palette_2">#0F4C75</Brush>
+        <Brush x:Key="Palette_3">#3282B8</Brush>
+        <Brush x:Key="Palette_4">#BBE1FA</Brush>
+        
+        
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateTimeToString x:Key="DateTimeToString"/>
@@ -49,23 +61,27 @@
                 </Setter.Value>
             </Setter>
         </Style>-->
+        <Style x:Key="Griglia_Principale"  TargetType="Grid">
+            <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
+        </Style>
 
-
-        <Style TargetType="ListBox">
+        <Style x:Key="Lista_Principale"  TargetType="ListBox">
             <Setter Property="Background" Value="White"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="#222831"/>
-            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="-3"/>
-            <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="200"/>
+            <Setter Property="Width" Value="1000"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center"/>
                         <Setter Property="Padding" Value="10"/>
-                        <Setter Property="Margin" Value="2"/>
-                        <Setter Property="Background" Value="#222831"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Background" Value="{StaticResource Palette_1}"/>
                         <Setter Property="BorderBrush" Value="#222831"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Foreground" Value="white"/>
@@ -84,29 +100,31 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Background" Value="#2196F3"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="{StaticResource Palette_2}"/>
+                                <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="LightBlue"/>
-                                <Setter Property="Foreground" Value="black"/>
+                                <Setter Property="Background" Value="{StaticResource Palette_4}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Setter.Value>
             </Setter>
         </Style>
+        
         <Style TargetType="Button">
-            <Setter Property="Background" Value="SlateBlue"/>
+            <Setter Property="Background" Value="{StaticResource Palette_2}"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="10,5"/>
             <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="40"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="Red"/>
-                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
                 </Trigger>
                 <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="Gray"/>

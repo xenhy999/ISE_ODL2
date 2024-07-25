@@ -7,13 +7,13 @@
         xmlns:odl="clr-namespace:ISE_ODL.Odl"
         d:DataContext="{d:DesignInstance Type=menu:MenuPrincipale_VM}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="450" Width="800" MinWidth="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type odl:Odl_VM}">
             <odl:OdlInElenco/>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{StaticResource Griglia_Principale}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -35,7 +35,7 @@
                     <DataGridTextColumn Header="Note" Binding="{Binding Orari}" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>-->
-            <ListBox  ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}" Width="900" Height="300" FontSize="20" HorizontalAlignment="Center">
+            <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}" >
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="1">
