@@ -6,7 +6,7 @@ namespace ISE_ODL
 {
     public partial class MenuPrincipale_V : Window
     {
-        private static readonly string fileName = @$"{AppDomain.CurrentDomain.BaseDirectory}\Commisioni.json";
+        public static readonly string fileName = @$"{AppDomain.CurrentDomain.BaseDirectory}\Commisioni.json";
 
         public MenuPrincipale_V() => InitializeComponent();
         private void Button_Click(object sender, RoutedEventArgs e) => Close();

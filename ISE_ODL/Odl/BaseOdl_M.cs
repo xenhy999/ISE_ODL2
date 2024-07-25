@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using ISE_ODL.Intervallo;
 
 namespace ISE_ODL.Odl
 {
@@ -6,8 +7,6 @@ namespace ISE_ODL.Odl
     {
         public string Attivita { get; set; }
         public bool Stato { get; set; }
-        public ObservableCollection<DateTime> OrariInizio { get; set; } = [];
-        public ObservableCollection<DateTime> OrariFine { get; set; } = [];
-        public ObservableCollection<string> DurataOrari { get; set; } = [];
+        public List<Intervallo_M> Intervalli { get; set; }
     }
 }

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ISE_ODL.Odl"
+             xmlns:inter="clr-namespace:ISE_ODL.Intervallo"
              d:DataContext="{d:DesignInstance Type=local:Odl_VM}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -58,6 +59,9 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
 
         </Style>
+        <DataTemplate DataType="{x:Type inter:Intervallo_VM}">
+            <inter:Intervallo_V/>
+        </DataTemplate>
     </UserControl.Resources>
     
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -100,7 +104,7 @@
         <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
         </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
+        <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -119,8 +123,9 @@
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2"  Orientation="Vertical" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
                 <TextBlock FontWeight="Bold" Text=" Durata: " />
-                <ListBox ItemsSource="{Binding DurataOrari}" FontSize="10" />
             </StackPanel>
-        </Grid>
+        </Grid>-->
+        
+        <ListBox ItemsSource="{Binding Intervalli}" />
     </Grid>
 </UserControl>
