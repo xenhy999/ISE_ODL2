@@ -94,7 +94,7 @@
             <TextBlock FontWeight="Bold" Text=" In attività: "/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="5" Margin="0,5,15,5">
-            <RadioButton GroupName="dshj" IsChecked="{Binding Stato}" IsEnabled="{Binding Stato,Converter={StaticResource EsecuzioneOdl}}"/>
+            <RadioButton GroupName="dshj" IsChecked="{Binding Stato}" />
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
