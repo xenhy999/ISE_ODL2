@@ -23,6 +23,7 @@
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateTimeToString x:Key="DateTimeToString"/>
+        <converters:EsecuzioneOdl x:Key="EsecuzioneOdl"/>
         <!--<Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="3"/>

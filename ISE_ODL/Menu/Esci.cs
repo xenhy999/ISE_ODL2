@@ -4,11 +4,9 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Documents;
 using System.Xml.Serialization;
 using ISE_ODL.Odl;
 
@@ -16,14 +14,13 @@ namespace ISE_ODL.Menu
 {
     class Esci : BaseCommand
     {
-        private const string fileName = @"C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\ISE_ODL\Menu\Commisioni.json";
         public override void Execute(object parameter)
         {
-            List<Odl_M> OdlDaSerializzare = ObjContainer.MenuPrincipale_VM.Commisioni.Where(c => c is Odl_VM).Cast<Odl_VM>().Select(cvm => cvm.Model).ToList();
-            List<string> odl = new List<string>();
-            foreach (Odl_M o in OdlDaSerializzare)
-                odl.Add(JsonSerializer.Serialize(o));
-            File.WriteAllLines(fileName, odl);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Odl_M>), new XmlRootAttribute("Commisioni"));
+            using (TextWriter writer = new StreamWriter(@"C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\ISE_ODL\Menu\Commisioni.xml"))
+            {
+                serializer.Serialize(writer, ObjContainer.MenuPrincipale_VM.Commisioni.Select(c => c.Odl_M).ToList());
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ namespace ISE_ODL.Menu
     internal class MenuPrincipale_VM : BaseBinding
     {
         public MenuPrincipale_M MenuPrincipale_M = new();
-        public ObservableCollection<BaseOdl_VM> Commisioni { get; set; } = [BaseOdl_F.Create()];
+        public ObservableCollection<Odl_VM> Commisioni { get; set; } = [];
         public CreaOdl DefinisciOdl { get; set; }
         public EliminaOdl EliminaOdl { get; set; }
         public ModificaOdl ModificaOdl { get; set; }
@@ -22,6 +22,7 @@ namespace ISE_ODL.Menu
                 EliminaOdl.OnRaiseCanExecuteChanged();
             }
         }
+        public bool OdlInEsecuzione { get; set; } = false;
         public MenuPrincipale_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl, Esci esci)
         {
             DefinisciOdl = definisciOdl;

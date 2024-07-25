@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_ODL.Odl
 {
-    public class BaseOdl_F
+    public class NessunoOdl: BaseBinding
     {
-        public static BaseOdl_VM Create() => new BaseOdl_VM(new BaseOdl_M()) { Attivita = "Nessuna attività", Stato = false };
     }
 }
