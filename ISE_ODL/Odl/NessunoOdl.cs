@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISE_ODL.Odl
 {
-    class NessunoOdl
+    public class NessunoOdl: BaseBinding
     {
     }
 }

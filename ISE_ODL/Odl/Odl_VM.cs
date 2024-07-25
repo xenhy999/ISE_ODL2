@@ -3,7 +3,7 @@
 namespace ISE_ODL.Odl
 {
     /*internal*/
-    public class Odl_VM : BaseBinding
+    public class Odl_VM : NessunoOdl
     {
         public Odl_M Odl_M { get; private set; }
 
