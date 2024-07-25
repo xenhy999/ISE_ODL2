@@ -18,24 +18,20 @@ namespace ISE_ODL.Odl
         {
             Model = nessunoOdl_M;
         }
-
+        public Intervallo_M? m;
         public string Attivita { get => Model.Attivita; set => Model.Attivita = value; }
         public bool Stato
         {
             get => Model.Stato;
             set
             {
-                if (Model.Stato == value)
-                    return;
-
+                if (Model.Stato == value) return;
                 Model.Stato = value;
                 OnPropertyChanged(nameof(Stato));
-
-                if (value)
-                    Intervalli.Add(Intertevallo_F.StartNew());
+                if (value) Intervalli.Add(Intertevallo_F.StartNew());
                 else
                 {
-                    Intervallo_M? m = Intervalli.LastOrDefault()?.EndThis();
+                    m = Intervalli.LastOrDefault().EndThis();
                     Model.Intervalli.Add(m);
                 }
             }

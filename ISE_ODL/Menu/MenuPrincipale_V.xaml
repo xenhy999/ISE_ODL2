@@ -53,7 +53,7 @@
             <Button Command="{Binding ModificaOdl}" >Modifica Odl</Button>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3">
-            <Button Command="{Binding Esci}" Click="Button_Click"> Esci</Button>
+            <CheckBox Content="MostraCompletati" IsChecked="{Binding MostraCompletati}"/>
         </StackPanel>
     </Grid>
     <!--<Grid Background="#F8EDED">

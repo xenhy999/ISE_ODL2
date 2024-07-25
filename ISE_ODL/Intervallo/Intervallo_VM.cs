@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ISE_ODL.Intervallo
 {
@@ -15,9 +16,18 @@ namespace ISE_ODL.Intervallo
             _model = model;
         }
 
+        public bool OrarioCompleto { get; set; } = false;
         public DateTime OrarioInizio { get => _model.OrarioInizio; set => _model.OrarioInizio = value; }
-        public DateTime OrarioFine { get => _model.OrarioFine; set => _model.OrarioFine = value; }
-
+        public DateTime OrarioFine
+        {
+            get => _model.OrarioFine;
+            set
+            {
+                _model.OrarioFine = value;
+                OrarioCompleto = true;
+                OnPropertyChanged(nameof(OrarioCompleto));
+            }
+        }
         public Intervallo_M EndThis()
         {
             OrarioFine = DateTime.Now;

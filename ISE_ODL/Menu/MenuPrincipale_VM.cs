@@ -12,6 +12,8 @@ namespace ISE_ODL.Menu
         public Esci Esci { get; set; }
 
         private Odl_VM odlSelezionata;
+        private bool mostraCompletati;
+
         public Odl_VM OdlSelezionata
         {
             get => odlSelezionata;
@@ -28,6 +30,15 @@ namespace ISE_ODL.Menu
             EliminaOdl = eliminaOdl;
             ModificaOdl = modificaOdl;
             Esci = esci;
+        }
+        public bool MostraCompletati
+        {
+            get => mostraCompletati;
+            set
+            {
+                mostraCompletati = value;
+                OnPropertyChanged(nameof(MostraCompletati));
+            }
         }
     }
 }

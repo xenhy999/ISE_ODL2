@@ -13,46 +13,24 @@
             <Setter Property="Margin" Value="10,5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-       
-        
-        <Style TargetType="CheckBox">
-            <Setter Property="Width" Value="Auto"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0"/>
-        </Style>
-        <Style TargetType="ToggleButton">
-            <Setter Property="Width" Value="110"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="{StaticResource Grigio}"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Style.Triggers>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="Background" Value="{StaticResource Grigio}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
-
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="23"/>
         </Style>
     </UserControl.Resources>
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
-            <TextBlock FontWeight="Bold" Text=" Attività: "/>
-            <TextBlock Text="{Binding Attivita}"/>
+            <TextBlock  Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1">
             <RadioButton Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" />

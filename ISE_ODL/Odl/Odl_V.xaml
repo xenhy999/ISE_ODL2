@@ -16,7 +16,7 @@
         </Style>
 
     </Window.Resources>
-    <Grid>
+    <Grid Background="{StaticResource Grigio_Chiaro}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
@@ -29,25 +29,21 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock>ID</TextBlock>
-            <TextBox Text="{Binding Id}"/> 
+            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Id}"/> 
 
         </StackPanel>
         <StackPanel Grid.Row="1">
             <TextBlock>Cliente </TextBlock>
-            <TextBox Text="{Binding Cliente}"/>
+            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Cliente}"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock>Note</TextBlock>
-            <TextBox Text="{Binding Attività}"/>
+            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="3">
             <TextBlock>ID</TextBlock>
-            <Button Command="{Binding AggiungiOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi </Button>
+            <Button Command="{Binding AggiungiOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi</Button>
             <Button Command="{Binding AggiornaOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource BoolToVisibility}}" Click="Button_Click">Aggiorna</Button>
-        </StackPanel>
-        <StackPanel Grid.Row="4">
-            <TextBlock>Attiva</TextBlock>
-            <CheckBox IsChecked="{Binding Stato}"/>
         </StackPanel>
     </Grid>
 </Window>

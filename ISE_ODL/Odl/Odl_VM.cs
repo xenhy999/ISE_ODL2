@@ -51,8 +51,16 @@ namespace ISE_ODL.Odl
             }
         }
         //public string Attività { get => Odl_M.Attività; set => Odl_M.Attività = value; }
-        public bool Completata { get => model.Completata; set => model.Completata = value; }
-        
+        public bool Completata
+        {
+            get => model.Completata;
+            set
+            {
+                model.Completata = value;
+                OnPropertyChanged(nameof(Completata));
+            }
+        }
+
         //public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl):
         //{
         //    Odl_M = odl_M;

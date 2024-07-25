@@ -63,23 +63,22 @@
             <inter:Intervallo_V/>
         </DataTemplate>
     </UserControl.Resources>
-    
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <Grid Width="800" Visibility="{Binding Completata, Converter={StaticResource NotBoolToVisibility}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="45"/>
+            <ColumnDefinition Width="130"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
-            <TextBlock FontWeight="Bold" Text=" Done: "/>
+            <!--<TextBlock FontWeight="Bold" Text=" Done: "/>-->
             <CheckBox IsChecked="{Binding Completata}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" >
@@ -94,14 +93,10 @@
             <TextBlock FontWeight="Bold" Text=" Attività: "/>
             <TextBlock Text="{Binding Attivita}"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="4" >
-            <TextBlock FontWeight="Bold" Text=" In attività: "/>
+        <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,5,15,5">
+            <RadioButton  Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" />
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0,5,15,5">
-            <RadioButton  Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" >
-            </RadioButton>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
+        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
         </StackPanel>
         <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
@@ -125,7 +120,9 @@
                 <TextBlock FontWeight="Bold" Text=" Durata: " />
             </StackPanel>
         </Grid>-->
-        
-        <ListBox ItemsSource="{Binding Intervalli}" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
+            <ListBox ItemsSource="{Binding Intervalli}" Width="auto"/>
+        </StackPanel>
+       
     </Grid>
 </UserControl>
