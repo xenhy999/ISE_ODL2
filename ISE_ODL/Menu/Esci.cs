@@ -16,14 +16,13 @@ namespace ISE_ODL.Menu
 {
     class Esci : BaseCommand
     {
-        private const string fileName = @"C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\ISE_ODL\Menu\Commisioni.json";
         public override void Execute(object parameter)
         {
-            List<Odl_M> OdlDaSerializzare = ObjContainer.MenuPrincipale_VM.Commisioni.Where(c => c is Odl_VM).Cast<Odl_VM>().Select(cvm => cvm.Model).ToList();
-            List<string> odl = new List<string>();
-            foreach (Odl_M o in OdlDaSerializzare)
-                odl.Add(JsonSerializer.Serialize(o));
-            File.WriteAllLines(fileName, odl);
+            //List<Odl_M> OdlDaSerializzare = ObjContainer.MenuPrincipale_VM.Commisioni.Where(c => c is Odl_VM).Cast<Odl_VM>().Select(cvm => cvm.Model).ToList();
+            //List<string> odl = new List<string>();
+            //foreach (Odl_M o in OdlDaSerializzare)
+            //    odl.Add(JsonSerializer.Serialize(o));
+            //File.WriteAllLines(fileName, odl);
         }
     }
 }

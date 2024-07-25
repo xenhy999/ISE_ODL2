@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:menu="clr-namespace:ISE_ODL.Menu"
         xmlns:odl="clr-namespace:ISE_ODL.Odl"
+        Closed="Window_Closed"
         d:DataContext="{d:DesignInstance Type=menu:MenuPrincipale_VM}"
         mc:Ignorable="d"
         Title="ISE ODL Assistant" Height="450" Width="800" MinWidth="800"

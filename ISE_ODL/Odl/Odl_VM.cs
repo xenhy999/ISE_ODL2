@@ -5,9 +5,19 @@ namespace ISE_ODL.Odl
     /*internal*/
     public class Odl_VM : BaseOdl_VM
     {
-        private readonly Odl_M model;
-        public Odl_M Model => model;
-        
+        private  Odl_M model;
+        public Odl_M Model
+        {
+            get
+            {
+                return model;
+            }
+            set
+            {
+                model = value;
+            }
+        }
+
         private bool mostraAltro;
 
         public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl,BaseOdl_M nessunoOdl_M) : base(nessunoOdl_M)
