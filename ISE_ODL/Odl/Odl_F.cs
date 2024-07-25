@@ -6,7 +6,9 @@
         {
             AggiungiOdl aggiungiOdl = new();
             AggiornaOdl aggiornaOdl = new();
-            Odl_VM odl_VM = new(odl_M, aggiungiOdl, aggiornaOdl);
+            BaseOdl_M nessunoOdl_M = new();
+            //NessunoOdl_M nessunoOdl_M = new();
+            Odl_VM odl_VM = new(odl_M, aggiungiOdl, aggiornaOdl, nessunoOdl_M);
             aggiungiOdl.OdlDaAggiungere = odl_VM;
             aggiornaOdl.OdlDaAggiornare = odl_VM;
             return odl_VM;
