@@ -76,7 +76,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
             <TextBlock FontWeight="Bold" Text=" Done: "/>
-            <TextBlock Text="{Binding Completata}"/>
+            <CheckBox IsChecked="{Binding Completata}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Id: "/>
@@ -88,13 +88,13 @@
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3" >
             <TextBlock FontWeight="Bold" Text=" Note: "/>
-            <TextBlock Text="{Binding Note}"/>
+            <TextBlock Text="{Binding Attività}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="4" >
             <TextBlock FontWeight="Bold" Text=" In attività: "/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="5" Margin="0,5,15,5">
-            <CheckBox IsChecked="{Binding Stato}" IsEnabled="{Binding Stato,Converter={StaticResource EsecuzioneOdl}}"/>
+            <RadioButton GroupName="dshj" IsChecked="{Binding Stato}" IsEnabled="{Binding Stato,Converter={StaticResource EsecuzioneOdl}}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
