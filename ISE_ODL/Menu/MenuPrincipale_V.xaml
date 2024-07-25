@@ -8,11 +8,13 @@
         d:DataContext="{d:DesignInstance Type=menu:MenuPrincipale_VM}"
         mc:Ignorable="d"
         Title="ISE ODL Assistant" Height="450" Width="800" MinWidth="800"
-        Icon="C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\ISE_ODL\Icone\icons8-project-96.ico"
         >
     <Window.Resources>
         <DataTemplate DataType="{x:Type odl:Odl_VM}">
             <odl:OdlInElenco/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type odl:BaseOdl_VM}">
+            <odl:OdlVuoto/>
         </DataTemplate>
     </Window.Resources>
     <Grid Style="{StaticResource Griglia_Principale}">

@@ -67,7 +67,7 @@
             <ColumnDefinition Width="175"/>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -87,14 +87,15 @@
             <TextBlock Text="{Binding Cliente}"/> 
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3" >
-            <TextBlock FontWeight="Bold" Text=" Note: "/>
-            <TextBlock Text="{Binding Attività}"/>
+            <TextBlock FontWeight="Bold" Text=" Attività: "/>
+            <TextBlock Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="4" >
             <TextBlock FontWeight="Bold" Text=" In attività: "/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="5" Margin="0,5,15,5">
-            <RadioButton GroupName="dshj" IsChecked="{Binding Stato}" />
+            <RadioButton  Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" >
+            </RadioButton>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="6" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>

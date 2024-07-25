@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// Logica di interazione per OdlInElenco.xaml
+    /// Logica di interazione per OdlVuoto.xaml
     /// </summary>
-    public partial class OdlInElenco:UserControl
+    public partial class OdlVuoto : UserControl
     {
-        public OdlInElenco()
+        public OdlVuoto()
         {
             InitializeComponent();
         }

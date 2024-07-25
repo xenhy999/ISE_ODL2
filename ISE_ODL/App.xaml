@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime" 
              xmlns:converters="clr-namespace:ISE_ODL.Converter"
+             xmlns:properties="clr-namespace:ISE_ODL.Properties"
              Startup="Application_Startup">
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
@@ -18,8 +19,10 @@
         <Brush x:Key="Palette_2">#0F4C75</Brush>
         <Brush x:Key="Palette_3">#3282B8</Brush>
         <Brush x:Key="Palette_4">#BBE1FA</Brush>
-        
-        
+
+        <Image Source="{Binding Source={x:Static properties:Resources.btn_ON}}" x:Key="imgOn" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.btn_OFF}}" x:Key="imgOff" x:Shared="false"/>
+
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateTimeToString x:Key="DateTimeToString"/>
@@ -111,7 +114,33 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+        <!--<Style TargetType="RadioButton" x:Key="In_Attivita">
+            <Setter Property="Background" Value="{StaticResource Palette_2}"/>
+            <Setter Property="Foreground" Value="{StaticResource Grigio_Chiaro}" />
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="FontSize" Value="20"/>
+  
+        </Style>-->
+        <Style TargetType="RadioButton" x:Key="In_Attivita">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid>
+                            <ContentPresenter/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="{StaticResource imgOn}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Content" Value="{StaticResource imgOff}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="{StaticResource Palette_2}"/>
             <Setter Property="Foreground" Value="White"/>
