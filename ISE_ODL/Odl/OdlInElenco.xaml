@@ -64,7 +64,7 @@
         </DataTemplate>
     </UserControl.Resources>
 
-    <Grid Width="800" Visibility="{Binding Completata, Converter={StaticResource NotBoolToVisibility}}">
+    <Grid Width="800" Visibility="{Binding Filtro, Converter={StaticResource NotBoolToVisibility}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>

@@ -30,6 +30,8 @@ namespace ISE_ODL.Menu
             EliminaOdl = eliminaOdl;
             ModificaOdl = modificaOdl;
             Esci = esci;
+            MostraCompletati = false;
+            OnPropertyChanged(nameof(MostraCompletati));
         }
         public bool MostraCompletati
         {
@@ -37,6 +39,13 @@ namespace ISE_ODL.Menu
             set
             {
                 mostraCompletati = value;
+                IEnumerable<Odl_VM> l = Commisioni.Where(c => c is Odl_VM).Cast<Odl_VM>();
+                foreach (Odl_VM item in l)
+                {
+                    if (!item.Completata || (item.Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati)) item.Filtro = false;
+                    else item.Filtro = true;
+                    OnPropertyChanged(nameof(item.Filtro));
+                }
                 OnPropertyChanged(nameof(MostraCompletati));
             }
         }

@@ -47,13 +47,13 @@
             <Button Command="{Binding DefinisciOdl}"> Definisci Odl</Button>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2">
-            <Button Command="{Binding EliminaOdl}" >Elimina Odl</Button>
+            <Button  Command="{Binding EliminaOdl}">Elimina Odl</Button>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0">
             <Button Command="{Binding ModificaOdl}" >Modifica Odl</Button>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3">
-            <CheckBox Content="MostraCompletati" IsChecked="{Binding MostraCompletati}"/>
+            <CheckBox Style="{StaticResource filtro_menu}"  Content="MostraCompletati" IsChecked="{Binding MostraCompletati}"/>
         </StackPanel>
     </Grid>
     <!--<Grid Background="#F8EDED">

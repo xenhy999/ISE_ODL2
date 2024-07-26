@@ -19,9 +19,15 @@
         <Brush x:Key="Palette_2">#0F4C75</Brush>
         <Brush x:Key="Palette_3">#3282B8</Brush>
         <Brush x:Key="Palette_4">#BBE1FA</Brush>
+        <Brush x:Key="Verde_Conferma">#4CAF50</Brush>
+        <Brush x:Key="Verde_Conferma_Scuro">#1B5E20</Brush>
+        <Brush x:Key="Rosso_Conferma">#F44336</Brush>
+        <Brush x:Key="Rosso_Conferma_Scuro">#B71C1C</Brush>
 
         <Image Source="{Binding Source={x:Static properties:Resources.btn_ON}}" x:Key="imgOn" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.btn_OFF}}" x:Key="imgOff" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.completate_Odl}}" x:Key="completate_Odl" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
 
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
@@ -167,8 +173,88 @@
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style  TargetType="Button" x:Key="Conferma_Eliminazione">
+            <Setter Property="Background" Value="{StaticResource Rosso_Conferma}" />
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="40" />
 
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Palette_2}" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
 
-        
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="OrangeRed" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style  TargetType="Button" x:Key="Annulla_Eliminazione">
+            <Setter Property="Background" Value="{StaticResource Verde_Conferma}" />
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="40" />
+
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Palette_2}" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="OrangeRed" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="CheckBox" x:Key="filtro_menu">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" Width="60"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.completate_Odl}}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.tutte_Odl}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+                </Setter>
+        </Style>
     </Application.Resources>
 </Application>

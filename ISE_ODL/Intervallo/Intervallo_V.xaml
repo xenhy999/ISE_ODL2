@@ -16,12 +16,12 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <TextBlock Text="Orario di inizio: "></TextBlock>
-            <TextBlock Text="{Binding OrarioInizio}"></TextBlock>
+            <TextBlock Text="Orario di inizio: "/>
+            <TextBlock Text="{Binding OrarioInizio}"/>
         </StackPanel >
         <StackPanel Grid.Row="0" Grid.Column="1" Visibility="{Binding OrarioCompleto, Converter={StaticResource BoolToVisibility}}">
-            <TextBlock Text="Orario di fine: "></TextBlock>
-            <TextBlock Text="{Binding OrarioFine}"></TextBlock>
+            <TextBlock Text="Orario di fine: "/>
+            <TextBlock Text="{Binding OrarioFine}"/>
         </StackPanel>
     </Grid>
 </UserControl>

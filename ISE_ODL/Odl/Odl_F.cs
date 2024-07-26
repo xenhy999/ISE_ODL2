@@ -13,12 +13,11 @@
             aggiornaOdl.OdlDaAggiornare = odl_VM;
             return odl_VM;
         }
-
-        public static Odl_VM Create() => Create(new Odl_M());
-
-
-
-        
+        public static Odl_VM Create()
+        {
+            Odl_M odl_M = new() { Completata=false};
+            return Create(odl_M);
+        }
         //public static Odl_VM CreateFromFile(string Id, string Cliente, string Note)
         //{
         //    Odl_VM odl_VM = Create();

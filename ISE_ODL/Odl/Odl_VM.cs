@@ -19,12 +19,14 @@ namespace ISE_ODL.Odl
         }
 
         private bool mostraAltro;
+        private bool filtro;
 
         public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl,BaseOdl_M nessunoOdl_M) : base(nessunoOdl_M)
         {
             model = odl_M;
             AggiungiOdl = aggiungiOdl;
             AggiornaOdl = aggiornaOdl;
+            Filtro = false;
         }
 
         public bool OdlInModifica { get; set; }
@@ -58,8 +60,28 @@ namespace ISE_ODL.Odl
             {
                 model.Completata = value;
                 OnPropertyChanged(nameof(Completata));
+                if (!Completata || (Completata&&ObjContainer.MenuPrincipale_VM.MostraCompletati)) Filtro = false;
+                else Filtro = true;
+                OnPropertyChanged(nameof(Filtro));
             }
         }
+        public bool Filtro
+        {
+            get
+            {
+                //if (Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati) return true;
+                //if (!Completata) return true;
+                //return false;
+                return filtro;
+            }
+
+            set
+            {
+                filtro = value;
+                OnPropertyChanged(nameof(Filtro));
+            }
+        }
+
 
         //public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl):
         //{

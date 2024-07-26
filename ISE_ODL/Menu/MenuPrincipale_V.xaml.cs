@@ -18,5 +18,11 @@ namespace ISE_ODL
             foreach (Odl_M o in OdlDaSerializzare) odl.Add(JsonSerializer.Serialize(o));
             File.WriteAllLines(fileName, odl);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            RichiestaEliminazioneOdl_V richiestaEliminazioneOdl_V = new RichiestaEliminazioneOdl_V();
+            richiestaEliminazioneOdl_V.Show();
+        }
     }
 }
