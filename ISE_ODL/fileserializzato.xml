@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfBaseOdl_M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BaseOdl_M>
+    <Attivita>Nessuna attività</Attivita>
+    <Stato>false</Stato>
+    <Intervalli>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:47.4817865+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:48.270206+02:00</OrarioFine>
+      </Intervallo_M>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:48.9536189+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:49.5852907+02:00</OrarioFine>
+      </Intervallo_M>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:50.4012931+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:51.7295157+02:00</OrarioFine>
+      </Intervallo_M>
+    </Intervalli>
+  </BaseOdl_M>
+  <BaseOdl_M>
+    <Stato>true</Stato>
+    <Intervalli>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:46.1100152+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:47.4828596+02:00</OrarioFine>
+      </Intervallo_M>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:48.2696644+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:48.9537021+02:00</OrarioFine>
+      </Intervallo_M>
+      <Intervallo_M>
+        <OrarioInizio>2024-07-26T17:46:49.585127+02:00</OrarioInizio>
+        <OrarioFine>2024-07-26T17:46:50.4013451+02:00</OrarioFine>
+      </Intervallo_M>
+    </Intervalli>
+  </BaseOdl_M>
+</ArrayOfBaseOdl_M>
