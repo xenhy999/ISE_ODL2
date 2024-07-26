@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=menu:MenuPrincipale_VM}"
         mc:Ignorable="d"
         ResizeMode="CanResize"
-        Title="ISE ODL Assistant" Height="450" Width="850" MinWidth="850" MinHeight="450">
+        Title="ISE ODL Assistant" Height="550" Width="865" MinWidth="865" MinHeight="550">
     <Window.Resources>
         <DataTemplate DataType="{x:Type odl:Odl_VM}">
             <odl:OdlInElenco/>
@@ -20,31 +20,34 @@
     </Window.Resources>
     <Grid Style="{StaticResource Griglia_Principale}" Height="Auto" Width="Auto">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3">
-            <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}"/>
-
+            <TextBlock Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource Palette_4}" Background="{StaticResource Palette_2}" Padding="10000,27"></TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3">
+            <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" >
             <Button Command="{Binding DefinisciOdl}">Definisci Odl</Button>
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="2">
+        <StackPanel Grid.Row="4" Grid.Column="2" >
             <Button  Command="{Binding EliminaOdl}">Elimina Odl</Button>
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="0">
+        <StackPanel Grid.Row="4" Grid.Column="0" >
             <Button Command="{Binding ModificaOdl}" >Modifica Odl</Button>
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" Margin="0,-10,0,0">
             <CheckBox Style="{StaticResource filtro_menu}"  Content="MostraCompletati" IsChecked="{Binding MostraCompletati}" Cursor="Hand"/>
         </StackPanel>
     </Grid>

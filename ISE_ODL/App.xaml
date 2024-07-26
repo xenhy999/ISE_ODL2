@@ -81,9 +81,13 @@
             <Setter Property="BorderBrush" Value="#222831"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="-3"/>
-            <Setter Property="Width" Value="1000"/>
+            <Setter Property="Width" Value="850"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="MaxHeight" Value="276"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="Margin" Value="0,0,0,40"/>
 
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
@@ -286,8 +290,7 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,0,15"/>
-            <Setter Property="Foreground" Value="{StaticResource Grigio_Chiaro}"/>
-
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
         </Style>
         <Style TargetType="TextBox" x:Key="Odl_V_Ins">
             <Setter Property="FontSize" Value="18"/>
@@ -295,7 +298,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
             <Setter Property="Background" Value="{StaticResource Palette_3}" />
-            <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Width" Value="150" />
             <Setter Property="Height" Value="30" />
@@ -303,6 +306,10 @@
             <Setter Property="SnapsToDevicePixels" Value="True" />
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="AcceptsReturn" Value="False"/>
+            <Setter Property="CharacterCasing" Value="Normal"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource Black_Neutral}"/>
         </Style>
     </Application.Resources>
 </Application>
