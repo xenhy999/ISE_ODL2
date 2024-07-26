@@ -14,7 +14,6 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="30" />
         </Style>
-
     </Window.Resources>
     <Grid Background="{StaticResource Palette_1}">
         <Grid.ColumnDefinitions>
@@ -29,7 +28,6 @@
         <StackPanel Grid.Row="0">
             <TextBlock Style="{StaticResource Odl_V}">ID</TextBlock>
             <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Id}"/> 
-
         </StackPanel>
         <StackPanel Grid.Row="1">
             <TextBlock Style="{StaticResource Odl_V}">Cliente </TextBlock>

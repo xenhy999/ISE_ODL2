@@ -9,32 +9,33 @@
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
         <sys:Boolean x:Key="False">False</sys:Boolean>
-        
         <Brush x:Key="Grigio">#78716C</Brush>
         <Brush x:Key="Grigio_Chiaro">#9E9E9E</Brush>
         <Brush x:Key="White_Neutral"> #EEEEEE</Brush>
         <Brush x:Key="Black_Neutral">#000000</Brush>
         <Brush x:Key="Palette_1">#1B262C</Brush>
         <Brush x:Key="Palette_2">#0F4C75</Brush>
+        
+        <!--<SolidColorBrush Color="{Binding }" x:Key="88"/>
+        <SolidColorBrush Color="Red" x:Key="88"/>
+        <SolidColorBrush Color="Red" x:Key="88"/>
+        <SolidColorBrush Color="Red" x:Key="88"/>-->
+        
         <Brush x:Key="Palette_3">#3282B8</Brush>
         <Brush x:Key="Palette_4">#BBE1FA</Brush>
         <Brush x:Key="Verde_Conferma">#4CAF50</Brush>
         <Brush x:Key="Verde_Conferma_Scuro">#1B5E20</Brush>
         <Brush x:Key="Rosso_Conferma">#F44336</Brush>
         <Brush x:Key="Rosso_Conferma_Scuro">#B71C1C</Brush>
-
         <Image Source="{Binding Source={x:Static properties:Resources.btn_ON}}" x:Key="imgOn" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.btn_OFF}}" x:Key="imgOff" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.completate_Odl}}" x:Key="completate_Odl" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
-        
-
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateTimeToString x:Key="DateTimeToString"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
         <converters:NotBool x:Key="NotBool"/>
-
         <!--<Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="3"/>
