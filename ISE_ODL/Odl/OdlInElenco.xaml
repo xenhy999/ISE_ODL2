@@ -79,7 +79,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
             <!--<TextBlock FontWeight="Bold" Text=" Done: "/>-->
-            <CheckBox IsChecked="{Binding Completata}"/>
+            <CheckBox IsChecked="{Binding Completata}" Style="{StaticResource Completata}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Id: "/>

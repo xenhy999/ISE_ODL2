@@ -256,5 +256,22 @@
                 </Setter.Value>
                 </Setter>
         </Style>
+        <Style TargetType="CheckBox" x:Key="Completata">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" Width="30"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.completato_Odl}}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.daCompletare_Odl}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
