@@ -48,6 +48,7 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Style.Triggers>
                 <Trigger Property="IsChecked" Value="True">
                     <Setter Property="Foreground" Value="Black"/>
@@ -63,8 +64,7 @@
             <inter:Intervallo_V/>
         </DataTemplate>
     </UserControl.Resources>
-
-    <Grid Width="800" Visibility="{Binding Filtro, Converter={StaticResource NotBoolToVisibility}}">
+    <Grid Width="800" Visibility="{Binding Filtro, Converter={StaticResource NotBoolToVisibility}}" Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
@@ -78,8 +78,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" >
-            <!--<TextBlock FontWeight="Bold" Text=" Done: "/>-->
-            <CheckBox IsChecked="{Binding Completata}" Style="{StaticResource Completata}"/>
+            <CheckBox IsChecked="{Binding Completata}" Style="{StaticResource Completata}" Cursor="Hand"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <TextBlock FontWeight="Bold" Text=" Id: "/>
@@ -94,35 +93,13 @@
             <TextBlock Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,5,15,5">
-            <RadioButton  Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" />
+            <RadioButton Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
         </StackPanel>
-        <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0"  Orientation="Vertical" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
-                <TextBlock FontWeight="Bold" Text=" Orario di inizio: "/>
-                <ListBox ItemsSource="{Binding OrariInizio}" FontSize="10"/>
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1"  Orientation="Vertical" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
-                <TextBlock FontWeight="Bold" Text=" Orario di fine: " />
-                <ListBox ItemsSource="{Binding OrariFine}" FontSize="10" />
-            </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="2"  Orientation="Vertical" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
-                <TextBlock FontWeight="Bold" Text=" Durata: " />
-            </StackPanel>
-        </Grid>-->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
             <ListBox ItemsSource="{Binding Intervalli}" Width="auto"/>
         </StackPanel>
-       
     </Grid>
 </UserControl>

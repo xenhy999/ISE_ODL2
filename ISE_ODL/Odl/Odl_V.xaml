@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ISE_ODL.Odl"
          d:DataContext="{d:DesignInstance Type=local:Odl_VM}"
         mc:Ignorable="d"
-        Title="Odl_V" Height="450" Width="800">
+        Title="Odl_V" Height="450" Width="600">
     <Window.Resources>
         <Style TargetType="StackPanel">
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -16,7 +16,7 @@
         </Style>
 
     </Window.Resources>
-    <Grid Background="{StaticResource Grigio_Chiaro}">
+    <Grid Background="{StaticResource Palette_1}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
@@ -25,23 +25,21 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock>ID</TextBlock>
-            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Id}"/> 
+            <TextBlock Style="{StaticResource Odl_V}">ID</TextBlock>
+            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Id}"/> 
 
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <TextBlock>Cliente </TextBlock>
-            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Cliente}"/>
+            <TextBlock Style="{StaticResource Odl_V}">Cliente </TextBlock>
+            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Cliente}"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <TextBlock>Note</TextBlock>
-            <TextBox Style="{StaticResource Inserimento}" Text="{Binding Attivita}"/>
+            <TextBlock Style="{StaticResource Odl_V}">Note</TextBlock>
+            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="3">
-            <TextBlock>ID</TextBlock>
             <Button Command="{Binding AggiungiOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi</Button>
             <Button Command="{Binding AggiornaOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource BoolToVisibility}}" Click="Button_Click">Aggiorna</Button>
         </StackPanel>

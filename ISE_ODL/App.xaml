@@ -4,15 +4,14 @@
              xmlns:sys="clr-namespace:System;assembly=System.Runtime" 
              xmlns:converters="clr-namespace:ISE_ODL.Converter"
              xmlns:properties="clr-namespace:ISE_ODL.Properties"
+             xmlns:menu="clr-namespace:ISE_ODL.Menu"
              Startup="Application_Startup">
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
         <sys:Boolean x:Key="False">False</sys:Boolean>
         
-        
         <Brush x:Key="Grigio">#78716C</Brush>
         <Brush x:Key="Grigio_Chiaro">#9E9E9E</Brush>
-
         <Brush x:Key="White_Neutral"> #EEEEEE</Brush>
         <Brush x:Key="Black_Neutral">#000000</Brush>
         <Brush x:Key="Palette_1">#1B262C</Brush>
@@ -28,11 +27,14 @@
         <Image Source="{Binding Source={x:Static properties:Resources.btn_OFF}}" x:Key="imgOff" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.completate_Odl}}" x:Key="completate_Odl" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
+        
 
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateTimeToString x:Key="DateTimeToString"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
+        <converters:NotBool x:Key="NotBool"/>
+
         <!--<Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="3"/>
@@ -73,7 +75,6 @@
         <Style x:Key="Griglia_Principale"  TargetType="Grid">
             <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
         </Style>
-
         <Style x:Key="Lista_Principale"  TargetType="ListBox">
             <Setter Property="Background" Value="White"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -88,7 +89,7 @@
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Padding" Value="0"/>
                         <Setter Property="Margin" Value="0"/>
                         <Setter Property="Background" Value="{StaticResource Palette_1}"/>
                         <Setter Property="BorderBrush" Value="#222831"/>
@@ -121,13 +122,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <!--<Style TargetType="RadioButton" x:Key="In_Attivita">
-            <Setter Property="Background" Value="{StaticResource Palette_2}"/>
-            <Setter Property="Foreground" Value="{StaticResource Grigio_Chiaro}" />
-            <Setter Property="Width" Value="50"/>
-            <Setter Property="FontSize" Value="20"/>
-  
-        </Style>-->
         <Style TargetType="RadioButton" x:Key="In_Attivita">
             <Setter Property="Width" Value="30"/>
             <Setter Property="Template">
@@ -148,25 +142,38 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource Palette_2}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Height" Value="40"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Red"/>
-                    <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="Foreground" Value="LightGray"/>
-                    <Setter Property="BorderBrush" Value="Gray"/>
-                </Trigger>
-            </Style.Triggers>
+        <Style  TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource Palette_2}" />
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Palette_4}" />
+                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource White_Neutral}" />
+                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style x:Key="Inserimento" TargetType="TextBox">
             <Setter Property="Width" Value="100"/>
@@ -204,7 +211,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
         </Style>
         <Style  TargetType="Button" x:Key="Annulla_Eliminazione">
             <Setter Property="Background" Value="{StaticResource Verde_Conferma}" />
@@ -240,10 +246,12 @@
 
         </Style>
         <Style TargetType="CheckBox" x:Key="filtro_menu">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
-                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" Width="60"></Image>
+                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" Width="60" Height="60" VerticalAlignment="Center"></Image>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.completate_Odl}}"/>
@@ -272,6 +280,29 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Odl_V">
+            <Setter Property="FontSize" Value="29"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="Foreground" Value="{StaticResource Grigio_Chiaro}"/>
+
+        </Style>
+        <Style TargetType="TextBox" x:Key="Odl_V_Ins">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Background" Value="{StaticResource Palette_3}" />
+            <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
     </Application.Resources>
 </Application>

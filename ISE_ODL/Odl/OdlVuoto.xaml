@@ -33,7 +33,7 @@
             <TextBlock  Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" />
+            <RadioButton Style="{StaticResource In_Attivita}" GroupName="activ" IsChecked="{Binding Stato}" Cursor="Hand"/>
         </StackPanel>
     </Grid>
 </UserControl>
