@@ -107,10 +107,10 @@
         <Style  TargetType="Button">
             <Setter Property="Background" Value="{StaticResource Palette_2}" />
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
-            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontSize" Value="17" />
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Width" Value="150" />
-            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="170" />
+            <Setter Property="Height" Value="45" />
             <Setter Property="VerticalAlignment" Value="Bottom"/>
             <Setter Property="SnapsToDevicePixels" Value="True" />
             <Setter Property="Template">

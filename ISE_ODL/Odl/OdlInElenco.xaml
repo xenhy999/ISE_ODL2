@@ -58,7 +58,47 @@
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
-
+        </Style>
+        <Style TargetType="DataGridRow">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="{StaticResource Palette_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+        <Style TargetType="DataGridRowHeader">
+            <Setter Property="Width" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="HeadersVisibility" Value="All"/>
         </Style>
         <DataTemplate DataType="{x:Type inter:Intervallo_VM}">
             <inter:Intervallo_V/>
@@ -98,8 +138,14 @@
         <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
             <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}">
-            <ListBox ItemsSource="{Binding Intervalli}" Width="auto"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
+            <DataGrid ItemsSource="{Binding Intervalli}" Width="auto" AutoGenerateColumns="False" Margin="20">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToString}}" Width="300"/>
+                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToString}}" Width="300" />
+                </DataGrid.Columns>
+                
+            </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>

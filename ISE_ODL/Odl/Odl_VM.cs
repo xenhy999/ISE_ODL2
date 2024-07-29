@@ -44,9 +44,10 @@
                 if (!Completata || (Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati)) Filtro = false;
                 else Filtro = true;
                 OnPropertyChanged(nameof(Filtro));
+                if (value && Stato) ObjContainer.MenuPrincipale_VM.Commisioni[0].Stato = true;
                 if (value) { 
                     Stato = false;
-                    ObjContainer.MenuPrincipale_VM.Commisioni[0].Stato = true;
+                   //ObjContainer.MenuPrincipale_VM.Commisioni.OrderBy(i => i.Model.Stato);
                 }
             }
         }

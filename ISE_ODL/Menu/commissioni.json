@@ -1,64 +1,63 @@
 [
   {
-    "Id": "a",
-    "Cliente": "aa",
-    "Completata": true,
-    "Attivita": "aaa",
+    "Id": "dfgdfg",
+    "Cliente": "dfg",
+    "Completata": false,
+    "Attivita": "dfg",
     "Stato": false,
     "Intervalli": [
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:38:00.3702928+02:00",
-        "OrarioFine": "2024-07-29T12:38:01.2348553+02:00"
+        "OrarioInizio": "2024-07-29T15:37:39.7951607+02:00",
+        "OrarioFine": "2024-07-29T15:37:40.7439261+02:00"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:38:01.9457636+02:00",
-        "OrarioFine": "2024-07-29T12:53:35.7798036+02:00"
+        "OrarioInizio": "2024-07-29T15:37:41.5790667+02:00",
+        "OrarioFine": "2024-07-29T15:37:43.1430997+02:00"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:57:10.4426261+02:00",
-        "OrarioFine": "2024-07-29T12:57:13.2052289+02:00"
+        "OrarioInizio": "2024-07-29T15:37:44.0508538+02:00",
+        "OrarioFine": "2024-07-29T15:37:46.0709045+02:00"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:58:08.8482661+02:00",
-        "OrarioFine": "2024-07-29T12:58:16.920711+02:00"
+        "OrarioInizio": "2024-07-29T15:37:47.0666855+02:00",
+        "OrarioFine": "2024-07-29T15:38:00.376435+02:00"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:24:17.9398375+02:00",
-        "OrarioFine": "2024-07-29T15:24:23.9485324+02:00"
+        "OrarioInizio": "2024-07-29T15:43:12.9269586+02:00",
+        "OrarioFine": "2024-07-29T15:43:16.892602+02:00"
       }
     ]
   },
   {
-    "Id": "b",
-    "Cliente": "bb",
+    "Id": "dfg",
+    "Cliente": "dfg",
     "Completata": true,
-    "Attivita": "bbb",
+    "Attivita": "dfg",
     "Stato": false,
     "Intervalli": [
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:38:01.2337879+02:00",
-        "OrarioFine": "2024-07-29T12:38:01.9465304+02:00"
-      },
+        "OrarioInizio": "2024-07-29T15:44:11.4061433+02:00",
+        "OrarioFine": "2024-07-29T15:44:13.1053061+02:00"
+      }
+    ]
+  },
+  {
+    "Id": "FDG",
+    "Cliente": "DFG",
+    "Completata": true,
+    "Attivita": "DFG",
+    "Stato": false,
+    "Intervalli": [
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:57:19.2158542+02:00",
-        "OrarioFine": "2024-07-29T12:57:23.7319813+02:00"
-      },
-      {
-        "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T12:58:34.8758554+02:00",
-        "OrarioFine": "2024-07-29T13:01:02.0991628+02:00"
-      },
-      {
-        "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T13:01:03.1037711+02:00",
-        "OrarioFine": "2024-07-29T13:01:04.0601379+02:00"
+        "OrarioInizio": "2024-07-29T15:44:22.554292+02:00",
+        "OrarioFine": "2024-07-29T15:44:27.3342992+02:00"
       }
     ]
   }

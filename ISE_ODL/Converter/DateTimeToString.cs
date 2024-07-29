@@ -12,7 +12,7 @@ namespace ISE_ODL.Converter
 {
     internal class DateTimeToString : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => ((DateTime)value).ToString("f");
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => ((DateTime)value).ToString("F");
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => Binding.DoNothing;
     }
 }

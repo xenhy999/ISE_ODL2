@@ -46,5 +46,6 @@ namespace ISE_ODL.Menu
                 OnPropertyChanged(nameof(MostraCompletati));
             }
         }
+        public bool OrdinaElementi { get; set; }
     }
 }
