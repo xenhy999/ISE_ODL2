@@ -15,12 +15,6 @@
         <Brush x:Key="Black_Neutral">#000000</Brush>
         <Brush x:Key="Palette_1">#1B262C</Brush>
         <Brush x:Key="Palette_2">#0F4C75</Brush>
-        
-        <!--<SolidColorBrush Color="{Binding }" x:Key="88"/>
-        <SolidColorBrush Color="Red" x:Key="88"/>
-        <SolidColorBrush Color="Red" x:Key="88"/>
-        <SolidColorBrush Color="Red" x:Key="88"/>-->
-        
         <Brush x:Key="Palette_3">#3282B8</Brush>
         <Brush x:Key="Palette_4">#BBE1FA</Brush>
         <Brush x:Key="Verde_Conferma">#4CAF50</Brush>
@@ -36,43 +30,6 @@
         <converters:DateTimeToString x:Key="DateTimeToString"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
         <converters:NotBool x:Key="NotBool"/>
-        <!--<Style TargetType="Button">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderThickness" Value="3"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Margin" Value="2" />
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="FontWeight" Value="bold"/>
-        </Style>-->
-        <!--<Style TargetType="DataGrid">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="RowBackground" Value="LightGray"/>
-            <Setter Property="AlternatingRowBackground" Value="WhiteSmoke"/>
-            <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
-            <Setter Property="ColumnHeaderStyle">
-                <Setter.Value>
-                    <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="DarkSlateGray"/>
-                        <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    </Style>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="CellStyle">
-                <Setter.Value>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="Padding" Value="5"/>
-                        <Setter Property="BorderThickness" Value="0.5"/>
-                        <Setter Property="BorderBrush" Value="LightGray"/>
-                    </Style>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
         <Style x:Key="Griglia_Principale"  TargetType="Grid">
             <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
         </Style>
@@ -176,7 +133,7 @@
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Background" Value="{StaticResource Grigio}" />
-                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+                                <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

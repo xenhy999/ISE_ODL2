@@ -5,7 +5,6 @@
     {
         private bool mostraAltro;
         private bool filtro;
-
         public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl) : base(odl_M)
         {
             AggiungiOdl = aggiungiOdl;
@@ -45,7 +44,10 @@
                 if (!Completata || (Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati)) Filtro = false;
                 else Filtro = true;
                 OnPropertyChanged(nameof(Filtro));
-                if (value) Stato = false;
+                if (value) { 
+                    Stato = false;
+                    ObjContainer.MenuPrincipale_VM.Commisioni[0].Stato = true;
+                }
             }
         }
         public bool Filtro

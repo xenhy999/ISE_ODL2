@@ -7,7 +7,6 @@ namespace ISE_ODL.Odl
     public class BaseOdl_M
     {
         public string Attivita { get; set; }
-
         private bool stato;
         public bool Stato
         {
@@ -19,13 +18,10 @@ namespace ISE_ODL.Odl
             }
         }
         public List<Intervallo_M> Intervalli { get; set; } = new List<Intervallo_M>();
-
         private void UpdateIntervalli()
         {
-            if (Stato) 
-                Intervalli.Add(Intertevallo_F.StartNew());
-            else
-                Intervalli.LastOrDefault()?.EndThis();
+            if (Stato) Intervalli.Add(Intertevallo_F.StartNew());
+            else Intervalli.LastOrDefault()?.EndThis();
         }
     }
 }

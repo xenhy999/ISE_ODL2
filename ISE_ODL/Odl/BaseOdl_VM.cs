@@ -11,11 +11,8 @@ namespace ISE_ODL.Odl
     public class BaseOdl_VM : BaseBinding
     {
         protected readonly BaseOdl_M _model;
-
         public BaseOdl_M Model => _model;
-
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M) => _model = nessunoOdl_M;
-
         public List<Intervallo_VM> Intervalli
         {
             get
@@ -27,7 +24,6 @@ namespace ISE_ODL.Odl
                 return Out;
             }
         }
-
         public string Attivita { get => _model.Attivita; set => _model.Attivita = value; }
         public bool Stato
         {

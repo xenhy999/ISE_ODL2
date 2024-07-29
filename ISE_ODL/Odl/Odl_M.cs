@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace ISE_ODL.Odl
 {
-    
     public class Odl_M : BaseOdl_M
     {
         public string Id { get; set; }

@@ -17,7 +17,6 @@ namespace ISE_ODL.Intervallo
             };
             return m;
         }
-
         public static Intervallo_VM Create(Intervallo_M m) => new Intervallo_VM(m);
 
     }
