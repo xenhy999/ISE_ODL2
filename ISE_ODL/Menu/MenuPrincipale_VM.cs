@@ -9,8 +9,6 @@ namespace ISE_ODL.Menu
         public CreaOdl DefinisciOdl { get; set; }
         public EliminaOdl EliminaOdl { get; set; }
         public ModificaOdl ModificaOdl { get; set; }
-        public Esci Esci { get; set; }
-
         private Odl_VM odlSelezionata;
         private bool mostraCompletati;
 
@@ -24,12 +22,11 @@ namespace ISE_ODL.Menu
                 EliminaOdl.OnRaiseCanExecuteChanged();
             }
         }
-        public MenuPrincipale_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl, Esci esci)
+        public MenuPrincipale_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl)
         {
             DefinisciOdl = definisciOdl;
             EliminaOdl = eliminaOdl;
             ModificaOdl = modificaOdl;
-            Esci = esci;
             MostraCompletati = false;
             OnPropertyChanged(nameof(MostraCompletati));
         }
