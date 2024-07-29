@@ -11,13 +11,9 @@ namespace ISE_ODL.Odl
     public class BaseOdl_VM: BaseBinding
     {
         private BaseOdl_M Model { get; set; }
-
-        public ObservableCollection<Intervallo_VM> Intervalli { get; set; } = new ObservableCollection<Intervallo_VM>();
-
-        public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
-        {
-            Model = nessunoOdl_M;
-        }
+        private ObservableCollection<Intervallo_VM> intervalli = new ObservableCollection<Intervallo_VM>();
+        public ObservableCollection<Intervallo_VM> Intervalli { get => intervalli; set => intervalli = value; }
+        public BaseOdl_VM(BaseOdl_M nessunoOdl_M) => Model = nessunoOdl_M;
         public Intervallo_M? m;
         public string Attivita { get => Model.Attivita; set => Model.Attivita = value; }
         public bool Stato

@@ -1,0 +1,15 @@
+[
+  {
+    "Id": "sdfs",
+    "Cliente": "sdf",
+    "Completata": false,
+    "Attivita": null,
+    "Stato": false,
+    "Intervalli": [
+      {
+        "OrarioInizio": "2024-07-29T10:25:22.9439913+02:00",
+        "OrarioFine": "0001-01-01T00:00:00"
+      }
+    ]
+  }
+]

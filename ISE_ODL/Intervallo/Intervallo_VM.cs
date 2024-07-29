@@ -9,21 +9,26 @@ namespace ISE_ODL.Intervallo
 {
     public  class Intervallo_VM : BaseBinding
     {
-        private readonly Intervallo_M _model;
+        private readonly Intervallo_M model;
 
         public Intervallo_VM(Intervallo_M model)
         {
-            _model = model;
+            this.model = model;
         }
 
         public bool OrarioCompleto { get; private set; } = false;
-        public DateTime OrarioInizio => _model.OrarioInizio;
+        public DateTime OrarioInizio
+        {
+            get => model.OrarioInizio;
+            set => model.OrarioInizio = value;
+        }
+
         public DateTime OrarioFine
         {
-            get => _model.OrarioFine;
-            private set
+            get => model.OrarioFine;
+            set
             {
-                _model.OrarioFine = value;
+                model.OrarioFine = value;
                 OnPropertyChanged(nameof(OrarioFine));
             }
         }
@@ -33,7 +38,7 @@ namespace ISE_ODL.Intervallo
             OrarioFine = DateTime.Now;
             OrarioCompleto = true;
             OnPropertyChanged(nameof(OrarioCompleto));
-            return _model;
+            return model;
         }
     }
 }

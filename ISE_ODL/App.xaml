@@ -155,7 +155,6 @@
             <Setter Property="Width" Value="150" />
             <Setter Property="Height" Value="40" />
             <Setter Property="VerticalAlignment" Value="Bottom"/>
-
             <Setter Property="SnapsToDevicePixels" Value="True" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -173,6 +172,10 @@
 
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" Value="{StaticResource White_Neutral}" />
+                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="{StaticResource Grigio}" />
                                 <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
                             </Trigger>
                         </ControlTemplate.Triggers>

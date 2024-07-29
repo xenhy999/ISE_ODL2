@@ -8,14 +8,8 @@ namespace ISE_ODL.Odl
         private  Odl_M model;
         public Odl_M Model
         {
-            get
-            {
-                return model;
-            }
-            set
-            {
-                model = value;
-            }
+            get => model;
+            set => model = value;
         }
 
         private bool mostraAltro;
@@ -52,7 +46,6 @@ namespace ISE_ODL.Odl
                 AggiornaOdl.OnRaiseCanExecuteChanged();
             }
         }
-        //public string Attività { get => Odl_M.Attività; set => Odl_M.Attività = value; }
         public bool Completata
         {
             get => model.Completata;
@@ -69,9 +62,6 @@ namespace ISE_ODL.Odl
         {
             get
             {
-                //if (Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati) return true;
-                //if (!Completata) return true;
-                //return false;
                 return filtro;
             }
 

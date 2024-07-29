@@ -1,8 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 using ISE_ODL.Intervallo;
 
 namespace ISE_ODL.Odl
 {
+    //[JsonDerivedType(typeof(BaseOdl_M), typeDiscriminator: "Base")]
+    //[JsonDerivedType(typeof(Odl_M), typeDiscriminator: "Odl_M")]
     public class BaseOdl_M
     {
         public BaseOdl_M()
