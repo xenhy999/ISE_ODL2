@@ -33,7 +33,7 @@
             <Setter Property="IsHitTestVisible" Value="False"/>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="Margin" Value="0"/>
-            
+
         </Style>
         <Style TargetType="CheckBox">
             <Setter Property="Width" Value="Auto"/>
@@ -104,48 +104,67 @@
             <inter:Intervallo_V/>
         </DataTemplate>
     </UserControl.Resources>
-    <Grid Width="800" Visibility="{Binding Filtro, Converter={StaticResource NotBoolToVisibility}}" Margin="15">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="45"/>
-            <ColumnDefinition Width="130"/>
-        </Grid.ColumnDefinitions>
+    <Grid Visibility="{Binding Filtro, Converter={StaticResource NotBoolToVisibility}}" Margin="15" MaxWidth="1400">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" >
-            <CheckBox IsChecked="{Binding Completata}" Style="{StaticResource Completata}" Cursor="Hand"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" >
-            <TextBlock FontWeight="Bold" Text=" Id: "/>
-            <TextBlock Text="{Binding Id}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="2" >
-            <TextBlock FontWeight="Bold" Text=" Cliente: "/>
-            <TextBlock Text="{Binding Cliente}"/> 
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="3" >
-            <TextBlock FontWeight="Bold" Text=" Attività: "/>
-            <TextBlock Text="{Binding Attivita}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="4" Margin="0,5,15,5">
-            <RadioButton Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="5" Margin="0">
-            <ToggleButton IsChecked="{Binding MostraAltro}" Content="Mostra Altro"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Margin="0" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
-            <DataGrid ItemsSource="{Binding Intervalli}" Width="auto" AutoGenerateColumns="False" Margin="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Grid.Column="0" IsChecked="{Binding Completata}" Style="{StaticResource Completata}" Cursor="Hand"/>
+            <StackPanel Grid.Column="1" >
+                <TextBlock FontWeight="Bold" Text=" Id: "/>
+                <TextBlock Text="{Binding Id}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" >
+                <TextBlock FontWeight="Bold" Text=" Cliente: "/>
+                <TextBlock Text="{Binding Cliente}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3" >
+                <TextBlock FontWeight="Bold" Text=" Attività: "/>
+                <TextBlock Text="{Binding Attivita}"/>
+            </StackPanel>
+                <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
+            <StackPanel Grid.Column="5" Margin="0">
+                <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="20" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToString}}" Width="300"/>
-                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToString}}" Width="300" />
+                    <DataGridTextColumn  Header="Orario Di inizio " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToString}}"  Width="300" />
                 </DataGrid.Columns>
-                
             </DataGrid>
-        </StackPanel>
+
+            <ListBox Grid.Column="2" Width="500">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Lunedì 29/07"/>
+                    <TextBlock Text="Tot. ore: 5" FontWeight="Bold"/>
+                    <CheckBox Content="Scaricato"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Martedì 30/07"/>
+                    <TextBlock Text="Tot. ore: 4" FontWeight="Bold"/>
+                    <CheckBox Content="Scaricato"/>
+                </StackPanel>
+            </ListBox>
+        </Grid>
+
     </Grid>
 </UserControl>

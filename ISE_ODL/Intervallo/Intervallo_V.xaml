@@ -15,7 +15,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
         <StackPanel Grid.Row="0" Grid.Column="0">
             <TextBlock Text="Orario di inizio: "/>
             <TextBlock Text="{Binding OrarioInizio}"/>

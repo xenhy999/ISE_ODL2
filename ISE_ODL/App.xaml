@@ -30,23 +30,9 @@
         <converters:DateTimeToString x:Key="DateTimeToString"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
         <converters:NotBool x:Key="NotBool"/>
-        <Style x:Key="Griglia_Principale"  TargetType="Grid">
-            <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
-        </Style>
-        <Style x:Key="Lista_Principale"  TargetType="ListBox">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="#222831"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="-3"/>
-            <Setter Property="Width" Value="850"/>
-            <Setter Property="Height" Value="Auto"/>
-            <Setter Property="MaxHeight" Value="276"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
-            <Setter Property="Margin" Value="0,0,0,40"/>
 
+        <Style x:Key="Lista_Principale"  TargetType="ListBox">
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <Style TargetType="ListBoxItem">
@@ -60,10 +46,8 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ListBoxItem">
-                                    <Border Background="{TemplateBinding Background}"
-                                            >
-                                        <ContentPresenter HorizontalAlignment="Center"
-                                                          VerticalAlignment="Center"
+                                    <Border Background="{TemplateBinding Background}" >
+                                        <ContentPresenter VerticalAlignment="Center"
                                                           Content="{TemplateBinding Content}"
                                                           Margin="{TemplateBinding Padding}"/>
                                     </Border>

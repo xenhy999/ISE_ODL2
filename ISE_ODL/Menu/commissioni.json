@@ -60,5 +60,13 @@
         "OrarioFine": "2024-07-29T15:44:27.3342992+02:00"
       }
     ]
+  },
+  {
+    "Id": "123/00012.5",
+    "Cliente": "Buzzi Unicem Vernasca",
+    "Completata": false,
+    "Attivita": "Aggiorna le soglie degli allarmi THR Ciao mamma",
+    "Stato": false,
+    "Intervalli": []
   }
 ]
