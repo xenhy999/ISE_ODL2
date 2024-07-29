@@ -8,13 +8,14 @@ namespace ISE_ODL.Intervallo
 {
     internal static class Intertevallo_F
     {
-        public static Intervallo_VM StartNew()
+        public static Intervallo_M StartNew()
         {
             Intervallo_M m = new()
             {
-                OrarioInizio = DateTime.Now
+                OrarioInizio = DateTime.Now,
+                OrarioCompleto = false
             };
-            return Create(m);
+            return m;
         }
 
         public static Intervallo_VM Create(Intervallo_M m) => new Intervallo_VM(m);

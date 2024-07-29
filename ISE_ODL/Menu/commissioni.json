@@ -1,14 +1,34 @@
 [
   {
-    "Id": "sdfs",
-    "Cliente": "sdf",
+    "Id": "a",
+    "Cliente": "aa",
     "Completata": false,
-    "Attivita": null,
+    "Attivita": "aaa",
+    "Stato": true,
+    "Intervalli": [
+      {
+        "OrarioCompleto": true,
+        "OrarioInizio": "2024-07-29T12:38:00.3702928+02:00",
+        "OrarioFine": "2024-07-29T12:38:01.2348553+02:00"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-29T12:38:01.9457636+02:00",
+        "OrarioFine": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "Id": "b",
+    "Cliente": "bb",
+    "Completata": false,
+    "Attivita": "bbb",
     "Stato": false,
     "Intervalli": [
       {
-        "OrarioInizio": "2024-07-29T10:25:22.9439913+02:00",
-        "OrarioFine": "0001-01-01T00:00:00"
+        "OrarioCompleto": true,
+        "OrarioInizio": "2024-07-29T12:38:01.2337879+02:00",
+        "OrarioFine": "2024-07-29T12:38:01.9465304+02:00"
       }
     ]
   }

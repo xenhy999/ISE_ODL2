@@ -8,30 +8,39 @@ using ISE_ODL.Intervallo;
 
 namespace ISE_ODL.Odl
 {
-    public class BaseOdl_VM: BaseBinding
+    public class BaseOdl_VM : BaseBinding
     {
-        private BaseOdl_M Model { get; set; }
-        private ObservableCollection<Intervallo_VM> intervalli = new ObservableCollection<Intervallo_VM>();
-        public ObservableCollection<Intervallo_VM> Intervalli { get => intervalli; set => intervalli = value; }
-        public BaseOdl_VM(BaseOdl_M nessunoOdl_M) => Model = nessunoOdl_M;
-        public Intervallo_M? m;
-        public string Attivita { get => Model.Attivita; set => Model.Attivita = value; }
-        public bool Stato
+        protected readonly BaseOdl_M _model;
+
+        public BaseOdl_M Model => _model;
+
+        public BaseOdl_VM(BaseOdl_M nessunoOdl_M) => _model = nessunoOdl_M;
+
+        public List<Intervallo_VM> Intervalli
         {
-            get => Model.Stato;
-            set
+            get
             {
-                if (Model.Stato == value) return;
-                Model.Stato = value;
-                OnPropertyChanged(nameof(Stato));
-                if (value) Intervalli.Add(Intertevallo_F.StartNew());
-                else
-                {
-                    m = Intervalli.LastOrDefault().EndThis();
-                    Model.Intervalli.Add(m);
-                }
+                // La lista viene ricreata ogi volta a partire da quella del model
+                List<Intervallo_VM> Out = [];
+                foreach (Intervallo_M i in Model.Intervalli)
+                    Out.Add(Intertevallo_F.Create(i));
+                return Out;
             }
         }
 
+        public string Attivita { get => _model.Attivita; set => _model.Attivita = value; }
+        public bool Stato
+        {
+            get => _model.Stato;
+            set
+            {
+                if (_model.Stato == value) 
+                    return;
+
+                _model.Stato = value;
+                OnPropertyChanged(nameof(Stato));
+                OnPropertyChanged(nameof(Intervalli));
+            }
+        }
     }
 }
