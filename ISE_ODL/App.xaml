@@ -27,7 +27,9 @@
         <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
-        <converters:DateTimeToString x:Key="DateTimeToString"/>
+        <converters:DateToString x:Key="DateToString"/>
+        <converters:DateTimeToHourString x:Key="DateTimeToHourString"/>
+        <converters:TimeSpanToHourMinute x:Key="TimeSpanToHourMinute"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
         <converters:NotBool x:Key="NotBool"/>
 

@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using ISE_ODL.Intervallo;
+using ISE_ODL.Intervallo.Durata;
 
 namespace ISE_ODL.Odl
 {
@@ -20,8 +21,15 @@ namespace ISE_ODL.Odl
         public List<Intervallo_M> Intervalli { get; set; } = new List<Intervallo_M>();
         private void UpdateIntervalli()
         {
-            if (Stato) Intervalli.Add(Intertevallo_F.StartNew());
-            else Intervalli.LastOrDefault()?.EndThis();
+            if (Stato)
+            {
+                Intervalli.Add(Intertevallo_F.StartNew());
+
+}
+            else
+            {
+                Intervalli.LastOrDefault()?.EndThis();
+            }
         }
     }
 }

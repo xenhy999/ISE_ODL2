@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISE_ODL.Intervallo;
+using ISE_ODL.Intervallo.Durata;
 
 namespace ISE_ODL.Odl
 {
     public class BaseOdl_VM : BaseBinding
     {
         protected readonly BaseOdl_M _model;
+        private readonly List<Durata_VM> durate;
+
         public BaseOdl_M Model => _model;
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M) => _model = nessunoOdl_M;
         public List<Intervallo_VM> Intervalli
@@ -24,6 +27,24 @@ namespace ISE_ODL.Odl
                 return Out;
             }
         }
+        public ObservableCollection<Durata_VM> Durate
+        {
+            get
+            {
+                IEnumerable<DateOnly> GiorniAttivita = Intervalli.Select(i => i.Giorno).Distinct();
+
+                ObservableCollection<Durata_VM> Out = [];
+                foreach (DateOnly g in GiorniAttivita)
+                {
+                    IEnumerable<TimeSpan> OreGiornaliere = Intervalli.Where(c => c.Giorno == g).Select(b=> b.Durata);
+                    TimeSpan totalSpan = new TimeSpan(OreGiornaliere.Sum(r => r.Ticks));
+                    Out.Add(Durata_F.Create(g, totalSpan));
+                }
+               // OnPropertyChanged(nameof(Durate);
+                return Out;
+            }
+        }
+
         public string Attivita { get => _model.Attivita; set => _model.Attivita = value; }
         public bool Stato
         {

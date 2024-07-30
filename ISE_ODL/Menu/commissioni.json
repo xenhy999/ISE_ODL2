@@ -1,72 +1,47 @@
 [
   {
-    "Id": "dfgdfg",
-    "Cliente": "dfg",
+    "Id": "sdf",
+    "Cliente": "sdf",
     "Completata": false,
-    "Attivita": "dfg",
+    "Attivita": "sdf",
     "Stato": false,
     "Intervalli": [
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:37:39.7951607+02:00",
-        "OrarioFine": "2024-07-29T15:37:40.7439261+02:00"
+        "OrarioInizio": "2024-07-30T11:09:05.2331746+02:00",
+        "OrarioFine": "2024-07-30T11:09:06.9941382+02:00",
+        "Giorno": "2024-07-30"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:37:41.5790667+02:00",
-        "OrarioFine": "2024-07-29T15:37:43.1430997+02:00"
+        "OrarioInizio": "2024-07-30T11:09:08.6414082+02:00",
+        "OrarioFine": "2024-07-30T11:09:10.2410363+02:00",
+        "Giorno": "2024-07-30"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:37:44.0508538+02:00",
-        "OrarioFine": "2024-07-29T15:37:46.0709045+02:00"
+        "OrarioInizio": "2024-07-30T11:09:11.6810363+02:00",
+        "OrarioFine": "2024-07-30T11:09:12.6498157+02:00",
+        "Giorno": "2024-07-30"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:37:47.0666855+02:00",
-        "OrarioFine": "2024-07-29T15:38:00.376435+02:00"
+        "OrarioInizio": "2024-07-30T11:09:13.713395+02:00",
+        "OrarioFine": "2024-07-30T11:09:14.6973904+02:00",
+        "Giorno": "2024-07-30"
       },
       {
         "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:43:12.9269586+02:00",
-        "OrarioFine": "2024-07-29T15:43:16.892602+02:00"
+        "OrarioInizio": "2024-07-30T11:09:16.4010212+02:00",
+        "OrarioFine": "2024-07-30T11:09:17.1613426+02:00",
+        "Giorno": "2024-07-30"
+      },
+      {
+        "OrarioCompleto": true,
+        "OrarioInizio": "2024-07-30T11:14:58.1931759+02:00",
+        "OrarioFine": "2024-07-30T11:15:02.0492765+02:00",
+        "Giorno": "2024-07-30"
       }
     ]
-  },
-  {
-    "Id": "dfg",
-    "Cliente": "dfg",
-    "Completata": true,
-    "Attivita": "dfg",
-    "Stato": false,
-    "Intervalli": [
-      {
-        "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:44:11.4061433+02:00",
-        "OrarioFine": "2024-07-29T15:44:13.1053061+02:00"
-      }
-    ]
-  },
-  {
-    "Id": "FDG",
-    "Cliente": "DFG",
-    "Completata": true,
-    "Attivita": "DFG",
-    "Stato": false,
-    "Intervalli": [
-      {
-        "OrarioCompleto": true,
-        "OrarioInizio": "2024-07-29T15:44:22.554292+02:00",
-        "OrarioFine": "2024-07-29T15:44:27.3342992+02:00"
-      }
-    ]
-  },
-  {
-    "Id": "123/00012.5",
-    "Cliente": "Buzzi Unicem Vernasca",
-    "Completata": false,
-    "Attivita": "Aggiorna le soglie degli allarmi THR Ciao mamma",
-    "Stato": false,
-    "Intervalli": []
   }
 ]

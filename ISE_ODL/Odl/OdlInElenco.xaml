@@ -59,21 +59,35 @@
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-        <Style TargetType="DataGridRow">
+        <Style TargetType="DataGridRow" >
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="DataGridCell">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="White"/>
+            
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
+                    <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{StaticResource Palette_1}"/>
@@ -99,6 +113,7 @@
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
             <Setter Property="RowBackground" Value="White"/>
             <Setter Property="HeadersVisibility" Value="All"/>
+            <Setter Property="IsReadOnly" Value="True"/>
         </Style>
         <DataTemplate DataType="{x:Type inter:Intervallo_VM}">
             <inter:Intervallo_V/>
@@ -144,26 +159,22 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
-            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False">
+
+            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" SelectedItem=" ">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToString}}" Width="300"/>
-                    <DataGridTextColumn  Header="Orario Di inizio " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToString}}"  Width="300" />
+                    <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="150"/>
+                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="150"/>
+                    <DataGridTextColumn  Header="Orario Di Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="150" />
                 </DataGrid.Columns>
             </DataGrid>
 
-            <ListBox Grid.Column="2" Width="500">
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Lunedì 29/07"/>
-                    <TextBlock Text="Tot. ore: 5" FontWeight="Bold"/>
-                    <CheckBox Content="Scaricato"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Martedì 30/07"/>
-                    <TextBlock Text="Tot. ore: 4" FontWeight="Bold"/>
-                    <CheckBox Content="Scaricato"/>
-                </StackPanel>
-            </ListBox>
+            <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single" CanUserSortColumns="True" SelectedItem="">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="150"/>
+                    <DataGridTextColumn  Header="Ore di Lavoro " Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}"  Width="150" />
+                    <DataGridCheckBoxColumn Header="Scaricate" Binding="{Binding Scaricato}" Width="100" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
     </Grid>
