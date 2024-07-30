@@ -48,9 +48,9 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="{Binding DefinisciOdl}">Definisci Odl</Button>
-            <Button Grid.Column="1" Command="{Binding EliminaOdl}">Elimina Odl</Button>
-            <Button Grid.Column="2" Command="{Binding ModificaOdl}" >Modifica Odl</Button>
+            <Button Grid.Column="0" Style="{StaticResource Default}" Command="{Binding DefinisciOdl}">Definisci Odl</Button>
+            <Button Grid.Column="1" Style="{StaticResource Default}" Command="{Binding EliminaOdl}">Elimina Odl</Button>
+            <Button Grid.Column="2" Style="{StaticResource Default}" Command="{Binding ModificaOdl}" >Modifica Odl</Button>
             <CheckBox Grid.Column="3" Style="{StaticResource filtro_menu}"  Content="MostraCompletati" IsChecked="{Binding MostraCompletati}" Cursor="Hand"/>
         </Grid>
     </Grid>

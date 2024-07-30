@@ -10,7 +10,13 @@ namespace ISE_ODL.Intervallo
     public  class Intervallo_VM : BaseBinding
     {
         private readonly Intervallo_M model;
-        public Intervallo_VM(Intervallo_M mode) => model = mode;
+
+        public Intervallo_VM(Intervallo_M mode, EliminaIntervallo eliminaIntervallo)
+        {
+            model = mode;
+            EliminaIntervallo = eliminaIntervallo;
+        }
+        public EliminaIntervallo EliminaIntervallo { get; set; }
         public bool OrarioCompleto => model.OrarioCompleto;
         public DateTime OrarioInizio { get => model.OrarioInizio; set => model.OrarioInizio = value; }
         public DateTime OrarioFine
@@ -22,8 +28,7 @@ namespace ISE_ODL.Intervallo
                 OnPropertyChanged(nameof(OrarioFine));
             }
         }
-
-        public TimeSpan Durata => OrarioFine - OrarioInizio;
+        public TimeSpan Durata => OrarioFine > OrarioInizio ? OrarioFine - OrarioInizio : new TimeSpan(0);
         public DateOnly Giorno { get=>model.Giorno; set=> model.Giorno=value; }
     }
 }

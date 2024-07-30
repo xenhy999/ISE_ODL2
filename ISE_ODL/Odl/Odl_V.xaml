@@ -38,8 +38,8 @@
             <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="3">
-            <Button Command="{Binding AggiungiOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi</Button>
-            <Button Command="{Binding AggiornaOdl}" Visibility="{Binding  OdlInModifica, Converter={StaticResource BoolToVisibility}}" Click="Button_Click">Aggiorna</Button>
+            <Button Command="{Binding AggiungiOdl}" Style="{StaticResource Default}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi</Button>
+            <Button Command="{Binding AggiornaOdl}" Style="{StaticResource Default}" Visibility="{Binding  OdlInModifica, Converter={StaticResource BoolToVisibility}}" Click="Button_Click">Aggiorna</Button>
         </StackPanel>
     </Grid>
 </Window>

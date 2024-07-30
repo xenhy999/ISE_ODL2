@@ -83,6 +83,16 @@ namespace ISE_ODL.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
+        public static byte[] cestino {
+            get {
+                object obj = ResourceManager.GetObject("cestino", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
         public static byte[] completate_Odl {
             get {
                 object obj = ResourceManager.GetObject("completate_Odl", resourceCulture);

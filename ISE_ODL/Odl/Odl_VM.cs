@@ -41,14 +41,10 @@
             {
                 ((Odl_M)Model).Completata = value;
                 OnPropertyChanged(nameof(Completata));
-                if (!Completata || (Completata && ObjContainer.MenuPrincipale_VM.MostraCompletati)) Filtro = false;
-                else Filtro = true;
+                Filtro = Completata && (!Completata || !ObjContainer.MenuPrincipale_VM.MostraCompletati);
                 OnPropertyChanged(nameof(Filtro));
                 if (value && Stato) ObjContainer.MenuPrincipale_VM.Commisioni[0].Stato = true;
-                if (value) { 
-                    Stato = false;
-                   //ObjContainer.MenuPrincipale_VM.Commisioni.OrderBy(i => i.Model.Stato);
-                }
+                if (value) Stato = false;
             }
         }
         public bool Filtro

@@ -25,6 +25,7 @@
         <Image Source="{Binding Source={x:Static properties:Resources.btn_OFF}}" x:Key="imgOff" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.completate_Odl}}" x:Key="completate_Odl" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" x:Key="cestino" x:Shared="false"/>
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateToString x:Key="DateToString"/>
@@ -90,7 +91,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style  TargetType="Button">
+        <Style  TargetType="Button" x:Key="Default">
             <Setter Property="Background" Value="{StaticResource Palette_2}" />
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}" />
             <Setter Property="FontSize" Value="17" />
