@@ -10,12 +10,12 @@ namespace ISE_ODL
 {
     public /*internal*/ abstract class BaseBinding : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
     public /*internal*/ abstract class BaseCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged;
         public void OnRaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         public virtual bool CanExecute(object parameter) => true;
         public abstract void Execute(object parameter);

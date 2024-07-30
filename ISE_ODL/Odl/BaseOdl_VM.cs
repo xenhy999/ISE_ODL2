@@ -1,9 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using System.Timers;
-using System.Windows;
 using ISE_ODL.Intervallo;
 using ISE_ODL.Intervallo.Durata;
-using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
     public class BaseOdl_VM : BaseBinding

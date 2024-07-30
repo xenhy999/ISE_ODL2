@@ -114,7 +114,7 @@
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
             <Setter Property="RowBackground" Value="White"/>
             <Setter Property="HeadersVisibility" Value="All"/>
-            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="IsReadOnly" Value="False"/>
         </Style>
         <DataTemplate DataType="{x:Type inter:Intervallo_VM}">
             <inter:Intervallo_V/>
@@ -134,7 +134,6 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-
             <CheckBox Grid.Column="0" IsChecked="{Binding Completata}" Style="{StaticResource Completata}" Cursor="Hand"/>
             <StackPanel Grid.Column="1" >
                 <TextBlock FontWeight="Bold" Text=" Id: "/>
@@ -153,14 +152,12 @@
                 <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari" IsEnabled="{Binding OrarioVisibile}"/>
             </StackPanel>
         </Grid>
-
         <Grid Grid.Row="1" Grid.Column="0" Margin="20" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
             <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="150"/>
@@ -169,11 +166,10 @@
                     <DataGridTemplateColumn Header="ELimina">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="40" Background="Transparent">
+                                <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="36" Background="Transparent" BorderBrush="Transparent">
                                     <Button.Content>
                                         <StackPanel Orientation="Horizontal" >
-                                            <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" 
-                                               Width="40" />
+                                            <Image Source="{Binding Source={x:Static properties:Resources.cestino}}"/>
                                         </StackPanel>
                                     </Button.Content>
                                 </Button>
@@ -182,7 +178,6 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-
             <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="150"/>

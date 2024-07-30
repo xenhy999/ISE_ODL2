@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ISE_ODL.Odl
+﻿namespace ISE_ODL.Odl
 {
     public/*internal*/ class AggiungiOdl : BaseCommand
     {

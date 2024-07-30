@@ -5,14 +5,24 @@ namespace ISE_ODL.Menu
     internal class MenuPrincipale_VM : BaseBinding
     {
         public MenuPrincipale_M MenuPrincipale_M = new();
-        public ObservableCollection<BaseOdl_VM> Commisioni { get; set; } = [BaseOdl_F.Create()];
+        private ObservableCollection<BaseOdl_VM> commisioni = [BaseOdl_F.Create()];
+        public ObservableCollection<BaseOdl_VM> Commisioni
+        {
+            get
+            {
+                
+                return commisioni;
+            }
+
+            set => commisioni = value;
+        }
         public CreaOdl DefinisciOdl { get; set; }
         public EliminaOdl EliminaOdl { get; set; }
         public ModificaOdl ModificaOdl { get; set; }
-        private Odl_VM odlSelezionata;
+        private Odl_VM? odlSelezionata;
         private bool mostraCompletati;
 
-        public Odl_VM OdlSelezionata
+        public Odl_VM? OdlSelezionata
         {
             get => odlSelezionata;
             set
@@ -46,6 +56,5 @@ namespace ISE_ODL.Menu
                 OnPropertyChanged(nameof(MostraCompletati));
             }
         }
-        public bool OrdinaElementi { get; set; }
     }
 }
