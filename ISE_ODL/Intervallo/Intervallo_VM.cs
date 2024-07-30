@@ -10,7 +10,6 @@ namespace ISE_ODL.Intervallo
     public  class Intervallo_VM : BaseBinding
     {
         private readonly Intervallo_M model;
-
         public Intervallo_VM(Intervallo_M mode, EliminaIntervallo eliminaIntervallo)
         {
             model = mode;

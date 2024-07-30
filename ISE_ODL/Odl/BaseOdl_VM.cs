@@ -3,16 +3,19 @@ using System.Timers;
 using System.Windows;
 using ISE_ODL.Intervallo;
 using ISE_ODL.Intervallo.Durata;
+using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
     public class BaseOdl_VM : BaseBinding
     {
-        protected readonly BaseOdl_M _model;
-        private readonly List<Durata_VM> durate;
-        public BaseOdl_M Model => _model;
+        protected readonly BaseOdl_M model;
+        public BaseOdl_M Model => model;
+        public OdlTimer OdlTimer { get; set; }
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
         {
-            _model = nessunoOdl_M;
+            OdlTimer = new();
+            EliminaIntervallo = new();
+            model = nessunoOdl_M;
         }
         public EliminaIntervallo EliminaIntervallo { get; set; }
         public ObservableCollection<Intervallo_VM> Intervalli
@@ -35,27 +38,26 @@ namespace ISE_ODL.Odl
                 ObservableCollection<Durata_VM> Out = [];
                 foreach (DateOnly g in Intervalli.Select(i => i.Giorno).Distinct())
                 {
-                    TimeSpan totalSpan = new TimeSpan(Intervalli.Where(c => c.Giorno == g).Select(b => b.Durata).Sum(r => r.Ticks));
-                    Out.Add(Durata_F.Create(g, totalSpan));
+                    Out.Add(Durata_F.Create(g, new TimeSpan(Intervalli.Where(c => c.Giorno == g).Select(b => b.Durata).Sum(r => r.Ticks))));
                 }
                 return Out;
             }
         }
-        public string Attivita { get => _model.Attivita; set => _model.Attivita = value; }
+        public bool OrarioVisibile { get; set; }
+        public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public bool Stato
         {
-            get => _model.Stato;
+            get => model.Stato;
             set
             {
                 if ( value)
                 {
-                    System.Timers.Timer time = new System.Timers.Timer(2000);
-                    time.Elapsed += Time_Elapsed;
-                    time.Enabled
-
+                    OdlTimer.timer.Start();
+                    OdlTimer.timer.Elapsed += OdlTimer.Time_Elapsed;
                 }
-                if (_model.Stato == value) return;
-                _model.Stato = value;
+                else OdlTimer.timer.Stop();
+                if (model.Stato == value) return;
+                model.Stato = value;
                 OrarioVisibile=true;
                 OnPropertyChanged(nameof(Stato));
                 OnPropertyChanged(nameof(Intervalli));
@@ -63,14 +65,5 @@ namespace ISE_ODL.Odl
                 OnPropertyChanged(nameof(OrarioVisibile));
             }
         }
-
-        private void Time_Elapsed(object? sender, ElapsedEventArgs e)
-        {
-            MessageBoxResult risposta = MessageBox.Show("Vuoi davvero eliminare...", "Eliminazione ODL", MessageBoxButton.OKCancel, MessageBoxImage.Question);
-        }
-
-        public bool OrarioVisibile { get; set; }
-       
-
     }
 }

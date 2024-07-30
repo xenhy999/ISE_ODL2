@@ -19,7 +19,6 @@ namespace ISE_ODL.Intervallo
             };
             return m;
         }
-
         public static Intervallo_VM Create(Intervallo_M m, BaseOdl_VM baseOdl_VM)
         {
             EliminaIntervallo eliminaIntervallo = new EliminaIntervallo();

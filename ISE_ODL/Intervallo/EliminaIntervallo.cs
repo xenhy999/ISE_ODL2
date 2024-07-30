@@ -8,7 +8,6 @@ namespace ISE_ODL.Intervallo
     {
         public BaseOdl_VM OdlDellIntervallo { get; set; }
         public Intervallo_M IntervalloDaEliminare { get; set; }
-
         public override void Execute(object parameter)
         {
             MessageBoxResult risposta = MessageBox.Show("Vuoi davvero eliminare questo intervallo di tempo", "Eliminazione intervallo di tempo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
