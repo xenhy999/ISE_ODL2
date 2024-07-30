@@ -60,6 +60,5 @@
                 OnPropertyChanged(nameof(Filtro));
             }
         }
-
     }
 }

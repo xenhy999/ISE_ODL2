@@ -9,7 +9,7 @@
     <Application.Resources>
         <sys:Boolean x:Key="True">True</sys:Boolean>
         <sys:Boolean x:Key="False">False</sys:Boolean>
-        <Brush x:Key="Grigio">#78716C</Brush>
+        <Brush x:Key="Grigio">#565e60</Brush>
         <Brush x:Key="Grigio_Chiaro">#9E9E9E</Brush>
         <Brush x:Key="White_Neutral"> #EEEEEE</Brush>
         <Brush x:Key="Black_Neutral">#000000</Brush>

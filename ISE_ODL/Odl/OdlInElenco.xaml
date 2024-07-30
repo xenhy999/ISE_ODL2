@@ -90,7 +90,7 @@
             </Style.Triggers>
         </Style>
         <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="{StaticResource Palette_1}"/>
+            <Setter Property="Background" Value="{StaticResource Grigio}"/>
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -149,7 +149,7 @@
             </StackPanel>
                 <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
             <StackPanel Grid.Column="5" Margin="0">
-                <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari"/>
+                <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari" IsEnabled="{Binding OrarioVisibile}"/>
             </StackPanel>
         </Grid>
 
@@ -160,19 +160,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" SelectedItem=" ">
+            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="150"/>
-                    <DataGridTextColumn Header="Orario Di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="150"/>
-                    <DataGridTextColumn  Header="Orario Di Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="150" />
+                    <DataGridTextColumn Header="Orario di inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="150"/>
+                    <DataGridTextColumn  Header="Orario di fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="150" />
                 </DataGrid.Columns>
             </DataGrid>
 
-            <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single" CanUserSortColumns="True" SelectedItem="">
+            <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="150"/>
-                    <DataGridTextColumn  Header="Ore di Lavoro " Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}"  Width="150" />
-                    <DataGridCheckBoxColumn Header="Scaricate" Binding="{Binding Scaricato}" Width="100" />
+                    <DataGridTextColumn Header="Ore di lavoro " Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}" Width="150" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
