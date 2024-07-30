@@ -6,14 +6,15 @@ namespace ISE_ODL.Odl
     public class BaseOdl_VM : BaseBinding
     {
         protected readonly BaseOdl_M model;
+        public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public BaseOdl_M Model => model;
-        public OdlTimer OdlTimer { get; set; }
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
         {
             OdlTimer = new();
             EliminaIntervallo = new();
             model = nessunoOdl_M;
         }
+        public OdlTimer OdlTimer { get; set; }
         public EliminaIntervallo EliminaIntervallo { get; set; }
         public ObservableCollection<Intervallo_VM> Intervalli
         {
@@ -41,7 +42,6 @@ namespace ISE_ODL.Odl
             }
         }
         public bool OrarioVisibile { get; set; }
-        public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public bool Stato
         {
             get => model.Stato;
