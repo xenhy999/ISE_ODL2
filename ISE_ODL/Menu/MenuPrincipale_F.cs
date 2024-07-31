@@ -10,10 +10,6 @@ namespace ISE_ODL.Menu
 {
     internal class MenuPrincipale_F
     {
-        static public Menuprincipale_VM Create()
-        {
-            ObjContainer.OdlTimer= new();
-            return new Menuprincipale_VM(ListaOdl_F.Create(), Setting_F.Create());
-        }
+        static public Menuprincipale_VM Create() => new Menuprincipale_VM(ListaOdl_F.Create(), Setting_F.Create());
     }
 }

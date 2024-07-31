@@ -316,6 +316,138 @@
         "OrarioInizio": "2024-07-31T16:57:19.7488709+02:00",
         "OrarioFine": "0001-01-01T00:00:00",
         "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:01:01.7583948+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:01:11.7658483+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:03:07.7878442+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:06:12.9049106+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:07:30.9629251+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:09:46.0196753+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:33:57.2840205+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:39:17.3163553+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:39:29.7485058+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:39:45.2677348+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:39:57.2422864+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:43:11.445517+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:43:19.3557888+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:46:16.7766523+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:46:25.4780298+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:46:46.8014878+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:46:58.5427236+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:47:06.5518276+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:47:12.8234157+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:48:32.2371992+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": true,
+        "OrarioInizio": "2024-07-31T17:48:45.4925477+02:00",
+        "OrarioFine": "2024-07-31T17:48:58.9865504+02:00",
+        "Giorno": "2024-07-31"
+      },
+      {
+        "OrarioCompleto": false,
+        "OrarioInizio": "2024-07-31T17:48:59.8928198+02:00",
+        "OrarioFine": "0001-01-01T00:00:00",
+        "Giorno": "2024-07-31"
       }
     ],
     "Stato": true

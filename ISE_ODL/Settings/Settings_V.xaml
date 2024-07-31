@@ -87,6 +87,6 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Reminder" FontSize="22" />
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Intervallo" FontSize="22" />
-        <TextBox Grid.Row="2" Grid.Column="2" Width="150" Height="33" Text="{Binding Intervallo}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Width="150" Height="33" Text="{Binding DurataDelTimer}"/>
     </Grid>
 </UserControl>

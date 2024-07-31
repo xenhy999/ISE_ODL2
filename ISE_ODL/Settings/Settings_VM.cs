@@ -7,20 +7,22 @@ using ISE_ODL.Odl;
 
 namespace ISE_ODL.Settings
 {
-    internal class Settings_VM:BaseBinding
+    internal class Settings_VM : BaseBinding
     {
-        private bool timerAbilitato;
-        private TimeSpan intervallo;
-
         public bool TimerAbilitato
         {
-            get => ObjContainer.OdlTimer.TimerAbilitato;
-            set => ObjContainer.OdlTimer.TimerAbilitato = value;
+            get => Properties.Settings.Default.TimerAttivo;
+            set => Properties.Settings.Default["TimerAttivo"] = value;
         }
-        public TimeSpan Intervallo
+
+        public TimeSpan DurataDelTimer
         {
-            get => ObjContainer.OdlTimer.DurataTimer;
-            set => ObjContainer.OdlTimer.DurataTimer = value;
+            get => Properties.Settings.Default.DurataDelTimer;
+            set
+            {
+                Properties.Settings.Default["DurataDelTimer"] = value;
+                ObjContainer.OdlTimer?.ResetTimer();
+            }
         }
     }
 }
