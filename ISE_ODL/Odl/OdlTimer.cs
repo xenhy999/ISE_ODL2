@@ -3,23 +3,58 @@ using Microsoft.Toolkit.Uwp.Notifications;
 using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
-    public class OdlTimer
+    public class OdlTimer:BaseBinding
     {
         public string Message;
         public string Title;
-        static public TimeSpan DurataTimer = new TimeSpan(0, 0,10);
-        private Timer timer = new Timer(DurataTimer);
-        public OdlTimer(string title, string message)
+        private TimeSpan durataTimer;
+        private bool timerAbilitato;
+
+        public bool TimerAbilitato
         {
-            Message = message;
-            Title = title;
+            get { 
+                return timerAbilitato; 
+            }
+            set
+            {
+                timerAbilitato = value;
+                if (timerAbilitato)
+                {
+                    Timer.Start();
+                    Timer.Elapsed += Time_Elapsed;
+                }
+                else Timer.Stop();
+            }
         }
-        public void Start() { 
-            timer.Start();
-            timer.Enabled = true;
-            timer.Elapsed += Time_Elapsed;
+        public  Timer Timer { get; set; }
+        public TimeSpan DurataTimer
+        {
+            get => durataTimer;
+            set
+            {
+                durataTimer = value;
+                Timer = new Timer(durataTimer);
+            }
         }
-        public void End() => timer.Stop();
+        public OdlTimer()
+        {
+            DurataTimer=new TimeSpan(0,0,10);
+            Message = "Attenzione";
+            Title = "Hai Passato più di un ora su questa attività";
+        }
+        public void Start() 
+        {
+            if (TimerAbilitato)
+            {
+                Timer.Start();
+                Timer.Elapsed += Time_Elapsed;
+            }
+        }
+        public void End()
+        {
+            if (TimerAbilitato) Timer.Stop();
+        }
+        //public void TimerAbilitato(bool stato)=> timer.Enabled = stato;
         public void Time_Elapsed(object? sender, ElapsedEventArgs e) => ShowNotifications(Title, Message);
         public static void ShowNotifications(string message, string title) => new ToastContentBuilder().AddText(message).AddText(title).Show();
 

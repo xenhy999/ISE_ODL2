@@ -5,18 +5,14 @@ namespace ISE_ODL.Odl
 {
     public class BaseOdl_VM : BaseBinding
     {
-        private readonly string TitoloNotificaToast = "Attenzione";
-        private readonly string MessaggioNotificaToast = "Hai Passato più di un ora su questa attività";
         protected readonly BaseOdl_M model;
         public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public BaseOdl_M Model => model;
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
         {
-            OdlTimer = new(TitoloNotificaToast, MessaggioNotificaToast);
             EliminaIntervallo = new();
             model = nessunoOdl_M;
         }
-        public OdlTimer OdlTimer { get; set; }
         public EliminaIntervallo EliminaIntervallo { get; set; }
         public ObservableCollection<Intervallo_VM> Intervalli
         {
@@ -49,8 +45,8 @@ namespace ISE_ODL.Odl
             get => model.Stato;
             set
             {
-                if (value) OdlTimer.Start();
-                else OdlTimer.End();
+                if (value) ObjContainer.OdlTimer.Start();
+                else ObjContainer.OdlTimer.Start();
                 if (model.Stato == value) return;
                 model.Stato = value;
                 OrarioVisibile=true;

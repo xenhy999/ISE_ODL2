@@ -34,7 +34,6 @@
         <converters:TimeSpanToHourMinute x:Key="TimeSpanToHourMinute"/>
         <converters:FiltroToVisibility x:Key="FiltroToVisibility"/>
         <converters:NotBool x:Key="NotBool"/>
-
         <Style x:Key="Lista_Principale"  TargetType="ListBox">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="ItemContainerStyle">

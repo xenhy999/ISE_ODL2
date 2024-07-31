@@ -26,13 +26,13 @@
                 
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}" >
-                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.impo}}" Width="100" VerticalAlignment="Center"></Image>
+                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.impo}}" Width="100" VerticalAlignment="Center" Visibility="Visible"></Image>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.btn_OFF}}"/>
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.cestino}}"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="False">
-                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.btn_ON}}"/>
+                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.cestino}}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -55,7 +55,7 @@
                 <Image Source="{Binding Source={x:Static properties:Resources.logo_ise}}" Width="150" Height="100" VerticalAlignment="Center"/>
             </Border>
             <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource Palette_4}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
-            <CheckBox Grid.Column="2" Content="sjkj" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="2" Content="sjkj" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
         </Grid>
         <ContentControl Grid.Row="1" Content="{Binding VistaCorrente}" />
     </Grid>

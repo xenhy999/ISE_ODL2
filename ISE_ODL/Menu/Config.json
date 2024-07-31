@@ -1,0 +1,12 @@
+{
+  "TimerAbilitato": true,
+  "Timer": {
+    "AutoReset": true,
+    "Enabled": false,
+    "Interval": 20000,
+    "Site": null,
+    "SynchronizingObject": null,
+    "Container": null
+  },
+  "DurataTimer": "00:00:20"
+}

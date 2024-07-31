@@ -14,7 +14,7 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="30" />
         </Style>
-        <Style x:Key="Odl_V_Ins" TargetType="TextBox">
+        <Style TargetType="TextBox">
             <Setter Property="Width" Value="150"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
@@ -61,15 +61,15 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock Style="{StaticResource Odl_V}">ID</TextBlock>
-            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Id}"/> 
+            <TextBox  Text="{Binding Id}"/> 
         </StackPanel>
         <StackPanel Grid.Row="1">
             <TextBlock Style="{StaticResource Odl_V}">Cliente </TextBlock>
-            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Cliente}"/>
+            <TextBox  Text="{Binding Cliente}"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock Style="{StaticResource Odl_V}">Note</TextBlock>
-            <TextBox Style="{StaticResource Odl_V_Ins}" Text="{Binding Attivita}"/>
+            <TextBox Text="{Binding Attivita}"/>
         </StackPanel>
         <StackPanel Grid.Row="3">
             <Button Command="{Binding AggiungiOdl}" Style="{StaticResource Default}" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}" Click="Button_Click">Aggiungi</Button>

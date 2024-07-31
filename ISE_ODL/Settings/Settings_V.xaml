@@ -16,7 +16,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
-                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.btn_ON}}" Width="60" Height="60" VerticalAlignment="Center"></Image>
+                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.btn_ON}}" Width="40" Height="60" VerticalAlignment="Center"></Image>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.btn_ON}}"/>
@@ -29,9 +29,51 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="29"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="3">
+                            <ScrollViewer Margin="0" 
+                                  x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="DarkGray"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter Property="BorderBrush" Value="Blue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="{StaticResource Grigio}" Height="200" Width="700">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -41,6 +83,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <CheckBox IsChecked="true"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Impostazioni" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Reminder" FontSize="22" />
+        <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Intervallo" FontSize="22" />
+        <TextBox Grid.Row="2" Grid.Column="2" Width="150" Height="33" Text="{Binding Intervallo}"/>
     </Grid>
 </UserControl>

@@ -17,17 +17,21 @@ namespace ISE_ODL
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             ObjContainer.Init();
-            if (File.Exists(MenuPrincipale_V.fileName)) LoadFromFile();
+            if (File.Exists(MenuPrincipale_V.fileNameOdl) ) LoadFromFile();
             MenuPrincipale_V menuPrincipale_V = new MenuPrincipale_V { DataContext = ObjContainer.Menuprincipale_VM };
             menuPrincipale_V.Show();
         }
         private void LoadFromFile()
         {
                 JsonSerializerOptions? option = new JsonSerializerOptions { WriteIndented = true };
-            string a = File.ReadAllText(MenuPrincipale_V.fileName);
-            List<Odl_M> b = JsonSerializer.Deserialize<List<Odl_M>>(a, option);
-            foreach (Odl_M odl_M in b)
+            string OdlDaDeserializzate = File.ReadAllText(MenuPrincipale_V.fileNameOdl);
+            List<Odl_M> ListaOdlDeserializzate = JsonSerializer.Deserialize<List<Odl_M>>(OdlDaDeserializzate, option);
+            foreach (Odl_M odl_M in ListaOdlDeserializzate)
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(Odl_F.Create(odl_M));
+
+            string CofigDaDeserializzare= File.ReadAllText(MenuPrincipale_V.fileNameConfig);
+            OdlTimer? CofigDeserializzate = JsonSerializer.Deserialize<OdlTimer>(CofigDaDeserializzare, option);
+            ObjContainer.OdlTimer= CofigDeserializzate;
         }
     }
 }
