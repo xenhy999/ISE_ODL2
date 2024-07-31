@@ -26,6 +26,7 @@
         <Image Source="{Binding Source={x:Static properties:Resources.completate_Odl}}" x:Key="completate_Odl" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.tutte_Odl}}" x:Key="tutte_Odl" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" x:Key="cestino" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.impo}}" x:Key="impo" x:Shared="false"/>
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
         <converters:DateToString x:Key="DateToString"/>

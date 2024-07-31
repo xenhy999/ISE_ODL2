@@ -41,9 +41,9 @@
             {
                 ((Odl_M)Model).Completata = value;
                 OnPropertyChanged(nameof(Completata));
-                Filtro = Completata && (!Completata || !ObjContainer.MenuPrincipale_VM.MostraCompletati);
+                Filtro = Completata && (!Completata || !ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati);
                 OnPropertyChanged(nameof(Filtro));
-                if (value && Stato) ObjContainer.MenuPrincipale_VM.Commisioni[0].Stato = true;
+                if (value && Stato) ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni[0].Stato = true;
                 if (value) Stato = false;
             }
         }

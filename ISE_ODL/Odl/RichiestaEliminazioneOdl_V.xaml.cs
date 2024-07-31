@@ -31,8 +31,8 @@ namespace ISE_ODL.Odl
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Odl_VM odlDaRimuovere = ObjContainer.MenuPrincipale_VM.OdlSelezionata;
-            ObjContainer.MenuPrincipale_VM.Commisioni.Remove(odlDaRimuovere);
+            Odl_VM odlDaRimuovere = ObjContainer.Menuprincipale_VM.ListaOdl_VM.OdlSelezionata;
+            ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Remove(odlDaRimuovere);
             Close();
         }
     }

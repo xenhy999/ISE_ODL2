@@ -4,6 +4,6 @@
     {
         public Odl_VM OdlDaAggiungere;
         public override bool CanExecute(object parameter) => !(string.IsNullOrEmpty(OdlDaAggiungere.Cliente));
-        public override void Execute(object parameter) => ObjContainer.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiungere);
+        public override void Execute(object parameter) => ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(OdlDaAggiungere);
     }
 }

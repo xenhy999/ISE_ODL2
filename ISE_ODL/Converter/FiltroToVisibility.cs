@@ -13,7 +13,7 @@ namespace ISE_ODL.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((ObjContainer.MenuPrincipale_VM.MostraCompletati && (bool)value)|| !(bool)value) return Visibility.Visible;
+            if ((ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati && (bool)value)|| !(bool)value) return Visibility.Visible;
             return Visibility.Collapsed;
         }
 

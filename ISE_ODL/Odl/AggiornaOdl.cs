@@ -12,8 +12,8 @@ namespace ISE_ODL.Odl
         public override bool CanExecute(object parameter) => !(string.IsNullOrEmpty(OdlDaAggiornare.Cliente));
         public override void Execute(object parameter)
         {
-            ObjContainer.MenuPrincipale_VM.Commisioni.Add(OdlDaAggiornare);
-            ObjContainer.MenuPrincipale_VM.Commisioni.Remove(ObjContainer.MenuPrincipale_VM.OdlSelezionata);
+            ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(OdlDaAggiornare);
+            ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Remove(ObjContainer.Menuprincipale_VM.ListaOdl_VM.OdlSelezionata);
         }
     }
 }

@@ -18,17 +18,16 @@ namespace ISE_ODL
         {
             ObjContainer.Init();
             if (File.Exists(MenuPrincipale_V.fileName)) LoadFromFile();
-            MenuPrincipale_V menuPrincipale_V = new MenuPrincipale_V { DataContext = ObjContainer.MenuPrincipale_VM };
+            MenuPrincipale_V menuPrincipale_V = new MenuPrincipale_V { DataContext = ObjContainer.Menuprincipale_VM };
             menuPrincipale_V.Show();
         }
         private void LoadFromFile()
         {
                 JsonSerializerOptions? option = new JsonSerializerOptions { WriteIndented = true };
             string a = File.ReadAllText(MenuPrincipale_V.fileName);
-            //List<Odl_M> b = JsonConvert.DeserializeObject<List<Odl_M>>(a/*,option*/);
             List<Odl_M> b = JsonSerializer.Deserialize<List<Odl_M>>(a, option);
             foreach (Odl_M odl_M in b)
-                ObjContainer.MenuPrincipale_VM.Commisioni.Add(Odl_F.Create(odl_M));
+                ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(Odl_F.Create(odl_M));
         }
     }
 }

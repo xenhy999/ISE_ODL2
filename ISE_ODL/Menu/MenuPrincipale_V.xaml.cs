@@ -13,7 +13,7 @@ namespace ISE_ODL
         private void Button_Click(object sender, RoutedEventArgs e) => Close();
         private void Window_Closed(object sender, EventArgs e)
         {
-            List<BaseOdl_M> OdlDaSerializzare = ObjContainer.MenuPrincipale_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList();
+            List<BaseOdl_M> OdlDaSerializzare = ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList();
             JsonSerializerOptions? option = new JsonSerializerOptions { WriteIndented = true };
             string b = JsonSerializer.Serialize(OdlDaSerializzare, option);
             File.WriteAllText(fileName, b);

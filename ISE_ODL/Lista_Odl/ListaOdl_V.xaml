@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="ISE_ODL.Lista_Odl.ListaOdl_V"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ISE_ODL.Lista_Odl" 
+             xmlns:lista_odl="clr-namespace:ISE_ODL.Lista_Odl"
+             xmlns:odl="clr-namespace:ISE_ODL.Odl"
+             d:DataContext="{d:DesignInstance Type=lista_odl:ListaOdl_VM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--<data template... lista_VM allora lista V>0-->
+        <DataTemplate DataType="{x:Type odl:Odl_VM}">
+            <odl:OdlInElenco/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type odl:BaseOdl_VM}">
+            <odl:OdlVuoto/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" Background="Transparent" BorderThickness="0" Style="{StaticResource Lista_Principale}" HorizontalAlignment="Stretch" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}"/>
+         <Grid Grid.Row="1" VerticalAlignment="Center">
+             <Grid.ColumnDefinitions>
+             <ColumnDefinition Width="2*"/>
+             <ColumnDefinition Width="2*"/>
+             <ColumnDefinition Width="2*"/>
+             <ColumnDefinition Width="1*"/>
+         </Grid.ColumnDefinitions>
+             <Button Grid.Column="0" Style="{StaticResource Default}" Command="{Binding DefinisciOdl}">Definisci Odl</Button>
+             <Button Grid.Column="1" Style="{StaticResource Default}" Command="{Binding EliminaOdl}">Elimina Odl</Button>
+             <Button Grid.Column="2" Style="{StaticResource Default}" Command="{Binding ModificaOdl}" >Modifica Odl</Button>
+             <CheckBox Grid.Column="3" Style="{StaticResource filtro_menu}"  Content="MostraCompletati" IsChecked="{Binding MostraCompletati}" Cursor="Hand"/>
+         </Grid>
+    </Grid>
+</UserControl>
