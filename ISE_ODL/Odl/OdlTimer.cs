@@ -1,4 +1,5 @@
-﻿using System.Timers;
+﻿using System.Net.NetworkInformation;
+using System.Timers;
 using System.Windows;
 using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
