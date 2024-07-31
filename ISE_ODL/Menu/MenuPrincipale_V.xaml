@@ -13,6 +13,7 @@
         Title="ISE ODL Assistant" Height="550" Width="865" MinWidth="865" MinHeight="550"
         Background="{StaticResource Grigio_Chiaro}">
     <Window.Resources>
+    <!--<data template... lista_VM allora lista V>0-->
         <DataTemplate DataType="{x:Type odl:Odl_VM}">
             <odl:OdlInElenco/>
         </DataTemplate>
@@ -39,6 +40,9 @@
             <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource Palette_4}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
         </Grid>
         
+        <!-- DA qui in giù è uno UC -->
+        <ContentControl Content="{Binding VistaCorrente}"/>
+
         <ListBox Grid.Row="1" Background="Transparent" BorderThickness="0" Style="{StaticResource Lista_Principale}" HorizontalAlignment="Stretch" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}"/>
 
         <Grid Grid.Row="2" VerticalAlignment="Center">

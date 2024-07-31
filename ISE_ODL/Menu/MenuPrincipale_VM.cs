@@ -4,6 +4,15 @@ namespace ISE_ODL.Menu
 {
     internal class MenuPrincipale_VM : BaseBinding
     {
+        public bool MostraSettings { get; set; }
+
+        public BaseBinding VistaCorrente { get; set; }
+
+        //private Lista_VM 
+        //private Settings_VM 
+
+
+        // Da spostare in ListaOdl_VM
         public MenuPrincipale_M MenuPrincipale_M = new();
         public MenuPrincipale_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl)
         {

@@ -1,17 +1,27 @@
-﻿using System.Net.NetworkInformation;
-using System.Timers;
-using System.Windows;
+﻿using System.Timers;
+using Microsoft.Toolkit.Uwp.Notifications;
 using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
     public class OdlTimer
     {
-        static private int DurataTimer = 3600000;
-        public Timer timer = new Timer(DurataTimer);
-        public void Time_Elapsed(object? sender, ElapsedEventArgs e)
+        public string Message;
+        public string Title;
+        static public TimeSpan DurataTimer = new TimeSpan(0, 0,10);
+        private Timer timer = new Timer(DurataTimer);
+        public OdlTimer(string title, string message)
         {
-            MessageBoxResult risposta = MessageBox.Show("Hai passato piu di un'ora su questa attivita. Vuoi Cambiare attività?", "Timer inattività ODL", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            //if (risposta == MessageBoxResult.Yes) Stato = false;
+            Message = message;
+            Title = title;
         }
+        public void Start() { 
+            timer.Start();
+            timer.Enabled = true;
+            timer.Elapsed += Time_Elapsed;
+        }
+        public void End() => timer.Stop();
+        public void Time_Elapsed(object? sender, ElapsedEventArgs e) => ShowNotifications(Title, Message);
+        public static void ShowNotifications(string message, string title) => new ToastContentBuilder().AddText(message).AddText(title).Show();
+
     }
 }
