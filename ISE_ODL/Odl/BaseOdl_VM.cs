@@ -8,6 +8,7 @@ namespace ISE_ODL.Odl
         protected readonly BaseOdl_M model;
         public BaseOdl_M Model => model;
         public string Attivita { get => model.Attivita; set => model.Attivita = value; }
+        public virtual bool Completata { get => false; set { return; } }
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
         {
             EliminaIntervallo = new();

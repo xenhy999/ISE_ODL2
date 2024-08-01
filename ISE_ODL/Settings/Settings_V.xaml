@@ -31,7 +31,7 @@
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="29"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,0,15"/>
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
@@ -86,7 +86,7 @@
     <Grid Background="{StaticResource Grigio}" Height="300" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,40"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition />
@@ -97,7 +97,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="IMPOSTAZIONI" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="IMPOSTAZIONI" FontWeight="Bold" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Reminder" FontSize="22" />
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Intervallo" FontSize="22" />

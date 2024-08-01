@@ -34,7 +34,7 @@
                 AggiornaOdl.OnRaiseCanExecuteChanged();
             }
         }
-        public bool Completata
+        public override bool Completata
         {
             get => ((Odl_M)Model).Completata;
             set
@@ -45,6 +45,8 @@
                 if (value) Stato = false;
                 OnPropertyChanged(nameof(Completata));
                 OnPropertyChanged(nameof(Filtro));
+
+                ObjContainer.Menuprincipale_VM.ListaOdl_VM.OrdinaLista();
             }
         }
         public bool Filtro

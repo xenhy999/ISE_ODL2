@@ -43,5 +43,10 @@ namespace ISE_ODL.Lista_Odl
                 OnPropertyChanged(nameof(MostraCompletati));
             }
         }
+        public void OrdinaLista()
+        {
+            Commisioni = new ObservableCollection<BaseOdl_VM>(Commisioni.OrderBy(c => c.Completata));
+            OnPropertyChanged(nameof(Commisioni));
+        }
     }
 }
