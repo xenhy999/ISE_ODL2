@@ -137,7 +137,10 @@
     <value>..\Resources\icons8-multiply-96.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="impo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-impostazioni-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\impo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="impo_N" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-impostazioni-64.png; System.Byte[],mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_ise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_ise_300-removebg-preview.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

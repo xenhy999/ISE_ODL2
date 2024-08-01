@@ -18,6 +18,5 @@ namespace ISE_ODL
             Menuprincipale_VM = MenuPrincipale_F.Create();
             OdlTimer = new();
         }
-
     }
 }

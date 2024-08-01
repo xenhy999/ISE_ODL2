@@ -15,13 +15,10 @@ namespace ISE_ODL.Odl
             Timer.Start();
             Timer.Elapsed += Time_Elapsed;
         }
-
         public void Stop() => Timer.Stop();
-
         private void Time_Elapsed(object? sender, ElapsedEventArgs e)
         {
-            if (ObjContainer.Menuprincipale_VM.Settings_VM.TimerAbilitato)
-                ShowNotifications("Attenzione", "...");
+            if (ObjContainer.Menuprincipale_VM.Settings_VM.TimerAbilitato) ShowNotifications("Attenzione", "...");
         }
         public static void ShowNotifications(string message, string title) => new ToastContentBuilder().AddText(message).AddText(title).Show();
     }

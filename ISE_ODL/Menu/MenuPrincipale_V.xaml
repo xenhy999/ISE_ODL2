@@ -57,10 +57,10 @@
                 <Image Source="{Binding Source={x:Static properties:Resources.logo_ise}}" Width="150" Height="100" VerticalAlignment="Center"/>
             </Border>
             <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource Palette_4}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
-            <CheckBox Grid.Column="2" Content="sjkj" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100">
+            <CheckBox Grid.Column="2" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
                 <CheckBox.Template>
                     <ControlTemplate>
-                        <Image Source="{Binding Source={x:Static properties:Resources.impo}}" Width="100" VerticalAlignment="Center" Visibility="Visible"/>
+                        <Image Source="{Binding Source={x:Static properties:Resources.impo_N}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
                     </ControlTemplate>
                 </CheckBox.Template>
             </CheckBox>

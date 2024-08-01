@@ -46,7 +46,6 @@ namespace ISE_ODL.Odl
             set
             {
                 ObjContainer.OdlTimer?.ResetTimer();
-               
                 if (model.Stato == value) return;
                 model.Stato = value;
                 OrarioVisibile=true;

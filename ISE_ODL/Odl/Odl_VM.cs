@@ -12,6 +12,9 @@
             Filtro = false;
         }
         public bool OdlInModifica { get; set; }
+        public AggiungiOdl AggiungiOdl { get; set; }
+        public AggiornaOdl AggiornaOdl { get; set; }
+        public string Id { get => ((Odl_M)Model).Id; set => ((Odl_M)Model).Id = value; }
         public bool MostraAltro
         {
             get => mostraAltro;
@@ -21,9 +24,6 @@
                 OnPropertyChanged(nameof(MostraAltro));
             }
         }
-        public AggiungiOdl AggiungiOdl { get; set; }
-        public AggiornaOdl AggiornaOdl { get; set; }
-        public string Id { get => ((Odl_M)Model).Id; set => ((Odl_M)Model).Id = value; }
         public string Cliente
         {
             get => ((Odl_M)Model).Cliente;
@@ -40,11 +40,11 @@
             set
             {
                 ((Odl_M)Model).Completata = value;
-                OnPropertyChanged(nameof(Completata));
                 Filtro = Completata && (!Completata || !ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati);
-                OnPropertyChanged(nameof(Filtro));
                 if (value && Stato) ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni[0].Stato = true;
                 if (value) Stato = false;
+                OnPropertyChanged(nameof(Completata));
+                OnPropertyChanged(nameof(Filtro));
             }
         }
         public bool Filtro
