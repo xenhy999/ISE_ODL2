@@ -145,6 +145,9 @@
   <data name="logo_ise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_ise_300-removebg-preview.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ricarica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-appuntamento-ricorrente-96.png;System.Byte[], mscorlib,Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tutte_Odl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ordine-96.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

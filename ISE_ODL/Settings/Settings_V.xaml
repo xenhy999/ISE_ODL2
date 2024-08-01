@@ -70,23 +70,49 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
-    <Grid Background="{StaticResource Grigio}" Height="200" Width="700">
+    <Grid Background="{StaticResource Grigio}" Height="300" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,40"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="50"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Impostazioni" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="IMPOSTAZIONI" FontWeight="Bold"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Reminder" FontSize="22" />
         <CheckBox Grid.Row="1" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Intervallo" FontSize="22" />
-        <TextBox Grid.Row="2" Grid.Column="2" Width="150" Height="33" Text="{Binding DurataDelTimer}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataDelTimer}"/>
+        <Button Grid.Row="2" Grid.Column="3" Click="Button_Click_1" Background="Transparent" BorderBrush="Transparent">
+        <Button.Content>
+            <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
+        </Button.Content>
+        </Button>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Durata Minima" FontSize="22" />
+        <TextBox Grid.Row="3" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataMinimaOdl}"/>
+        <Button Grid.Row="3" Grid.Column="3" Click="Button_Click" Background="Transparent" BorderBrush="Transparent">
+            <Button.Content>
+                <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
+            </Button.Content>
+        </Button>
     </Grid>
 </UserControl>

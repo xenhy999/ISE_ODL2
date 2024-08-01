@@ -21,26 +21,6 @@
         <DataTemplate DataType="{x:Type setting:Settings_VM}">
             <setting:Settings_V/>
         </DataTemplate>
-        <!--<Style TargetType="CheckBox">
-            <Setter Property="Template">
-                
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type CheckBox}" >
-                        <Image x:Name="checkBoxImage" Source="{Binding Source={x:Static properties:Resources.impo}}" Width="100" VerticalAlignment="Center" Visibility="Visible"></Image>
-                        -->
-        <!--<ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.impo}}"/>
-                            </Trigger>
-                            <Trigger Property="IsChecked" Value="False">
-                                <Setter TargetName="checkBoxImage" Property="Source" Value="{Binding Source={x:Static properties:Resources.impo}}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>-->
-        <!--
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -56,7 +36,7 @@
             <Border Grid.Column="0" Background="{StaticResource White_Neutral}">
                 <Image Source="{Binding Source={x:Static properties:Resources.logo_ise}}" Width="150" Height="100" VerticalAlignment="Center"/>
             </Border>
-            <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource Palette_4}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource White_Neutral}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
             <CheckBox Grid.Column="2" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
                 <CheckBox.Template>
                     <ControlTemplate>

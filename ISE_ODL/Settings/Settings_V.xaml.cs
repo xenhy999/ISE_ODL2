@@ -24,5 +24,15 @@ namespace ISE_ODL.Settings
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl=new TimeSpan(0,5,0);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
+        }
     }
 }

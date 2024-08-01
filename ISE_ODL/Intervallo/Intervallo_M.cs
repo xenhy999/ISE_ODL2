@@ -12,6 +12,7 @@ namespace ISE_ODL.Intervallo
         public DateTime OrarioInizio { get; set; }
         public DateTime OrarioFine { get; set; }
         public DateOnly Giorno { get; set; }
+        public bool IntervalloValido { get; set; }
         public void EndThis()
         {
             OrarioFine = DateTime.Now;

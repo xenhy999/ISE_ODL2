@@ -12,11 +12,13 @@ namespace ISE_ODL.Intervallo
         {
             MessageBoxResult risposta = MessageBox.Show("Vuoi davvero eliminare questo intervallo di tempo", "Eliminazione intervallo di tempo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             if (risposta == MessageBoxResult.OK)
-            {
-                OdlDellIntervallo.Model.Intervalli.Remove(IntervalloDaEliminare);
-                OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Intervalli));
-                OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Durate));
-            }
+                Elimina(OdlDellIntervallo, IntervalloDaEliminare);
+        }
+        public static void Elimina(BaseOdl_VM OdlDellIntervallo, Intervallo_M IntervalloDaEliminare)
+        {
+            OdlDellIntervallo.Model.Intervalli.Remove(IntervalloDaEliminare);
+            OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Intervalli));
+            OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Durate));
         }
     }
 }

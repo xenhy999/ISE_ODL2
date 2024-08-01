@@ -164,7 +164,7 @@
                     <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="120"/>
                     <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="100"/>
                     <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="100" />
-                    <DataGridTemplateColumn Header="Elimina" >
+                    <DataGridTemplateColumn Header="" >
                         <DataGridTemplateColumn.CellTemplate >
                             <DataTemplate>
                                 <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="40" Background="Transparent" BorderBrush="Transparent">
@@ -181,8 +181,8 @@
             </DataGrid>
             <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="150"/>
-                    <DataGridTextColumn Header="Ore di lavoro " Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}" Width="150" />
+                    <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="130"/>
+                    <DataGridTextColumn Header="Ore" Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}" Width="130" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

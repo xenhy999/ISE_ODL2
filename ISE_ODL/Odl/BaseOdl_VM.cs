@@ -49,6 +49,14 @@ namespace ISE_ODL.Odl
                 if (model.Stato == value) return;
                 model.Stato = value;
                 OrarioVisibile=true;
+                if (!value)
+                {
+                    // Quando spengo un odl controllo la sua durata minima
+                    Intervallo_VM? UltimoIntervallo = Intervalli.LastOrDefault();
+                    if (UltimoIntervallo.Durata < ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl)
+                        EliminaIntervallo.Elimina(this, UltimoIntervallo.Model);
+                }
+
                 OnPropertyChanged(nameof(Stato));
                 OnPropertyChanged(nameof(Intervalli));
                 OnPropertyChanged(nameof(Durate));

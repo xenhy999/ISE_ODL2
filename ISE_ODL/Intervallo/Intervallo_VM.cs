@@ -10,10 +10,12 @@ namespace ISE_ODL.Intervallo
     public  class Intervallo_VM : BaseBinding
     {
         private readonly Intervallo_M model;
+        public Intervallo_M Model => model;
         public Intervallo_VM(Intervallo_M mode, EliminaIntervallo eliminaIntervallo)
         {
             model = mode;
             EliminaIntervallo = eliminaIntervallo;
+            //IntervalloValido=true;
         }
         public EliminaIntervallo EliminaIntervallo { get; set; }
         public bool OrarioCompleto => model.OrarioCompleto;
@@ -33,7 +35,8 @@ namespace ISE_ODL.Intervallo
             {
                 if (OrarioFine > OrarioInizio)
                 {
-                    if(OrarioFine- OrarioInizio<MinimoIntervallo)
+                    //if (OrarioFine - OrarioInizio < MinimoIntervallo) IntervalloValido = false;
+                    //else IntervalloValido = true;
                     return OrarioFine - OrarioInizio;
                 }
                 else
@@ -44,7 +47,6 @@ namespace ISE_ODL.Intervallo
         }
 
         public DateOnly Giorno { get=>model.Giorno; set=> model.Giorno=value; }
-        public bool IntervalloValido { get; set; }
-        public Time
+        //public bool IntervalloValido { get => model.IntervalloValido; set => model.IntervalloValido = value; }
     }
 }

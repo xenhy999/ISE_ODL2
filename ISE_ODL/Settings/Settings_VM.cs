@@ -15,8 +15,18 @@ namespace ISE_ODL.Settings
             get => Properties.Settings.Default.DurataDelTimer;
             set
             {
+                OnPropertyChanged(nameof(DurataDelTimer));
                 Properties.Settings.Default["DurataDelTimer"] = value;
                 ObjContainer.OdlTimer?.ResetTimer();
+            }
+        }
+        public TimeSpan DurataMinimaOdl
+        {
+            get => Properties.Settings.Default.DurataMinimaOdl;
+            set
+            {
+                OnPropertyChanged(nameof(DurataMinimaOdl));
+                Properties.Settings.Default["DurataMinimaOdl"] = value;
             }
         }
     }

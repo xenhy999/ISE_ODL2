@@ -46,5 +46,17 @@ namespace ISE_ODL.Properties {
                 this["DurataDelTimer"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00:05:00")]
+        public global::System.TimeSpan DurataMinimaOdl {
+            get {
+                return ((global::System.TimeSpan)(this["DurataMinimaOdl"]));
+            }
+            set {
+                this["DurataMinimaOdl"] = value;
+            }
+        }
     }
 }
