@@ -27,7 +27,24 @@ namespace ISE_ODL.Intervallo
                 OnPropertyChanged(nameof(OrarioFine));
             }
         }
-        public TimeSpan Durata => OrarioFine > OrarioInizio ? OrarioFine - OrarioInizio : new TimeSpan(0);
+        public TimeSpan Durata
+        {
+            get
+            {
+                if (OrarioFine > OrarioInizio)
+                {
+                    if(OrarioFine- OrarioInizio<MinimoIntervallo)
+                    return OrarioFine - OrarioInizio;
+                }
+                else
+                {
+                    return new TimeSpan(0);
+                }
+            }
+        }
+
         public DateOnly Giorno { get=>model.Giorno; set=> model.Giorno=value; }
+        public bool IntervalloValido { get; set; }
+        public Time
     }
 }

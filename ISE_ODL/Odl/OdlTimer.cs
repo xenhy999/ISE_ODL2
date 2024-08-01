@@ -7,7 +7,6 @@ namespace ISE_ODL.Odl
     public class OdlTimer
     {
         private Timer Timer = null;
-
         public void ResetTimer()
         {
             Timer?.Stop();

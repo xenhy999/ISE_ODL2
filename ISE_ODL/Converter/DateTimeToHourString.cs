@@ -12,7 +12,7 @@ namespace ISE_ODL.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-             return ((DateTime)value).Year < 2000 ? "In esecuzione" : ((DateTime)value).ToString("T");
+             return ((DateTime)value).Year < 2000 ? "/" : ((DateTime)value).ToString("T");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

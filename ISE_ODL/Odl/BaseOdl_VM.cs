@@ -6,8 +6,8 @@ namespace ISE_ODL.Odl
     public class BaseOdl_VM : BaseBinding
     {
         protected readonly BaseOdl_M model;
-        public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public BaseOdl_M Model => model;
+        public string Attivita { get => model.Attivita; set => model.Attivita = value; }
         public BaseOdl_VM(BaseOdl_M nessunoOdl_M)
         {
             EliminaIntervallo = new();
