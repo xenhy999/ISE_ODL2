@@ -15,8 +15,11 @@ namespace ISE_ODL.Intervallo
         public bool IntervalloValido { get; set; }
         public void EndThis()
         {
-            OrarioFine = DateTime.Now;
-            OrarioCompleto = true;
+            if (OrarioFine == new DateTime())
+            {
+                OrarioFine = DateTime.Now;
+                OrarioCompleto = true;
+            }
         }
     }
 }

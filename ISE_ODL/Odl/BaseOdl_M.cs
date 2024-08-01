@@ -20,8 +20,10 @@ namespace ISE_ODL.Odl
         }
         private void UpdateIntervalli()
         {
-            if (Stato) Intervalli.Add(Intertevallo_F.StartNew());
-            else Intervalli.LastOrDefault()?.EndThis();
+            if (Stato) 
+                Intervalli.Add(Intertevallo_F.StartNew());
+            else 
+                Intervalli.LastOrDefault()?.EndThis();
 
         }
     }

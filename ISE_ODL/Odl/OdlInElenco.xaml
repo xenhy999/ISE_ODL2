@@ -76,7 +76,7 @@
         <Style TargetType="DataGridCell">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="BorderThickness" Value="0"/>
-            
+
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -147,45 +147,48 @@
                 <TextBlock FontWeight="Bold" Text=" Attività: "/>
                 <TextBlock Text="{Binding Attivita}"/>
             </StackPanel>
-                <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
+            <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
             <StackPanel Grid.Column="5" Margin="0">
                 <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari" IsEnabled="{Binding OrarioVisibile}"/>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}" >
-        <Grid Margin="20" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="0" ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="120"/>
-                    <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="100"/>
-                    <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="100" />
-                    <DataGridTemplateColumn Header="" >
-                        <DataGridTemplateColumn.CellTemplate >
-                            <DataTemplate>
-                                <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="40" Background="Transparent" BorderBrush="Transparent">
-                                    <Button.Content>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <Image Source="{Binding Source={x:Static properties:Resources.cestino}}"/>
-                                        </StackPanel>
-                                    </Button.Content>
-                                </Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="130"/>
-                    <DataGridTextColumn Header="Ore" Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}" Width="130" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+            <Grid Margin="20" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="290">
+                    <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="120"/>
+                            <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="100"/>
+                            <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="100" />
+                            <DataGridTemplateColumn Header="" >
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="40" Background="Transparent" BorderBrush="Transparent">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.cestino}}"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ScrollViewer>
+
+                <DataGrid Grid.Column="2" ItemsSource="{Binding Durate}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Giorno " Binding="{Binding Data}" Width="130"/>
+                        <DataGridTextColumn Header="Ore" Binding="{Binding Ore,Converter={StaticResource TimeSpanToHourMinute}}" Width="130" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </StackPanel>
 
     </Grid>

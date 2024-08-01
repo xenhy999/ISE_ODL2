@@ -47,7 +47,8 @@ namespace ISE_ODL.Odl
             set
             {
                 ObjContainer.OdlTimer?.ResetTimer();
-                if (model.Stato == value) return;
+                if (model.Stato == value) 
+                    return;
                 model.Stato = value;
                 OrarioVisibile=true;
                 if (!value)
@@ -57,7 +58,6 @@ namespace ISE_ODL.Odl
                     if (UltimoIntervallo.Durata < ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl)
                         EliminaIntervallo.Elimina(this, UltimoIntervallo.Model);
                 }
-
                 OnPropertyChanged(nameof(Stato));
                 OnPropertyChanged(nameof(Intervalli));
                 OnPropertyChanged(nameof(Durate));
