@@ -58,5 +58,16 @@
                 OnPropertyChanged(nameof(Filtro));
             }
         }
+
+        public bool AttivatoIl(DateOnly g, out TimeSpan durataTotale)
+        {
+            if (!Durate.Any(d => d.Data == g))
+            {
+                durataTotale = TimeSpan.Zero;
+                return false;
+            }
+            durataTotale = new TimeSpan(Durate.Where(d => d.Data == g).Sum(d => d.Ore.Ticks));
+            return true;
+        }
     }
 }

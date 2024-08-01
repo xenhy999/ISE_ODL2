@@ -7,6 +7,7 @@
         xmlns:odl="clr-namespace:ISE_ODL.Odl"
         xmlns:lista_odl="clr-namespace:ISE_ODL.Lista_Odl"
         xmlns:setting="clr-namespace:ISE_ODL.Settings"
+        xmlns:resoconto="clr-namespace:ISE_ODL.Resoconto"
         xmlns:properties="clr-namespace:ISE_ODL.Properties"
         Closed="Window_Closed"
         d:DataContext="{d:DesignInstance Type=menu:Menuprincipale_VM}"
@@ -20,6 +21,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type setting:Settings_VM}">
             <setting:Settings_V/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type resoconto:Resoconto_VM}">
+            <resoconto:Resoconto_V/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -37,13 +41,27 @@
                 <Image Source="{Binding Source={x:Static properties:Resources.logo_ise}}" Width="150" Height="100" VerticalAlignment="Center"/>
             </Border>
             <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource White_Neutral}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
-            <CheckBox Grid.Column="2" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
-                <CheckBox.Template>
-                    <ControlTemplate>
-                        <Image Source="{Binding Source={x:Static properties:Resources.impo_N}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
-                    </ControlTemplate>
-                </CheckBox.Template>
-            </CheckBox>
+            <Grid Grid.Column="2" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Column="1" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                    <CheckBox.Template>
+                        <ControlTemplate>
+                            <Image Source="{Binding Source={x:Static properties:Resources.impo_N}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+                <CheckBox Grid.Column="0" IsChecked="{Binding MostraResoconto}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                    <CheckBox.Template>
+                        <ControlTemplate>
+                            <Image Source="{Binding Source={x:Static properties:Resources.resoconto}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+            </Grid>
+            
         </Grid>
         <ContentControl Grid.Row="1" Content="{Binding VistaCorrente}" />
     </Grid>

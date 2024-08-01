@@ -28,6 +28,8 @@
         <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" x:Key="cestino" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.impo_N}}" x:Key="impo_N" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" x:Key="ricarica" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.resoconto}}" x:Key="resoconto" x:Shared="false"/>
+
 
         <converters:BoolToVisibility x:Key="BoolToVisibility"/>
         <converters:NotBoolToVisibility x:Key="NotBoolToVisibility"/>
