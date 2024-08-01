@@ -14,6 +14,8 @@
         </DataTemplate>
     </UserControl.Resources>
     <Grid >
-        <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Background="Red" Width="800"></ListBox>
+        <ScrollViewer >
+        <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Width="800" Background="{StaticResource Grigio_Chiaro}" BorderThickness="0" Height="Auto"></ListBox>
+        </ScrollViewer>
     </Grid>
 </UserControl>
