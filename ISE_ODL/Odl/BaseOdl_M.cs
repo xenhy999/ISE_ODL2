@@ -1,6 +1,5 @@
 ﻿using System.Text.Json.Serialization;
 using ISE_ODL.Intervallo;
-
 namespace ISE_ODL.Odl
 {
     [JsonDerivedType(typeof(Odl_M))]
@@ -20,9 +19,9 @@ namespace ISE_ODL.Odl
         }
         private void UpdateIntervalli()
         {
-            if (Stato) 
+            if (Stato)
                 Intervalli.Add(Intertevallo_F.StartNew());
-            else 
+            else
                 Intervalli.LastOrDefault()?.EndThis();
 
         }

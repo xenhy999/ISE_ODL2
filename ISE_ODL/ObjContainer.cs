@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ISE_ODL.Lista_Odl;
-using ISE_ODL.Menu;
+﻿using ISE_ODL.Menu;
 using ISE_ODL.Odl;
-
 namespace ISE_ODL
 {
     internal static class ObjContainer

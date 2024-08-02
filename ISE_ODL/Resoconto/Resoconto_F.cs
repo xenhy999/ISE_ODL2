@@ -13,6 +13,6 @@ namespace ISE_ODL.Resoconto
 {
     internal static class Resoconto_F
     {
-        public static Resoconto_VM Create() => new Resoconto_VM();
+        public static Resoconto_VM Create() => new();
     }
 }

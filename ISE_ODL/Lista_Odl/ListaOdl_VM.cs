@@ -4,13 +4,12 @@ namespace ISE_ODL.Lista_Odl
 {
     internal class ListaOdl_VM:BaseBinding
     {
-        public ListaOdl_M ListaOdl_M = new();
         public ListaOdl_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl)
         {
             DefinisciOdl = definisciOdl;
             EliminaOdl = eliminaOdl;
             ModificaOdl = modificaOdl;
-            MostraCompletati = false;
+            MostraCompletati = true;
             OnPropertyChanged(nameof(MostraCompletati));
         }
         public CreaOdl DefinisciOdl { get; set; }

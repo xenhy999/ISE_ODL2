@@ -11,6 +11,6 @@ namespace ISE_ODL.Menu
 {
     internal class MenuPrincipale_F
     {
-        static public Menuprincipale_VM Create() => new Menuprincipale_VM(ListaOdl_F.Create(), Setting_F.Create(),Resoconto_F.Create());
+        static public Menuprincipale_VM Create() => new(ListaOdl_F.Create(), Setting_F.Create(),Resoconto_F.Create());
     }
 }

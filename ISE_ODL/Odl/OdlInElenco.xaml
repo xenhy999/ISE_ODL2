@@ -148,7 +148,7 @@
                             <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate >
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Padding="0" Margin="0">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="23" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Padding="0" Margin="0">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -158,7 +158,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="75"/>
+                            <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="52"/>
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
@@ -176,7 +176,7 @@
                             <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Padding="0">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="23" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Padding="0">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -186,7 +186,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="75" />
+                            <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="52" />
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
@@ -200,7 +200,6 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
                             <DataGridTemplateColumn Header="" Width="50" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

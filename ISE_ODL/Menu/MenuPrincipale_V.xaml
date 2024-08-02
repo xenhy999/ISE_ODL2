@@ -70,11 +70,8 @@
                     </CheckBox.Template>
                 </CheckBox>
             </Grid>
-            
+
         </Grid>
         <ContentControl Grid.Row="1" Content="{Binding VistaCorrente}" />
     </Grid>
 </Window>
-
-
-

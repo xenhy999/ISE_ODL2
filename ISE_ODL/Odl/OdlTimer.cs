@@ -1,11 +1,12 @@
 ﻿using System.Timers;
-using System.Windows;
 using Microsoft.Toolkit.Uwp.Notifications;
 using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
     public class OdlTimer
     {
+        private const string Message = "Attenzione";
+        private const string Title = "Hai trascorso molto tempo su questa attività";
         private Timer Timer = null;
         public void ResetTimer()
         {
@@ -17,7 +18,7 @@ namespace ISE_ODL.Odl
         public void Stop() => Timer.Stop();
         private void Time_Elapsed(object? sender, ElapsedEventArgs e)
         {
-            if (ObjContainer.Menuprincipale_VM.Settings_VM.TimerAbilitato) ShowNotifications("Attenzione", "...");
+            if (ObjContainer.Menuprincipale_VM.Settings_VM.TimerAbilitato) ShowNotifications(Message, Title);
         }
         public static void ShowNotifications(string message, string title) => new ToastContentBuilder().AddText(message).AddText(title).Show();
     }

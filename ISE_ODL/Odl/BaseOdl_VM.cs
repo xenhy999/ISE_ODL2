@@ -23,7 +23,7 @@ namespace ISE_ODL.Odl
                 ObservableCollection<Intervallo_VM> Out = [];
                 foreach (Intervallo_M i in Model.Intervalli)
                     Out.Add(Intertevallo_F.Create(i, this));
-                OrarioVisibile = Out.Count!=0;
+                OrarioVisibile = Out.Count != 0;
                 OnPropertyChanged(nameof(OrarioVisibile));
                 return Out;
             }
@@ -47,16 +47,19 @@ namespace ISE_ODL.Odl
             set
             {
                 ObjContainer.OdlTimer?.ResetTimer();
-                if (model.Stato == value) 
+                if (model.Stato == value)
                     return;
                 model.Stato = value;
-                OrarioVisibile=true;
+                OrarioVisibile = true;
                 if (!value)
                 {
                     // Quando spengo un odl controllo la sua durata minima
+                    if (Intervalli != null)
+                    {
                     Intervallo_VM? UltimoIntervallo = Intervalli.LastOrDefault();
                     if (UltimoIntervallo.Durata < ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl)
                         EliminaIntervallo.Elimina(this, UltimoIntervallo.Model);
+                    }
                 }
                 OnPropertyChanged(nameof(Stato));
                 OnPropertyChanged(nameof(Intervalli));

@@ -10,7 +10,6 @@
             model = mode;
             EliminaIntervallo = eliminaIntervallo;
             ModificaIntervallo = modificaIntervallo;
-            //IntervalloValido=true;
         }
         public EliminaIntervallo EliminaIntervallo { get; set; }
         public ModificaIntervallo ModificaIntervallo { get; set; }

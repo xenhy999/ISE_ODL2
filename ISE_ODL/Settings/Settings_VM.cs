@@ -9,8 +9,6 @@ namespace ISE_ODL.Settings
 {
     internal class Settings_VM : BaseBinding
     {
-        //private TimeSpan intervalloInModifica = new(0, 10, 0);
-
         public bool TimerAbilitato{ get => Properties.Settings.Default.TimerAttivo;set => Properties.Settings.Default["TimerAttivo"] = value; }
         public TimeSpan DurataDelTimer
         {

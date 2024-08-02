@@ -1,6 +1,5 @@
 ﻿namespace ISE_ODL.Odl
 {
-    /*internal*/
     public class Odl_VM : BaseOdl_VM
     {
         private bool mostraAltro;
@@ -72,6 +71,6 @@
             durataTotale = new TimeSpan(Durate.Where(d => d.Data == g).Sum(d => d.Ore.Ticks));
             return true;
         }
-        public DateOnly DataCompletamento { get=> ((Odl_M)Model).DataCompletamento; set => ((Odl_M)Model).DataCompletamento =value; }
+        public DateOnly DataCompletamento { get => ((Odl_M)Model).DataCompletamento; set => ((Odl_M)Model).DataCompletamento = value; }
     }
 }

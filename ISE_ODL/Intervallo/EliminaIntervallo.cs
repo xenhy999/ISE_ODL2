@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using ISE_ODL.Odl;
 
 namespace ISE_ODL.Intervallo
