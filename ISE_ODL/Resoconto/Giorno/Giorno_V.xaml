@@ -11,42 +11,45 @@
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type odl:Odl_VM}">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Id}" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Attivita}"/>
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                   </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock  Grid.Column="0" Text="ID: "  />
+                    <TextBlock  Grid.Column="1" Text="{Binding Id}" FontWeight="Normal" />
+                    <TextBlock  Grid.Column="3" Text="Cliente: " />
+                    <TextBlock  Grid.Column="4" Text="{Binding Cliente}" FontWeight="Normal" />
+                </Grid>
             </StackPanel>
         </DataTemplate>
         <Style TargetType="DataGridRow" >
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="19"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="Auto"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
         <Style TargetType="DataGridCell">
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="10"/>
 
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
-                    <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
         <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="{StaticResource Grigio}"/>
+            <Setter Property="Background" Value="{StaticResource Palette_1}"/>
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -70,28 +73,30 @@
             <Setter Property="RowBackground" Value="White"/>
             <Setter Property="HeadersVisibility" Value="All"/>
             <Setter Property="IsReadOnly" Value="False"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
         <Style TargetType="Expander">
             <Setter Property="Background" Value="{StaticResource Grigio}"/>
             <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
-            <Setter Property="FontSize" Value="25"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Padding" Value="15"/>
         </Style>
     </UserControl.Resources>
-    <Expander Header="{Binding Data}" IsExpanded="True">
-        <!--<ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding OdlLavorati}"/>-->
+    <Expander Header="{Binding Data}" IsExpanded="{Binding DataOdierna}" FontSize="20">
         <DataGrid Grid.Row="1" ItemsSource="{Binding OdlLavorati}" AutoGenerateColumns="False" HorizontalAlignment="Left" IsEnabled="False">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="ODL">
+                <DataGridTemplateColumn Header="ODL" Width="400">
                     <DataGridTemplateColumn.CellTemplate >
                         <DataTemplate>
                             <ContentControl Content="{Binding Key}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Durata" Binding="{Binding Value,Converter={StaticResource TimeSpanToHourMinute}}" />
+                <DataGridTextColumn Header="Durata" Binding="{Binding Value,Converter={StaticResource TimeSpanToHourMinute}}" Width="150" />
             </DataGrid.Columns>
         </DataGrid>
     </Expander>

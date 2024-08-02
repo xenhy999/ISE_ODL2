@@ -15,7 +15,7 @@
     </UserControl.Resources>
     <Grid >
         <ScrollViewer >
-        <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Width="800" Background="{StaticResource Grigio_Chiaro}" BorderThickness="0" Height="Auto"></ListBox>
+        <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Background="{StaticResource Palette_1}" BorderThickness="0" Height="Auto"></ListBox>
         </ScrollViewer>
     </Grid>
 </UserControl>

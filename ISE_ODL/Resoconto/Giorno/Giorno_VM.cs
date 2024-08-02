@@ -10,14 +10,20 @@ namespace ISE_ODL.Resoconto.Giorno
 {
     internal class Giorno_VM:BaseBinding
     {
-        public Giorno_VM(DateOnly data)
+        private DateOnly data;
+        public Giorno_VM(DateOnly data) => Data = data;
+        public DateOnly Data
         {
-            Data = data;
-           
+            get => data;
+            set
+            {
+                data = value;
+                if(data==DateOnly.FromDateTime(DateTime.Now)) DataOdierna=true;
+                else DataOdierna=false;
+                OnPropertyChanged(nameof(DataOdierna));
+            }
         }
-
-        public DateOnly Data { get; set; }
-        
         public Dictionary<Odl_VM, TimeSpan> OdlLavorati { get; set; } = new Dictionary<Odl_VM, TimeSpan>();
+        public bool DataOdierna { get; set; }
     }
 }
