@@ -15,6 +15,9 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width=" 50"/>
                         <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition />
                         <ColumnDefinition Width="50"/>
                         <ColumnDefinition/>
@@ -24,10 +27,13 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <CheckBox Grid.Column="0" IsChecked="{Binding Completata}" Style="{StaticResource Completata}"/>
-                    <TextBlock  Grid.Column="1" Text="ID: "  />
-                    <TextBlock  Grid.Column="2" Text="{Binding Id}" FontWeight="Normal" />
-                    <TextBlock  Grid.Column="4" Text="Cliente: " />
-                    <TextBlock  Grid.Column="5" Text="{Binding Cliente}" FontWeight="Normal" />
+                    <TextBlock  Grid.Column="1" Text="Completato il: " Visibility="{Binding Completata, Converter={StaticResource BoolToVisibility}}"/>
+                    <TextBlock  Grid.Column="2" Text="{Binding DataCompletamento}" Visibility="{Binding Completata, Converter={StaticResource BoolToVisibility}}"/>
+                    
+                    <TextBlock  Grid.Column="4" Text=" ID: "  />
+                    <TextBlock  Grid.Column="5" Text="{Binding Id}" FontWeight="Normal" />
+                    <TextBlock  Grid.Column="7" Text="Cliente: " />
+                    <TextBlock  Grid.Column="8" Text="{Binding Cliente}" FontWeight="Normal" />
                 </Grid>
             </StackPanel>
         </DataTemplate>
@@ -91,7 +97,7 @@
     <Expander Header="{Binding Data}" IsExpanded="{Binding DataOdierna}" FontSize="20">
         <DataGrid Grid.Row="1" ItemsSource="{Binding OdlLavorati}" AutoGenerateColumns="False" HorizontalAlignment="Left" IsEnabled="False">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="ODL" Width="400">
+                <DataGridTemplateColumn Header="ODL" Width="auto">
                     <DataGridTemplateColumn.CellTemplate >
                         <DataTemplate>
                             <ContentControl Content="{Binding Key}"/>

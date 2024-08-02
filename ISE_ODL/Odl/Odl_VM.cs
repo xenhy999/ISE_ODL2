@@ -42,7 +42,11 @@
                 ((Odl_M)Model).Completata = value;
                 Filtro = Completata && (!Completata || !ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati);
                 if (value && Stato) ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni[0].Stato = true;
-                if (value) Stato = false;
+                if (value)
+                {
+                    Stato = false;
+                    DataCompletamento = DateOnly.FromDateTime(DateTime.Now);
+                }
                 OnPropertyChanged(nameof(Completata));
                 OnPropertyChanged(nameof(ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati));
                 OnPropertyChanged(nameof(Filtro));
@@ -58,7 +62,6 @@
                 OnPropertyChanged(nameof(Filtro));
             }
         }
-
         public bool AttivatoIl(DateOnly g, out TimeSpan durataTotale)
         {
             if (!Durate.Any(d => d.Data == g))
@@ -69,5 +72,6 @@
             durataTotale = new TimeSpan(Durate.Where(d => d.Data == g).Sum(d => d.Ore.Ticks));
             return true;
         }
+        public DateOnly DataCompletamento { get=> ((Odl_M)Model).DataCompletamento; set => ((Odl_M)Model).DataCompletamento =value; }
     }
 }

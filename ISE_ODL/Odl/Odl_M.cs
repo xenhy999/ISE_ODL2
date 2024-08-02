@@ -8,5 +8,6 @@ namespace ISE_ODL.Odl
         public string Id { get; set; }
         public string Cliente { get; set; }
         public bool Completata { get; set; }
+        public DateOnly DataCompletamento { get; set; }
     }
 }
