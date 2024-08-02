@@ -6,7 +6,15 @@ namespace ISE_ODL.Menu
 {
     internal class Menuprincipale_VM : BaseBinding
     {
-        public BaseBinding VistaCorrente { get; set; } 
+        public BaseBinding VistaCorrente
+        {
+            get => vistaCorrente;
+            set
+            {
+                vistaCorrente = value;
+                if (vistaCorrente== Resoconto_VM) Resoconto_VM.CreaGiorni();
+            }
+        }
         public ListaOdl_VM ListaOdl_VM { get;}
         public Settings_VM Settings_VM { get;}
         public Resoconto_VM Resoconto_VM { get; }
@@ -18,7 +26,6 @@ namespace ISE_ODL.Menu
             set
             {
                 mostraSettings = value;
-                //VistaCorrente = value ? Settings_VM : ListaOdl_VM;
                 VistaCorrente = Settings_VM;
                 OnPropertyChanged(nameof(VistaCorrente));
             }
@@ -30,21 +37,20 @@ namespace ISE_ODL.Menu
             set
             {
                 mostraResoconto = value;
-                //VistaCorrente = value ? Resoconto_VM : ListaOdl_VM;
                 VistaCorrente = Resoconto_VM;
-                if (value)
-                    Resoconto_VM.CreaGiorni();
+                Resoconto_VM.CreaGiorni();
                 OnPropertyChanged(nameof(VistaCorrente));
             }
         }
         private bool mostraLista;
+        private BaseBinding vistaCorrente;
+
         public bool MostraLista
         {
             get => mostraLista;
             set
             {
                 mostraLista = value;
-                //VistaCorrente = value ? Resoconto_VM : ListaOdl_VM;
                 VistaCorrente = ListaOdl_VM;
                 OnPropertyChanged(nameof(VistaCorrente));
             }
@@ -55,7 +61,8 @@ namespace ISE_ODL.Menu
             Settings_VM = settings_VM;
             Resoconto_VM = resoconto_VM;
             MostraSettings = false;
-            //MostraResoconto = false;
+            MostraResoconto = false;
+            MostraLista = false;
         }
     }
 }

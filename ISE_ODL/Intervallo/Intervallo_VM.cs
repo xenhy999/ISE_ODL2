@@ -23,8 +23,6 @@
             }
         }
         public TimeSpan Durata => OrarioFine > OrarioInizio ? OrarioFine - OrarioInizio : new TimeSpan(0);
-
         public DateOnly Giorno { get => model.Giorno; set => model.Giorno = value; }
-        //public bool IntervalloValido { get => model.IntervalloValido; set => model.IntervalloValido = value; }
     }
 }

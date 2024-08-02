@@ -13,6 +13,7 @@
             <StackPanel Orientation="Horizontal">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=" 50"/>
                         <ColumnDefinition/>
                         <ColumnDefinition />
                         <ColumnDefinition Width="50"/>
@@ -22,10 +23,11 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock  Grid.Column="0" Text="ID: "  />
-                    <TextBlock  Grid.Column="1" Text="{Binding Id}" FontWeight="Normal" />
-                    <TextBlock  Grid.Column="3" Text="Cliente: " />
-                    <TextBlock  Grid.Column="4" Text="{Binding Cliente}" FontWeight="Normal" />
+                    <CheckBox Grid.Column="0" IsChecked="{Binding Completata}" Style="{StaticResource Completata}"/>
+                    <TextBlock  Grid.Column="1" Text="ID: "  />
+                    <TextBlock  Grid.Column="2" Text="{Binding Id}" FontWeight="Normal" />
+                    <TextBlock  Grid.Column="4" Text="Cliente: " />
+                    <TextBlock  Grid.Column="5" Text="{Binding Cliente}" FontWeight="Normal" />
                 </Grid>
             </StackPanel>
         </DataTemplate>

@@ -28,7 +28,7 @@
         <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" x:Key="cestino" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.impostazioni}}" x:Key="impostazioni" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" x:Key="ricarica" x:Shared="false"/>
-        <Image Source="{Binding Source={x:Static properties:Resources.resoconto}}" x:Key="resoconto" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.reso_new}}" x:Key="reso_new" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.home}}" x:Key="home" x:Shared="false"/>
 
 

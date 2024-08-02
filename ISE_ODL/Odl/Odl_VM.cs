@@ -44,8 +44,8 @@
                 if (value && Stato) ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni[0].Stato = true;
                 if (value) Stato = false;
                 OnPropertyChanged(nameof(Completata));
+                OnPropertyChanged(nameof(ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati));
                 OnPropertyChanged(nameof(Filtro));
-
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.OrdinaLista();
             }
         }

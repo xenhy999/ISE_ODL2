@@ -14,8 +14,13 @@
         </DataTemplate>
     </UserControl.Resources>
     <Grid >
-        <ScrollViewer >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" >
         <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Background="{StaticResource Palette_1}" BorderThickness="0" Height="Auto"></ListBox>
         </ScrollViewer>
+        <CheckBox Grid.Row="1" IsChecked="{Binding MostraCompletate}" Style="{StaticResource filtro_menu}"/>
     </Grid>
 </UserControl>

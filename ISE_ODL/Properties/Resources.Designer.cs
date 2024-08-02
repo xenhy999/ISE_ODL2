@@ -163,6 +163,16 @@ namespace ISE_ODL.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
+        public static byte[] reso_new {
+            get {
+                object obj = ResourceManager.GetObject("reso_new", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
         public static byte[] resoconto {
             get {
                 object obj = ResourceManager.GetObject("resoconto", resourceCulture);
