@@ -63,6 +63,16 @@ namespace ISE_ODL.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
+        public static byte[] aggiungi {
+            get {
+                object obj = ResourceManager.GetObject("aggiungi", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
         public static byte[] btn_OFF {
             get {
                 object obj = ResourceManager.GetObject("btn_OFF", resourceCulture);
@@ -186,6 +196,16 @@ namespace ISE_ODL.Properties {
         public static byte[] ricarica {
             get {
                 object obj = ResourceManager.GetObject("ricarica", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        public static byte[] sottrai {
+            get {
+                object obj = ResourceManager.GetObject("sottrai", resourceCulture);
                 return ((byte[])(obj));
             }
         }

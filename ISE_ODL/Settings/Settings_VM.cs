@@ -29,5 +29,6 @@ namespace ISE_ODL.Settings
                 Properties.Settings.Default["DurataMinimaOdl"] = value;
             }
         }
+        public TimeSpan IntervalloInModifica { get; set; } = new(0, 10, 0);
     }
 }

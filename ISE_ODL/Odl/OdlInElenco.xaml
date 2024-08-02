@@ -163,8 +163,61 @@
                     <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="120"/>
+                            <DataGridTemplateColumn Header="" Width="30" >
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="100"/>
+                            <DataGridTemplateColumn Header="" Width="30" >
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ai" Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="" Width="30" >
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="100" />
+                            <DataGridTemplateColumn Header="" Width="30" >
+                                <DataGridTemplateColumn.CellTemplate >
+                                    <DataTemplate>
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="af"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
                             <DataGridTemplateColumn Header="" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>

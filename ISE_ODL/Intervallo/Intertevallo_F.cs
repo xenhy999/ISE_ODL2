@@ -22,9 +22,12 @@ namespace ISE_ODL.Intervallo
         public static Intervallo_VM Create(Intervallo_M m, BaseOdl_VM baseOdl_VM)
         {
             EliminaIntervallo eliminaIntervallo = new EliminaIntervallo();
-            Intervallo_VM i = new Intervallo_VM(m,eliminaIntervallo);
+            ModificaIntervallo modificaIntervallo = new();
+            Intervallo_VM i = new Intervallo_VM(m,eliminaIntervallo, modificaIntervallo);
             eliminaIntervallo.IntervalloDaEliminare = m;
             eliminaIntervallo.OdlDellIntervallo = baseOdl_VM;
+            modificaIntervallo.OdlDellIntervallo = baseOdl_VM;
+            modificaIntervallo.IntervalloDaModificare = m;
             return i;
         }
     }
