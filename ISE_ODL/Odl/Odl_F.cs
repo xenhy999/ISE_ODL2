@@ -13,7 +13,7 @@
         }
         public static Odl_VM Create()
         {
-            Odl_M odl_M = new() { Completata=false};
+            Odl_M odl_M = new() { Completata = false };
             return Create(odl_M);
         }
     }

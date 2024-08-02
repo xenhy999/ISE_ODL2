@@ -12,8 +12,8 @@ namespace ISE_ODL.Resoconto
 {
     class Resoconto_VM : BaseBinding
     {
-        private bool mostraCompletate;
         public ObservableCollection<Giorno_VM> ListaDeiGiorni { get; set; } = new ObservableCollection<Giorno_VM>();
+        private bool mostraCompletate;
         public bool MostraCompletate
         {
             get => mostraCompletate;
