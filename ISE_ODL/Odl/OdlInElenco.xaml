@@ -57,38 +57,20 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
         <Style TargetType="DataGridRow" >
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="19"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
-                </Trigger>
-            </Style.Triggers>
+            <Setter Property="Height" Value="35"/>
         </Style>
         <Style TargetType="DataGridCell">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="BorderThickness" Value="0"/>
-
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{StaticResource Palette_3}"/>
-                    <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{StaticResource Grigio}"/>
@@ -160,13 +142,13 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="290">
-                    <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
+                    <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="120"/>
-                            <DataGridTemplateColumn Header="" Width="30" >
+                            <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="150"/>
+                            <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
-                                    <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                    <DataTemplate >
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Padding="0" Margin="0">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -176,11 +158,11 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="100"/>
+                            <DataGridTextColumn Header="Inizio " Binding="{Binding OrarioInizio,Converter={StaticResource DateTimeToHourString}}" Width="75"/>
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ai" Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ai" Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>
@@ -190,10 +172,11 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="" Width="30" >
+                            <DataGridTextColumn Width="40"/>
+                            <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Padding="0">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -203,11 +186,11 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="100" />
+                            <DataGridTextColumn  Header="Fine " Binding="{Binding OrarioFine,Converter={StaticResource DateTimeToHourString}}"  Width="75" />
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="af"  Height="30" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="af"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>

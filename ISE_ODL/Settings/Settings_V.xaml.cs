@@ -34,5 +34,10 @@ namespace ISE_ODL.Settings
         {
             ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
+        }
     }
 }

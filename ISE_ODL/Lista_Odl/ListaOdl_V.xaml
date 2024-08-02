@@ -24,7 +24,7 @@
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="-1">
             <ListBox Background="Transparent" BorderThickness="0" Style="{StaticResource Lista_Principale}" HorizontalAlignment="Stretch" ItemsSource="{Binding Commisioni}" SelectedItem="{Binding OdlSelezionata}"/>
         </ScrollViewer>
         <Grid Grid.Row="1" VerticalAlignment="Center">

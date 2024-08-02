@@ -83,15 +83,17 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="{StaticResource Grigio}" Height="300" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,40"> 
+    <Grid Background="{StaticResource Grigio}" Height="500" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="35"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -104,14 +106,21 @@
         <TextBox Grid.Row="2" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataDelTimer}"/>
         <Button Grid.Row="2" Grid.Column="3" Click="Button_Click_1" Background="Transparent" BorderBrush="Transparent">
         <Button.Content>
-            <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
+            <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
         </Button.Content>
         </Button>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Durata Minima" FontSize="22" />
         <TextBox Grid.Row="3" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataMinimaOdl}"/>
         <Button Grid.Row="3" Grid.Column="3" Click="Button_Click" Background="Transparent" BorderBrush="Transparent">
             <Button.Content>
-                <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
+                <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
+            </Button.Content>
+        </Button>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Passo intervallo" FontSize="22" />
+        <TextBox Grid.Row="4" Grid.Column="2" Width="120" Height="33" Text="{Binding IntervalloInModifica}"/>
+        <Button Grid.Row="4" Grid.Column="3" Click="Button_Click_2" Background="Transparent" BorderBrush="Transparent">
+            <Button.Content>
+                <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
             </Button.Content>
         </Button>
     </Grid>

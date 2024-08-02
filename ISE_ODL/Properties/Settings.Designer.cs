@@ -58,5 +58,17 @@ namespace ISE_ODL.Properties {
                 this["DurataMinimaOdl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00:10:00")]
+        public global::System.TimeSpan IntervalloInModifica {
+            get {
+                return ((global::System.TimeSpan)(this["IntervalloInModifica"]));
+            }
+            set {
+                this["IntervalloInModifica"] = value;
+            }
+        }
     }
 }
