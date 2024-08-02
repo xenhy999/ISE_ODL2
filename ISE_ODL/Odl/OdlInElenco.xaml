@@ -201,13 +201,13 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="" >
-                                <DataGridTemplateColumn.CellTemplate >
+                            <DataGridTemplateColumn Header="" Width="50" >
+                                <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Command="{ Binding EliminaIntervallo}" Width="100" Height="40" Background="Transparent" BorderBrush="Transparent">
+                                        <Button Command="{ Binding EliminaIntervallo}"  Background="Transparent" BorderBrush="Transparent">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <Image Source="{Binding Source={x:Static properties:Resources.cestino}}"/>
+                                                    <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" Width="30" />
                                                 </StackPanel>
                                             </Button.Content>
                                         </Button>

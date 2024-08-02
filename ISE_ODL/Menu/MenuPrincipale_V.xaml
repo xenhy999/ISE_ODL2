@@ -13,7 +13,7 @@
         d:DataContext="{d:DesignInstance Type=menu:Menuprincipale_VM}"
         mc:Ignorable="d"
         ResizeMode="CanResize"
-        Title="ISE ODL Assistant" Height="550" Width="865" MinWidth="865" MinHeight="550"
+        Title="ISE ODL Assistant" Height="550" Width="930" MinWidth="930" MinHeight="550"
         Background="{StaticResource Grigio_Chiaro}">
     <Window.Resources>
         <DataTemplate DataType="{x:Type lista_odl:ListaOdl_VM}">
