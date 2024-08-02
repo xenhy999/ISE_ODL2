@@ -7,8 +7,7 @@ namespace ISE_ODL.Intervallo
         public Intervallo_M IntervalloDaModificare { get; set; }
         public override void Execute(object parameter)
         {
-            string caso = (string)parameter;
-            switch (caso)
+            switch ((string)parameter)
             {
                 case "ai":
                     if (IntervalloDaModificare.OrarioFine - IntervalloDaModificare.OrarioInizio >= ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica)

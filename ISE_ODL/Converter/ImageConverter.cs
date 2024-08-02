@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing.Imaging;
+﻿using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
@@ -28,7 +27,6 @@ namespace ISE_ODL.Converter
             bitmap.EndInit();
             return bitmap;
         }
-
         public object ConvertBack(object value, Type targetType,
             object parameter, CultureInfo culture)
         {

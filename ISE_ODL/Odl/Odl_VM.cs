@@ -2,8 +2,6 @@
 {
     public class Odl_VM : BaseOdl_VM
     {
-        private bool mostraAltro;
-        private bool filtro;
         public Odl_VM(Odl_M odl_M, AggiungiOdl aggiungiOdl, AggiornaOdl aggiornaOdl) : base(odl_M)
         {
             AggiungiOdl = aggiungiOdl;
@@ -14,6 +12,7 @@
         public AggiungiOdl AggiungiOdl { get; set; }
         public AggiornaOdl AggiornaOdl { get; set; }
         public string Id { get => ((Odl_M)Model).Id; set => ((Odl_M)Model).Id = value; }
+        private bool mostraAltro;
         public bool MostraAltro
         {
             get => mostraAltro;
@@ -52,6 +51,7 @@
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.OrdinaLista();
             }
         }
+        private bool filtro;
         public bool Filtro
         {
             get => filtro;

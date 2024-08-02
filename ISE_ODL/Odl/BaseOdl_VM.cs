@@ -56,9 +56,9 @@ namespace ISE_ODL.Odl
                     // Quando spengo un odl controllo la sua durata minima
                     if (Intervalli != null)
                     {
-                    Intervallo_VM? UltimoIntervallo = Intervalli.LastOrDefault();
-                    if (UltimoIntervallo.Durata < ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl)
-                        EliminaIntervallo.Elimina(this, UltimoIntervallo.Model);
+                        Intervallo_VM? UltimoIntervallo = Intervalli.LastOrDefault();
+                        if (UltimoIntervallo.Durata < ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl)
+                            EliminaIntervallo.Elimina(this, UltimoIntervallo.Model);
                     }
                 }
                 OnPropertyChanged(nameof(Stato));

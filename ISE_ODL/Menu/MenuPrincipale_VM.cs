@@ -1,24 +1,23 @@
 ﻿using ISE_ODL.Lista_Odl;
-using ISE_ODL.Odl;
 using ISE_ODL.Resoconto;
 using ISE_ODL.Settings;
 namespace ISE_ODL.Menu
 {
     internal class Menuprincipale_VM : BaseBinding
     {
+        private BaseBinding vistaCorrente;
         public BaseBinding VistaCorrente
         {
             get => vistaCorrente;
             set
             {
                 vistaCorrente = value;
-                if (vistaCorrente== Resoconto_VM) Resoconto_VM.CreaGiorni();
+                if (vistaCorrente == Resoconto_VM) Resoconto_VM.CreaGiorni();
             }
         }
-        public ListaOdl_VM ListaOdl_VM { get;}
-        public Settings_VM Settings_VM { get;}
+        public ListaOdl_VM ListaOdl_VM { get; }
+        public Settings_VM Settings_VM { get; }
         public Resoconto_VM Resoconto_VM { get; }
-
         private bool mostraSettings;
         public bool MostraSettings
         {
@@ -43,8 +42,6 @@ namespace ISE_ODL.Menu
             }
         }
         private bool mostraLista;
-        private BaseBinding vistaCorrente;
-
         public bool MostraLista
         {
             get => mostraLista;
@@ -62,7 +59,7 @@ namespace ISE_ODL.Menu
             Resoconto_VM = resoconto_VM;
             MostraSettings = false;
             MostraResoconto = false;
-            MostraLista = false;
+            MostraLista = true;
         }
     }
 }

@@ -4,7 +4,7 @@
     {
         private readonly Intervallo_M model;
         public Intervallo_M Model => model;
-        public TimeSpan IntervalloModifica = new(0,10,0);
+        public TimeSpan IntervalloModifica = new(0, 10, 0);
         public Intervallo_VM(Intervallo_M mode, EliminaIntervallo eliminaIntervallo, ModificaIntervallo modificaIntervallo)
         {
             model = mode;
@@ -34,15 +34,5 @@
         }
         public TimeSpan Durata => OrarioFine > OrarioInizio ? OrarioFine - OrarioInizio : new TimeSpan(0);
         public DateOnly Giorno { get => model.Giorno; set => model.Giorno = value; }
-        public void ModificaOrarioInizio(bool aggiungi)
-        {
-            if (aggiungi) OrarioInizio += IntervalloModifica;
-            else OrarioInizio -= IntervalloModifica;
-        }
-        public void ModificaOrarioFine(bool aggiungi)
-        {
-            if (aggiungi) OrarioFine += IntervalloModifica;
-            else OrarioFine -= IntervalloModifica;
-        }
     }
 }
