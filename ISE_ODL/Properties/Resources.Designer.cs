@@ -121,6 +121,16 @@ namespace ISE_ODL.Properties {
         }
         
         /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        public static byte[] home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap impo {
@@ -133,9 +143,9 @@ namespace ISE_ODL.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
-        public static byte[] impo_N {
+        public static byte[] impostazioni {
             get {
-                object obj = ResourceManager.GetObject("impo_N", resourceCulture);
+                object obj = ResourceManager.GetObject("impostazioni", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -176,6 +186,16 @@ namespace ISE_ODL.Properties {
         public static byte[] tutte_Odl {
             get {
                 object obj = ResourceManager.GetObject("tutte_Odl", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        public static byte[] vecchia {
+            get {
+                object obj = ResourceManager.GetObject("vecchia", resourceCulture);
                 return ((byte[])(obj));
             }
         }

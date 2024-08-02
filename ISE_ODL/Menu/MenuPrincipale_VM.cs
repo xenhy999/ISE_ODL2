@@ -18,7 +18,8 @@ namespace ISE_ODL.Menu
             set
             {
                 mostraSettings = value;
-                VistaCorrente = value ? Settings_VM : ListaOdl_VM;
+                //VistaCorrente = value ? Settings_VM : ListaOdl_VM;
+                VistaCorrente = Settings_VM;
                 OnPropertyChanged(nameof(VistaCorrente));
             }
         }
@@ -29,9 +30,22 @@ namespace ISE_ODL.Menu
             set
             {
                 mostraResoconto = value;
-                VistaCorrente = value ? Resoconto_VM : ListaOdl_VM;
-                if(value)
+                //VistaCorrente = value ? Resoconto_VM : ListaOdl_VM;
+                VistaCorrente = Resoconto_VM;
+                if (value)
                     Resoconto_VM.CreaGiorni();
+                OnPropertyChanged(nameof(VistaCorrente));
+            }
+        }
+        private bool mostraLista;
+        public bool MostraLista
+        {
+            get => mostraLista;
+            set
+            {
+                mostraLista = value;
+                //VistaCorrente = value ? Resoconto_VM : ListaOdl_VM;
+                VistaCorrente = ListaOdl_VM;
                 OnPropertyChanged(nameof(VistaCorrente));
             }
         }

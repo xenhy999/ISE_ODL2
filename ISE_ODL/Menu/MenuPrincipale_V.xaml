@@ -43,20 +43,29 @@
             <TextBlock Grid.Column="1" Text="ODL ASSISTANT" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="{StaticResource White_Neutral}" Background="{StaticResource Palette_2}" VerticalAlignment="Center"/>
             <Grid Grid.Column="2" HorizontalAlignment="Right">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
-                <CheckBox Grid.Column="1" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                <CheckBox Grid.Column="0" IsChecked="{Binding MostraResoconto}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
                     <CheckBox.Template>
                         <ControlTemplate>
-                            <Image Source="{Binding Source={x:Static properties:Resources.impo_N}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
+                            <Image Source="{Binding Source={x:Static properties:Resources.resoconto}}" Width="43" VerticalAlignment="Center" Visibility="Visible"/>
                         </ControlTemplate>
                     </CheckBox.Template>
                 </CheckBox>
-                <CheckBox Grid.Column="0" IsChecked="{Binding MostraResoconto}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                <CheckBox Grid.Column="1" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
                     <CheckBox.Template>
                         <ControlTemplate>
-                            <Image Source="{Binding Source={x:Static properties:Resources.resoconto}}" Width="60" VerticalAlignment="Center" Visibility="Visible"/>
+                            <Image Source="{Binding Source={x:Static properties:Resources.impostazioni}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+                <CheckBox Grid.Column="2" IsChecked="{Binding MostraLista}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                    <CheckBox.Template>
+                        <ControlTemplate>
+                            <Image Source="{Binding Source={x:Static properties:Resources.home}}" Width="40" VerticalAlignment="Center" Visibility="Visible"/>
                         </ControlTemplate>
                     </CheckBox.Template>
                 </CheckBox>
