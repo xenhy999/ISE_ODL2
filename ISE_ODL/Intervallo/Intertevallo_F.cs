@@ -13,7 +13,7 @@ namespace ISE_ODL.Intervallo
         {
             Intervallo_M m = new()
             {
-                Giorno = DateOnly.FromDateTime(DateTime.Now),
+                Giorno = DateTime.Now,
                 OrarioInizio = DateTime.Now,
                 OrarioCompleto = false
             };
