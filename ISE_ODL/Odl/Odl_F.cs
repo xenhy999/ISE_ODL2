@@ -1,4 +1,6 @@
-﻿namespace ISE_ODL.Odl
+﻿using MongoDB.Bson;
+
+namespace ISE_ODL.Odl
 {
     internal class Odl_F
     {
@@ -13,7 +15,7 @@
         }
         public static Odl_VM Create()
         {
-            Odl_M odl_M = new() { Completata = false };
+            Odl_M odl_M = new() { Completata = false, _id = ObjectId.GenerateNewId() };
             return Create(odl_M);
         }
     }

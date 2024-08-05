@@ -13,7 +13,7 @@
                 if (value)
                 {
                     Stato = false;
-                    DataCompletamento = DateOnly.FromDateTime(DateTime.Now);
+                    DataCompletamento = DateTime.Now;
                 }
                 OnPropertyChanged(nameof(Completata));
                 OnPropertyChanged(nameof(ObjContainer.Menuprincipale_VM.ListaOdl_VM.MostraCompletati));
@@ -30,8 +30,8 @@
         public bool OdlInModifica { get; set; }
         public AggiungiOdl AggiungiOdl { get; set; }
         public AggiornaOdl AggiornaOdl { get; set; }
-        public string Id { get => ((Odl_M)Model).Id; set => ((Odl_M)Model).Id = value; }
-        public DateOnly DataCompletamento { get => ((Odl_M)Model).DataCompletamento; set => ((Odl_M)Model).DataCompletamento = value; }
+        public string Id { get => ((Odl_M)Model).OdlId; set => ((Odl_M)Model).OdlId = value; }
+        public DateTime DataCompletamento { get => ((Odl_M)Model).DataCompletamento; set => ((Odl_M)Model).DataCompletamento = value; }
         private bool mostraAltro;
         public bool MostraAltro
         {

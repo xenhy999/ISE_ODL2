@@ -28,7 +28,7 @@
                     </Grid.RowDefinitions>
                     <CheckBox Grid.Column="0" IsChecked="{Binding Completata}" Style="{StaticResource Completata}"/>
                     <TextBlock  Grid.Column="1" Text="Completato il: " Visibility="{Binding Completata, Converter={StaticResource BoolToVisibility}}"/>
-                    <TextBlock  Grid.Column="2" Text="{Binding DataCompletamento}" Visibility="{Binding Completata, Converter={StaticResource BoolToVisibility}}"/>
+                    <TextBlock  Grid.Column="2" Text="{Binding DataCompletamento, Converter={StaticResource DateTimeToDate}}" Visibility="{Binding Completata, Converter={StaticResource BoolToVisibility}}"/>
                     
                     <TextBlock  Grid.Column="4" Text=" ID: "  />
                     <TextBlock  Grid.Column="5" Text="{Binding Id}" FontWeight="Normal" />
