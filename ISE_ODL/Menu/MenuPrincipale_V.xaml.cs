@@ -20,10 +20,7 @@ namespace ISE_ODL
         {
             Properties.Settings.Default.Save();
             foreach (BaseOdl_VM a in ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni)
-            {
                 a.Stato = false;
-            }
-            //File.WriteAllText(fileName, OdlSerializzate);
             List<BaseOdl_M> OdlDaSerializzare = ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList();
             JsonSerializerOptions? option = new JsonSerializerOptions { WriteIndented = true };
             string OdlSerializzate = JsonSerializer.Serialize(OdlDaSerializzare, option);

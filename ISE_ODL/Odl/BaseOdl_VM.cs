@@ -34,9 +34,7 @@ namespace ISE_ODL.Odl
             {
                 ObservableCollection<Durata_VM> Out = [];
                 foreach (DateOnly g in Intervalli.Select(i => i.Giorno).Distinct())
-                {
                     Out.Add(Durata_F.Create(g, new TimeSpan(Intervalli.Where(c => c.Giorno == g).Select(b => b.Durata).Sum(r => r.Ticks))));
-                }
                 return Out;
             }
         }

@@ -9,15 +9,7 @@ namespace ISE_ODL
 {
     public partial class App : Application
     {
-        //public  IMongoClient client;
-        //public IMongoDatabase database;
-        //const string connectionUri = "mongodb+srv://veronesimatteo2007:6CoPE4CbN6sOgVC0@iseodl.bbf2tvm.mongodb.net/?retryWrites=true&w=majority&appName=IseODL";
-        //public void sadha() { 
-        //    client = new MongoClient(connectionUri);
-        //    var collection = client.GetDatabase("Odl").GetCollection<BsonDocument>("odl");
-        //    collection.InsertOne(document);
-        //}
-        const string connectionUri = "mongodb+srv://veronesimatteo2007:6CoPE4CbN6sOgVC0@iseodl.bbf2tvm.mongodb.net/?retryWrites=true&w=majority&appName=IseODL";
+        private const string connectionUri = "mongodb+srv://veronesimatteo2007:6CoPE4CbN6sOgVC0@iseodl.bbf2tvm.mongodb.net/?retryWrites=true&w=majority&appName=IseODL";
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             ObjContainer.Init();
@@ -27,19 +19,9 @@ namespace ISE_ODL
         }
         private void LoadFromFile()
         {
-            
-
-            //string OdlDaDeserializzate = File.ReadAllText(MenuPrincipale_V.fileName);
-
-
             MongoClient client = new MongoClient(connectionUri);
             IMongoCollection<Odl_M> collection = client.GetDatabase("Odl").GetCollection<Odl_M>("odl");
-            //var result = collection.Aggregate<Odl_M>().Project("{ _id : 0 }").ToList();
-
-           // List<Odl_M> odl_Ms = collection.Find(new BsonDocument(), new FindOptions<User>() { Projection = "{ _id : 0 }" }).ToList();
             List<Odl_M> odl_Ms = collection.Find(new BsonDocument()).ToList();
-
-            //List<Odl_M> ListaOdlDeserializzate = JsonSerializer.Deserialize<List<Odl_M>>(a, new JsonSerializerOptions { WriteIndented = true });
             foreach (Odl_M odl_M in odl_Ms)
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(Odl_F.Create(odl_M));
         }
