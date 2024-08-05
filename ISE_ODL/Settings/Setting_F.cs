@@ -2,6 +2,7 @@
 {
     internal class Setting_F
     {
+
         static public Settings_VM Create() => new();
     }
 }
