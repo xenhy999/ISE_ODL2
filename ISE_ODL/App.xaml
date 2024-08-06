@@ -32,6 +32,8 @@
         <Image Source="{Binding Source={x:Static properties:Resources.home}}" x:Key="home" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}" x:Key="aggiungi" x:Shared="false"/>
         <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}" x:Key="sottrai" x:Shared="false"/>
+        <Image Source="{Binding Source={x:Static properties:Resources.stampaReport}}" x:Key="stampaReport" x:Shared="false"/>
+
 
 
 

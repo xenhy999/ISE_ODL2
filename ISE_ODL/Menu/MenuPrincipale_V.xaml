@@ -48,21 +48,21 @@
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
-                <CheckBox Grid.Column="1" IsChecked="{Binding MostraResoconto}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                <CheckBox Grid.Column="1" IsChecked="{Binding MostraResoconto}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0" ToolTip="Resoconto">
                     <CheckBox.Template>
                         <ControlTemplate>
                             <Image Source="{Binding Source={x:Static properties:Resources.reso_new}}" Width="30" VerticalAlignment="Center" Visibility="Visible"/>
                         </ControlTemplate>
                     </CheckBox.Template>
                 </CheckBox>
-                <CheckBox Grid.Column="2" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                <CheckBox Grid.Column="2" IsChecked="{Binding MostraSettings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0" ToolTip="Impostazioni">
                     <CheckBox.Template>
                         <ControlTemplate>
                             <Image Source="{Binding Source={x:Static properties:Resources.impostazioni}}" Width="30" VerticalAlignment="Center" Visibility="Visible"/>
                         </ControlTemplate>
                     </CheckBox.Template>
                 </CheckBox>
-                <CheckBox Grid.Column="0" IsChecked="{Binding MostraLista}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0">
+                <CheckBox Grid.Column="0" IsChecked="{Binding MostraLista}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="0,0,15,0" ToolTip="Home">
                     <CheckBox.Template>
                         <ControlTemplate>
                             <Image Source="{Binding Source={x:Static properties:Resources.home}}" Width="30" VerticalAlignment="Center" Visibility="Visible"/>

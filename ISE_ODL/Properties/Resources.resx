@@ -163,6 +163,9 @@
   <data name="sottrai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-subtract-52.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stampaReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-stampa-96.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tutte_Odl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ordine-96.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

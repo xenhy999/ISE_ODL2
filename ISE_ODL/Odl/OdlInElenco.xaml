@@ -129,7 +129,7 @@
                 <TextBlock FontWeight="Bold" Text=" Attività: "/>
                 <TextBlock Text="{Binding Attivita}"/>
             </StackPanel>
-            <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" />
+            <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" ToolTip="Attiva/Disattiva ODL" />
             <StackPanel Grid.Column="5" Margin="0">
                 <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari" IsEnabled="{Binding OrarioVisibile}"/>
             </StackPanel>
@@ -203,7 +203,7 @@
                             <DataGridTemplateColumn Header="" Width="50" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Command="{ Binding EliminaIntervallo}"  Background="Transparent" BorderBrush="Transparent">
+                                        <Button Command="{ Binding EliminaIntervallo}"  Background="Transparent" BorderBrush="Transparent" ToolTip="Elimina intervallo">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" Width="30" />

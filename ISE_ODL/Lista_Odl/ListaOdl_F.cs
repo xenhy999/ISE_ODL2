@@ -9,6 +9,6 @@ namespace ISE_ODL.Lista_Odl
 {
     internal class ListaOdl_F
     {
-       static public ListaOdl_VM Create() => new( new Odl.CreaOdl(), new Odl.EliminaOdl(), new Odl.ModificaOdl());
+       static public ListaOdl_VM Create() => new( new Odl.CreaOdl(), new Odl.EliminaOdl(), new Odl.ModificaOdl(), new Report.ReportOdl());
     }
 }

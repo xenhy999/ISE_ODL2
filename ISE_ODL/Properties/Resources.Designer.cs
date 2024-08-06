@@ -213,6 +213,16 @@ namespace ISE_ODL.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Byte[].
         /// </summary>
+        public static byte[] stampaReport {
+            get {
+                object obj = ResourceManager.GetObject("stampaReport", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
         public static byte[] tutte_Odl {
             get {
                 object obj = ResourceManager.GetObject("tutte_Odl", resourceCulture);
