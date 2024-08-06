@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
-
 namespace ISE_ODL.Converter
 {
     [ValueConversion(typeof(System.Drawing.Image), typeof(System.Windows.Media.ImageSource))]

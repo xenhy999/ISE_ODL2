@@ -1,6 +1,5 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
-
 namespace ISE_ODL.Converter
 {
     class DateTimeToHourString : IValueConverter

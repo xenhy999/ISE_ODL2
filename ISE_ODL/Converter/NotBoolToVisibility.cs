@@ -1,7 +1,6 @@
 ﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-
 namespace ISE_ODL.Converter
 {
     internal class NotBoolToVisibility : IValueConverter

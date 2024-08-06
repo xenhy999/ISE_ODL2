@@ -1,6 +1,5 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
-
 namespace ISE_ODL.Converter
 {
     internal class DateToString : IValueConverter
@@ -11,9 +10,7 @@ namespace ISE_ODL.Converter
             string[]? valori = value.ToString()?.Split('/');
             List<int> valoriNumerici = new List<int>();
             foreach (string s in valori)
-            {
                 valoriNumerici.Add(int.Parse(s));
-            }
             return new DateTime(valoriNumerici[2], valoriNumerici[1], valoriNumerici[0]);
         }
     }
