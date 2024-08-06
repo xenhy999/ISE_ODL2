@@ -1,9 +1,14 @@
 ﻿using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Shapes;
+using System.Windows.Xps.Packaging;
 using GroupDocs.Conversion;
 using ISE_ODL.Intervallo;
 using ISE_ODL.Odl;
 using ISE_ODL.Resoconto.Giorno;
+using Microsoft.Win32;
 namespace ISE_ODL.Report
 {
     public class ReportOdl : BaseCommand
@@ -31,8 +36,27 @@ namespace ISE_ODL.Report
                     ReportFinale.Add(SingoloGiorno);
                 }
             }
-            File.WriteAllLines(fileName, ReportFinale);
-            FluentConverter.Load(fileName).ConvertTo(fileNamePdf).Convert();
+
+
+
+            //PrintDialog pDialog = new PrintDialog();
+            //pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+            //pDialog.UserPageRangeEnabled = true;
+            //pDialog.ShowDialog();
+
+            //XpsDocument xpsDocument = new XpsDocument(fileNamePdf, FileAccess.ReadWrite);
+            //FixedDocumentSequence fixedDocSeq = xpsDocument.GetFixedDocumentSequence();
+            //pDialog.PrintDocument(fixedDocSeq.DocumentPaginator, "Test print job");
+            SaveFileDialog Esplora = new()
+            {
+                Filter = "Text (*.txt)|*.txt",
+                InitialDirectory = @"C:\",
+                FilterIndex = 1
+            };
+            Esplora.ShowDialog();
+            string FileName = Esplora.FileName;
+            File.WriteAllLines(FileName, ReportFinale);
+            //FluentConverter.Load(FileName).ConvertTo(fileNamePdf).Convert();
             MessageBox.Show("Report creato con successo", "Report", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
