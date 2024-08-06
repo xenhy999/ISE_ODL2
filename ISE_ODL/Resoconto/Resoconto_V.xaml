@@ -21,6 +21,6 @@
         <ScrollViewer Grid.Row="0" >
         <ListBox Style="{StaticResource Lista_Principale}" ItemsSource="{Binding ListaDeiGiorni}" Background="{StaticResource Palette_1}" BorderThickness="0" Height="Auto"></ListBox>
         </ScrollViewer>
-        <CheckBox Grid.Row="1" IsChecked="{Binding MostraCompletate}" Style="{StaticResource filtro_menu}"/>
+        <CheckBox Grid.Row="1" IsChecked="{Binding MostraCompletate}" Style="{StaticResource filtro_menu}" ToolTip="Mostra/Nascondi completati"/>
     </Grid>
 </UserControl>
