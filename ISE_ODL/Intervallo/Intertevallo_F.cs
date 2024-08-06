@@ -11,24 +11,23 @@ namespace ISE_ODL.Intervallo
     {
         public static Intervallo_M StartNew()
         {
-            Intervallo_M m = new()
+            return new Intervallo_M
             {
                 Giorno = DateTime.Now,
                 OrarioInizio = DateTime.Now,
                 OrarioCompleto = false
             };
-            return m;
         }
-        public static Intervallo_VM Create(Intervallo_M m, BaseOdl_VM baseOdl_VM)
+        public static Intervallo_VM Create(Intervallo_M intervallo_M, BaseOdl_VM baseOdl_VM)
         {
             EliminaIntervallo eliminaIntervallo = new EliminaIntervallo();
             ModificaIntervallo modificaIntervallo = new();
-            Intervallo_VM i = new Intervallo_VM(m,eliminaIntervallo, modificaIntervallo);
-            eliminaIntervallo.IntervalloDaEliminare = m;
+            Intervallo_VM intervallo_VM = new(intervallo_M, eliminaIntervallo, modificaIntervallo);
+            eliminaIntervallo.IntervalloDaEliminare = intervallo_M;
             eliminaIntervallo.OdlDellIntervallo = baseOdl_VM;
             modificaIntervallo.OdlDellIntervallo = baseOdl_VM;
-            modificaIntervallo.IntervalloDaModificare = m;
-            return i;
+            modificaIntervallo.IntervalloDaModificare = intervallo_M;
+            return intervallo_VM;
         }
     }
 }

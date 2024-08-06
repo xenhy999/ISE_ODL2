@@ -1,12 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 using ISE_ODL.Odl;
 using ISE_ODL.Report;
-//using ISE_ODL.Report;
 namespace ISE_ODL.Lista_Odl
 {
-    internal class ListaOdl_VM:BaseBinding
+    internal class ListaOdl_VM : BaseBinding
     {
-        public ListaOdl_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl,ReportOdl reportOdl)
+        public ListaOdl_VM(CreaOdl definisciOdl, EliminaOdl eliminaOdl, ModificaOdl modificaOdl, ReportOdl reportOdl)
         {
             DefinisciOdl = definisciOdl;
             EliminaOdl = eliminaOdl;
@@ -51,6 +50,5 @@ namespace ISE_ODL.Lista_Odl
             Commisioni = new ObservableCollection<BaseOdl_VM>(Commisioni.OrderBy(c => c.Completata));
             OnPropertyChanged(nameof(Commisioni));
         }
-        
     }
 }

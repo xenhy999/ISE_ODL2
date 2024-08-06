@@ -6,7 +6,7 @@ namespace ISE_ODL.Odl
     public class BaseOdl_M
     {
         public string Attivita { get; set; }
-        public List<Intervallo_M> Intervalli { get; set; } = new List<Intervallo_M>();
+        public List<Intervallo_M> Intervalli { get; set; } = [];
         private bool stato;
         public bool Stato
         {

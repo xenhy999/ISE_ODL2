@@ -5,9 +5,6 @@ namespace ISE_ODL.Odl
 {
     public class Odl_M : BaseOdl_M
     {
-        //[BsonRepresentation(BsonType.ObjectId)]
-        //public string id { get; set; }
-      
         public Object _id { get; set; } = ObjectId.GenerateNewId();
         public string OdlId { get; set; }
         public string Cliente { get; set; }

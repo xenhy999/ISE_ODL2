@@ -23,7 +23,7 @@ namespace ISE_ODL.Resoconto.Giorno
                 OnPropertyChanged(nameof(DataOdierna));
             }
         }
-        public Dictionary<Odl_VM, TimeSpan> OdlLavorati { get; set; } = new Dictionary<Odl_VM, TimeSpan>();
+        public Dictionary<Odl_VM, TimeSpan> OdlLavorati { get; set; } = [];
         public bool DataOdierna { get; set; }
     }
 }

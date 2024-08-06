@@ -6,7 +6,7 @@ namespace ISE_ODL.Resoconto
 {
     class Resoconto_VM : BaseBinding
     {
-        public ObservableCollection<Giorno_VM> ListaDeiGiorni { get; set; } = new ObservableCollection<Giorno_VM>();
+        public ObservableCollection<Giorno_VM> ListaDeiGiorni { get; set; }
         private bool mostraCompletate;
         public bool MostraCompletate
         {
@@ -23,8 +23,7 @@ namespace ISE_ODL.Resoconto
             IEnumerable<Odl_VM> odlAttivi;
             if (ObjContainer.Menuprincipale_VM != null)
             {
-                if (MostraCompletate) odlAttivi = ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(odl => odl is Odl_VM).Cast<Odl_VM>();
-                else odlAttivi = ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(odl => odl.Completata == false && odl is Odl_VM).Cast<Odl_VM>();
+                odlAttivi = MostraCompletate ? ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(odl => odl is Odl_VM).Cast<Odl_VM>() : ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(odl => !odl.Completata && odl is Odl_VM).Cast<Odl_VM>();
                 List<DateOnly> tuttiGiorni = odlAttivi.Select(o => o.Durate).SelectMany(x => x).Select(d => d.Data).Distinct().ToList();
                 foreach (DateOnly g in tuttiGiorni)
                 {

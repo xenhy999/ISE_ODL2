@@ -245,6 +245,5 @@
                 </DataGrid>
             </Grid>
         </StackPanel>
-
     </Grid>
 </UserControl>

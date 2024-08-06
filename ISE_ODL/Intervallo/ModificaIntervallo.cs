@@ -23,6 +23,8 @@ namespace ISE_ODL.Intervallo
                     if (IntervalloDaModificare.OrarioFine - IntervalloDaModificare.OrarioInizio >= ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica)
                         IntervalloDaModificare.OrarioFine -= ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica;
                     break;
+                default:
+                    break;
             }
             OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Intervalli));
             OdlDellIntervallo.OnPropertyChanged(nameof(OdlDellIntervallo.Durate));
