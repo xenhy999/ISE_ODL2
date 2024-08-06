@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
+using GroupDocs.Conversion;
 using ISE_ODL.Intervallo;
 using ISE_ODL.Odl;
 using ISE_ODL.Resoconto.Giorno;
@@ -31,6 +32,7 @@ namespace ISE_ODL.Report
                 }
             }
             File.WriteAllLines(fileName, ReportFinale);
+            FluentConverter.Load(fileName).ConvertTo(fileNamePdf).Convert();
             MessageBox.Show("Report creato con successo", "Report", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
