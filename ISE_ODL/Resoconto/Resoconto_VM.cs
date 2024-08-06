@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ISE_ODL.Intervallo.Durata;
+﻿using System.Collections.ObjectModel;
 using ISE_ODL.Odl;
 using ISE_ODL.Resoconto.Giorno;
 
