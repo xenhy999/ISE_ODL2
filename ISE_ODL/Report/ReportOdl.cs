@@ -1,10 +1,5 @@
 ﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Shapes;
-using System.Windows.Xps.Packaging;
-using GroupDocs.Conversion;
 using ISE_ODL.Intervallo;
 using ISE_ODL.Odl;
 using ISE_ODL.Resoconto.Giorno;
