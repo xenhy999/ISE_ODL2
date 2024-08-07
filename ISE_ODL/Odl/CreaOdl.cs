@@ -1,6 +1,6 @@
 ﻿namespace ISE_ODL.Odl
 {
-    internal class CreaOdl : BaseCommand
+    public class CreaOdl : BaseCommand
     {
         public override void Execute(object parameter)
         {

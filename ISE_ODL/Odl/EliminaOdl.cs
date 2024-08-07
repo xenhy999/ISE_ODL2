@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 namespace ISE_ODL.Odl
 {
-    internal class EliminaOdl : BaseCommand
+    public class EliminaOdl : BaseCommand
     {
         private const string MessageBoxText = "Vuoi davvero eliminare questa ODL";
         private const string Caption = "Eliminazione ODL";

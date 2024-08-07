@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
-
-namespace ISE_ODL.Lista_Odl
+﻿namespace ISE_ODL.Lista_Odl
 {
-    internal class ListaOdl_F
+    /// <summary>
+    /// La classe statica ListaOdl_F fornisce un metodo per creare una nuova istanza di ListaOdl_VM.
+    /// Si tratta della factory degli elementi ListOdl_VM
+    /// </summary>
+    public class ListaOdl_F
     {
-       static public ListaOdl_VM Create() => new( new Odl.CreaOdl(), new Odl.EliminaOdl(), new Odl.ModificaOdl(), new Report.ReportOdl());
+        /// <summary>
+        /// Crea una nuova istanza di ListaOdl_VM utilizzando i comandi forniti per creare, eliminare e modificare Odl, 
+        /// e per generare report di Odl.
+        /// </summary>
+        /// <returns>
+        /// Una nuova istanza di ListaOdl_VM configurata con i comandi specificati.
+        /// </returns>
+        public static ListaOdl_VM Create() => new(new Odl.CreaOdl(), new Odl.EliminaOdl(), new Odl.ModificaOdl(), new Report.ReportOdl());
     }
 }

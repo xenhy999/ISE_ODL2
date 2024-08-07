@@ -1,6 +1,6 @@
 ﻿namespace ISE_ODL.Odl
 {
-    internal class ModificaOdl : BaseCommand
+    public class ModificaOdl : BaseCommand
     {
         public override bool CanExecute(object parameter) => ObjContainer.Menuprincipale_VM.ListaOdl_VM.OdlSelezionata != null;
         public override void Execute(object parameter)
