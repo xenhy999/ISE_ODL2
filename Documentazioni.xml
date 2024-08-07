@@ -500,6 +500,21 @@
             </summary>
             <param name="parameter">Il parametro che indica l'operazione da eseguire, che può essere "ai" (aumenta inizio), "ri" (riduci inizio), "af" (aumenta fine) o "rf" (riduci fine).</param>
         </member>
+        <member name="T:ISE_ODL.Lista_Odl.ListaOdl_F">
+            <summary>
+            La classe statica ListaOdl_F fornisce un metodo per creare una nuova istanza di ListaOdl_VM.
+            Si tratta della factory degli elementi ListOdl_VM
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Lista_Odl.ListaOdl_F.Create">
+            <summary>
+            Crea una nuova istanza di ListaOdl_VM utilizzando i comandi forniti per creare, eliminare e modificare Odl, 
+            e per generare report di Odl.
+            </summary>
+            <returns>
+            Una nuova istanza di ListaOdl_VM configurata con i comandi specificati.
+            </returns>
+        </member>
         <member name="T:ISE_ODL.Lista_Odl.ListaOdl_V">
             <summary>
             Logica di interazione per ListaOdl_V.xaml
@@ -511,6 +526,63 @@
         <member name="M:ISE_ODL.Lista_Odl.ListaOdl_V.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Lista_Odl.ListaOdl_VM">
+            <summary>
+            La classe ListaOdl_VM rappresenta il ViewModel per la gestione di una lista di Odl (Ordini di Lavoro).
+            Fornisce proprietà e metodi per definire, eliminare, modificare e generare report per gli Odl.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Lista_Odl.ListaOdl_VM.#ctor(ISE_ODL.Odl.CreaOdl,ISE_ODL.Odl.EliminaOdl,ISE_ODL.Odl.ModificaOdl,ISE_ODL.Report.ReportOdl)">
+            <summary>
+            Costruttore di una istanza di ListaOdl_VM con i comandi specificati per creare, eliminare e modificare Odl,
+            e per generare report di Odl.
+            </summary>
+            <param name="definisciOdl">Istanza per definire un nuovo Odl.</param>
+            <param name="eliminaOdl">Istanza per eliminare un Odl esistente.</param>
+            <param name="modificaOdl">Istanza per modificare un Odl esistente.</param>
+            <param name="reportOdl">Istanza per generare report sugli Odl.</param>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.DefinisciOdl">
+            <summary>
+            Proprietà che contiene l'istanza per definire un nuovo Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.EliminaOdl">
+            <summary>
+            Proprietà che contiene l'istanza per eliminare un Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.ModificaOdl">
+            <summary>
+            Proprietà che contiene l'istanza per modificare un Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.ReportOdl">
+            <summary>
+            Proprietà che contiene l'istanza per definire un nuovo report di Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.Commisioni">
+            <summary>
+            Proprietà che indica una collezione osservabile di oggetti BaseOdl_VM che rappresentano gli Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.OdlSelezionata">
+            <summary>
+            Proprieta che contiene l'Odl selezionato attualmente. Notifica i comandi di eliminazione e modifica in base all'Odl selezionato.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Lista_Odl.ListaOdl_VM.MostraCompletati">
+            <summary>
+            Proprieta che indica se devono essere mostrati solo gli Odl non completati.
+            Aggiorna il filtro degli Odl e notifica la modifica della proprietà.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Lista_Odl.ListaOdl_VM.OrdinaLista">
+            <summary>
+            Metodo che ordina la lista di Odl in base al loro stato di completamento.
             </summary>
         </member>
         <member name="T:ISE_ODL.MenuPrincipale_V">

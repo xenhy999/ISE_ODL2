@@ -8,7 +8,7 @@ using ISE_ODL.Odl;
 
 namespace ISE_ODL.Resoconto.Giorno
 {
-    internal class Giorno_VM:BaseBinding
+    public class Giorno_VM:BaseBinding
     {
         private DateOnly data;
         public Giorno_VM(DateOnly data) => Data = data;

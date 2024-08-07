@@ -4,7 +4,7 @@ using ISE_ODL.Resoconto.Giorno;
 
 namespace ISE_ODL.Resoconto
 {
-    class Resoconto_VM : BaseBinding
+    public class Resoconto_VM : BaseBinding
     {
         public ObservableCollection<Giorno_VM> ListaDeiGiorni { get; set; }
         private bool mostraCompletate;

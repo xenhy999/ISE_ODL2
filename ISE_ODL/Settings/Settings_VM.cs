@@ -1,6 +1,6 @@
 ﻿namespace ISE_ODL.Settings
 {
-    internal class Settings_VM : BaseBinding
+    public class Settings_VM : BaseBinding
     {
         public bool TimerAbilitato { get => Properties.Settings.Default.TimerAttivo; set => Properties.Settings.Default["TimerAttivo"] = value; }
         public TimeSpan DurataDelTimer
