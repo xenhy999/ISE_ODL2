@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace ISE_ODL.Resoconto.Giorno
 {
     /// <summary>
-    /// Logica di interazione per Giorno_V.xaml
+    /// Classe parziale per la vista Giorno_V, che eredita da UserControl.
+    /// Rappresenta la vista per Giorno_VM.
     /// </summary>
     public partial class Giorno_V : UserControl
     {
+        /// <summary>
+        /// Costruttore della classe Giorno_V.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public Giorno_V()
         {
             InitializeComponent();

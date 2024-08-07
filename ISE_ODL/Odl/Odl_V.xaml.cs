@@ -15,12 +15,21 @@ using System.Windows.Shapes;
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// Logica di interazione per Odl_V.xaml
+    /// Classe parziale per la vista Odl_V, che eredita da UserControl.
+    /// Rappresenta la vista per Odl_VM.
     /// </summary>
     public partial class Odl_V : Window
     {
+        /// <summary>
+        /// Costruttore della classe Odl_V.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public Odl_V() => InitializeComponent();
-
+        /// <summary>
+        /// Gestisce il click del bottone per chiudere la finestra.
+        /// </summary>
+        /// <param name="sender">L'oggetto che ha generato l'evento.</param>
+        /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click(object sender, RoutedEventArgs e) => Close();
     }
 }

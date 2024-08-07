@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// Logica di interazione per OdlVuoto.xaml
+    /// Classe parziale per la vista OdlVuoto, che eredita da UserControl.
+    /// Rappresenta la vista per BaseOdl_VM.
     /// </summary>
     public partial class OdlVuoto : UserControl
     {
+        /// <summary>
+        /// Costruttore della classe OdlVuoto.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public OdlVuoto()
         {
             InitializeComponent();

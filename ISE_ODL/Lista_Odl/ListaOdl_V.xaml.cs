@@ -16,10 +16,15 @@ using System.Windows.Shapes;
 namespace ISE_ODL.Lista_Odl
 {
     /// <summary>
-    /// Logica di interazione per ListaOdl_V.xaml
+    /// Classe parziale per la vista ListaOdl_V, che eredita da UserControl.
+    /// Rappresenta la vista per Lista_VM.
     /// </summary>
     public partial class ListaOdl_V : UserControl
     {
+        /// <summary>
+        /// Costruttore della classe ListaOdl_V.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public ListaOdl_V()
         {
             InitializeComponent();

@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace ISE_ODL.Resoconto
 {
     /// <summary>
-    /// Logica di interazione per Resoconto_V.xaml
+    /// Classe parziale per la vista Resoconto_V, che eredita da UserControl.
+    /// Rappresenta la vista per Resoconto_VM.
     /// </summary>
     public partial class Resoconto_V : UserControl
     {
+        /// <summary>
+        /// Costruttore della classe Resoconto_V.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public Resoconto_V()
         {
             InitializeComponent();

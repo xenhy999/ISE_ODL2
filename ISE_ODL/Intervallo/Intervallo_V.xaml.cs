@@ -16,10 +16,15 @@ using System.Windows.Shapes;
 namespace ISE_ODL.Intervallo
 {
     /// <summary>
-    /// Logica di interazione per Intervallo_V.xaml
+    /// Classe parziale per la vista Intervallo_V, che eredita da UserControl.
+    /// Rappresenta la vista per Intervallo_VM.
     /// </summary>
     public partial class Intervallo_V : UserControl
     {
+        /// <summary>
+        /// Costruttore della classe Intervallo_V.
+        /// Inizializza i componenti della vista.
+        /// </summary>
         public Intervallo_V()
         {
             InitializeComponent();
