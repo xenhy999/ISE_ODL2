@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Intervallo.Durata
 {
     /// <summary>
-    /// La classe Durata_VM rappresenta un modello di visualizzazione (ViewModel) per la durata,
+    /// La classe Durata_VM rappresenta il ViewModel per la durata,
     /// derivata dalla classe BaseBinding.
     /// </summary>
     public class Durata_VM : BaseBinding

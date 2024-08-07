@@ -1,6 +1,9 @@
 ﻿using ISE_ODL.Odl;
 namespace ISE_ODL.Intervallo
 {
+    /// <summary>
+    /// La classe ModificaIntervallo rappresenta un comando per modificare un intervallo.
+    /// </summary>
     public class ModificaIntervallo : BaseCommand
     {
         /// <summary>

@@ -1,8 +1,8 @@
 ﻿namespace ISE_ODL.Lista_Odl
 {
     /// <summary>
-    /// La classe statica ListaOdl_F fornisce un metodo per creare una nuova istanza di ListaOdl_VM.
-    /// Si tratta della factory degli elementi ListOdl_VM
+    /// La classe ListaOdl_F fornisce un metodo per creare una nuova istanza di ListaOdl_VM.
+    /// Si tratta della factory degli elementi ListaOdl_VM
     /// </summary>
     public class ListaOdl_F
     {

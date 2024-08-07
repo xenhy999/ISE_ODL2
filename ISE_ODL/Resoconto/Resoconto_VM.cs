@@ -4,7 +4,7 @@ using ISE_ODL.Resoconto.Giorno;
 namespace ISE_ODL.Resoconto
 {
     /// <summary>
-    /// La classe rappresenta il ViewModel per la visualizzazione del riepilogo dei giorni.
+    /// La classe Resoconto_VM rappresenta il ViewModel per la visualizzazione del riepilogo dei giorni.
     /// </summary>
     public class Resoconto_VM : BaseBinding
     {

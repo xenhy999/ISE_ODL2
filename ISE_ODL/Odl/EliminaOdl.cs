@@ -2,7 +2,7 @@
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe rappresenta un comando per eliminare un ordine di lavoro (ODL).
+    /// La classe EliminaOdl rappresenta un comando per eliminare un ordine di lavoro (Odl).
     /// </summary>
     public class EliminaOdl : BaseCommand
     {

@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Settings
 {
     /// <summary>
-    /// La classe fornisce metodi statici per la creazione di istanze di Settings_VM.
+    /// La classe Setting_F fornisce metodi statici per la creazione di istanze di Settings_VM.
     /// </summary>
     public class Setting_F
     {

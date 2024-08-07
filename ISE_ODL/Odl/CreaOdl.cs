@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe rappresenta un comando per creare un nuovo ordine di lavoro (Odl).
+    /// La classe CreaOdl rappresenta un comando per creare un nuovo ordine di lavoro (Odl).
     /// </summary>
     public class CreaOdl : BaseCommand
     {

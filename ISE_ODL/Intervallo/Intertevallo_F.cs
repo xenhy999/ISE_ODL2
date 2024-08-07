@@ -3,7 +3,7 @@
 namespace ISE_ODL.Intervallo
 {
     /// <summary>
-    /// La classe statica Intertevallo_F fornisce metodi per la creazione e gestione degli intervalli di tempo.
+    /// La classe Intertevallo_F fornisce metodi per la creazione e gestione degli intervalli di tempo.
     /// Si tratta della factory di Intervallo_VM
     /// </summary>
     public class Intertevallo_F

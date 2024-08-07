@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Intervallo
 {
     /// <summary>
-    /// La classe Intervallo_M rappresenta il MOdel un intervallo di tempo con dettagli su inizio, fine e validità.
+    /// La classe Intervallo_M rappresenta il Model un intervallo di tempo con dettagli su inizio, fine e validità.
     /// </summary>
     public class Intervallo_M
     {

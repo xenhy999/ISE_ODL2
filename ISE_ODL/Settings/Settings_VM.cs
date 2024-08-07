@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Settings
 {
     /// <summary>
-    /// La classe gestisce le impostazioni dell'applicazione.
+    /// La classe Settings_VM gestisce le impostazioni dell'applicazione.
     /// </summary>
     public class Settings_VM : BaseBinding
     {

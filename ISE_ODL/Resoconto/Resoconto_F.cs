@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Resoconto
 {
     /// <summary>
-    /// La classe  fornisce metodi statici per la creazione di istanze di Resoconto_VM.
+    /// La classe Resoconto_F fornisce metodi statici per la creazione di istanze di Resoconto_VM.
     /// </summary>
     public class Resoconto_F
     {

@@ -4,8 +4,8 @@ using MongoDB.Bson;
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe rappresenta un modello di dati per un ordine di lavoro (ODL).
-    /// Eredita da "BaseOdl_M e aggiunge proprietà specifiche per la gestione degli ODL.
+    /// La classe Odl_M rappresenta un modello di dati per un ordine di lavoro (Odl).
+    /// Eredita da "BaseOdl_M e aggiunge proprietà specifiche per la gestione degli Odl.
     /// </summary>
     public class Odl_M : BaseOdl_M
     {

@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Resoconto.Giorno
 {
     /// <summary>
-    /// La classe è una factory per la creazione di istanze di Giorno_VM.
+    /// La classe Giorno_F è una factory per la creazione di istanze di Giorno_VM.
     /// </summary>
     public class Giorno_F
     {

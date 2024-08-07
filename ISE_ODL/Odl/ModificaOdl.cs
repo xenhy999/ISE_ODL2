@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe rappresenta un comando per modificare un ordine di lavoro (ODL) selezionato.
+    /// La classe ModificaOdl rappresenta un comando per modificare un ordine di lavoro (Odl) selezionato.
     /// </summary>
     public class ModificaOdl : BaseCommand
     {

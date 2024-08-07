@@ -2,7 +2,7 @@
 namespace ISE_ODL.Resoconto.Giorno
 {
     /// <summary>
-    /// La classe rappresenta il ViewModel per una data specifica.
+    /// La classe Giorno_VM rappresenta il ViewModel per una data specifica.
     /// </summary>
     public class Giorno_VM : BaseBinding
     {

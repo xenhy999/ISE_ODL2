@@ -5,8 +5,8 @@ using ISE_ODL.Settings;
 namespace ISE_ODL.Menu
 {
     /// <summary>
-    /// La classe statica MenuPrincipale_F fornisce un metodo per creare una nuova istanza di Menuprincipale_VM.
-    /// Si tratta della factori per MenuPrincipale_VM
+    /// La classe MenuPrincipale_F fornisce un metodo per creare una nuova istanza di Menuprincipale_VM.
+    /// Si tratta della factori per Menuprincipale_VM
     /// </summary>
     public class MenuPrincipale_F
     {

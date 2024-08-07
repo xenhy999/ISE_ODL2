@@ -1,10 +1,10 @@
 ﻿namespace ISE_ODL.Intervallo.Durata
 {
     /// <summary>
-    /// La classe statica Durata_F fornisce un metodo per creare istanze di Durata_VM.
+    /// La classe Durata_F fornisce un metodo per creare istanze di Durata_VM.
     /// Si tratta della factory di Durata_VM
     /// </summary>
-    public static class Durata_F
+    public class Durata_F
     {
         /// <summary>
         /// Crea una nuova istanza di Durata_VM con la data e le ore specificate.

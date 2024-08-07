@@ -1,14 +1,14 @@
 ﻿namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe il ViewModel per un ordine di lavoro (ODL).
-    /// Eredita da BaseOdl_VM e aggiunge funzionalità specifiche per la gestione e l'interazione con gli ODL.
+    /// La classe Odl_VM rappresenta il ViewModel per un ordine di lavoro (Odl).
+    /// Eredita da BaseOdl_VM e aggiunge funzionalità specifiche per la gestione e l'interazione con gli Odl.
     /// </summary>
     public class Odl_VM : BaseOdl_VM
     {
         /// <summary>
         /// Proprietà che indica lo stato di completamento dell'ODL.
-        /// Se impostato su <c>true</c>, l'ODL è considerato completato. Aggiorna anche il filtro e lo stato degli ODL.
+        /// Se impostato su <c>true</c>, l'ODL è considerato completato. Aggiorna anche il filtro e lo stato degli Odl.
         /// </summary>
         public override bool Completata
         {

@@ -4,7 +4,7 @@ using Timer = System.Timers.Timer;
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe gestisce un timer per monitorare il tempo trascorso su un'attività.
+    /// La classe OdlTimer gestisce un timer per monitorare il tempo trascorso su un'attività.
     /// Fornisce metodi per avviare, resettare e fermare il timer, nonché per mostrare notifiche quando il tempo trascorso supera una certa soglia.
     /// </summary>
     public class OdlTimer

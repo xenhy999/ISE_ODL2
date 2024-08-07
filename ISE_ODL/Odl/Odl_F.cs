@@ -3,7 +3,7 @@
 namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe fornisce metodi statici per creare istanze di Odl_VM/>.
+    /// La classe Odl_F fornisce metodi statici per creare istanze di Odl_VM.
     /// </summary>
     public class Odl_F
     {
