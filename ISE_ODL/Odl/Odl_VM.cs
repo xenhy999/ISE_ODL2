@@ -1,7 +1,7 @@
 ﻿namespace ISE_ODL.Odl
 {
     /// <summary>
-    /// La classe rappresenta la vista del modello di dati per un ordine di lavoro (ODL).
+    /// La classe il ViewModel per un ordine di lavoro (ODL).
     /// Eredita da BaseOdl_VM e aggiunge funzionalità specifiche per la gestione e l'interazione con gli ODL.
     /// </summary>
     public class Odl_VM : BaseOdl_VM

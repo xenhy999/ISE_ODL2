@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ISE_ODL.Intervallo;
-using ISE_ODL.Intervallo.Durata;
-using ISE_ODL.Resoconto.Giorno;
-using Windows.Security.ExchangeActiveSyncProvisioning;
-
-namespace ISE_ODL.Resoconto
+﻿namespace ISE_ODL.Resoconto
 {
-    internal static class Resoconto_F
+    /// <summary>
+    /// La classe  fornisce metodi statici per la creazione di istanze di Resoconto_VM.
+    /// </summary>
+    public class Resoconto_F
     {
+        /// <summary>
+        /// Crea una nuova istanza di Resoconto_VM con una lista vuota di giorni.
+        /// </summary>
+        /// <returns>
+        /// Una nuova istanza di Resoconto_VM con la proprietà ListaDeiGiorni inizializzata come lista vuota.
+        /// </returns>
         public static Resoconto_VM Create() => new() { ListaDeiGiorni = [] };
     }
 }

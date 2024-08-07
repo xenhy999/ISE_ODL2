@@ -1,13 +1,22 @@
 ﻿using System.Collections.ObjectModel;
 using ISE_ODL.Odl;
 using ISE_ODL.Resoconto.Giorno;
-
 namespace ISE_ODL.Resoconto
 {
+    /// <summary>
+    /// La classe rappresenta il ViewModel per la visualizzazione del riepilogo dei giorni.
+    /// </summary>
     public class Resoconto_VM : BaseBinding
     {
+        /// <summary>
+        /// Proprietà che indica la lista di giorni.
+        /// </summary>
         public ObservableCollection<Giorno_VM> ListaDeiGiorni { get; set; }
         private bool mostraCompletate;
+        /// <summary>
+        /// Proprietà che indica se devono essere mostrati anche gli ordini di lavoro completati.
+        /// Quando viene impostato, il metodo CreaGiorni viene chiamato per aggiornare la lista dei giorni.
+        /// </summary>
         public bool MostraCompletate
         {
             get => mostraCompletate;
@@ -17,6 +26,9 @@ namespace ISE_ODL.Resoconto
                 CreaGiorni();
             }
         }
+        /// <summary>
+        /// Crea e aggiorna la lista di giorni con i dati degli ordini di lavoro.
+        /// </summary>
         public void CreaGiorni()
         {
             ListaDeiGiorni.Clear();

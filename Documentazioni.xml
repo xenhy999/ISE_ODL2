@@ -665,6 +665,208 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:ISE_ODL.Odl.AggiornaOdl">
+            <summary>
+            La classe AggiornaOdl rappresenta un comando per aggiornare un'istanza di Odl_VM nella lista degli Odl.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Odl.AggiornaOdl.OdlDaAggiornare">
+            <summary>
+            Rappresenta l'istanza di Odl_VM che deve essere aggiornata.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.AggiornaOdl.CanExecute(System.Object)">
+            <summary>
+            Determina se il comando può essere eseguito. Il comando è eseguibile solo se il campo Cliente dell'istanza OdlDaAggiornare non è nullo o vuoto.
+            </summary>
+            <param name="parameter">Parametro passato al comando, non utilizzato in questo caso.</param>
+            <returns>
+            <c>true</c> se il campo Cliente di OdlDaAggiornare non è nullo o vuoto; <c>false</c> altrimenti.
+            </returns>
+        </member>
+        <member name="M:ISE_ODL.Odl.AggiornaOdl.Execute(System.Object)">
+            <summary>
+            Esegue il comando aggiornando l'istanza di Odl_VM nella lista degli Odl.
+            Aggiunge l'istanza OdlDaAggiornare alla lista Commisioni e rimuove l'istanza vecchia.
+            </summary>
+            <param name="parameter">Parametro passato al comando, non utilizzato in questo caso.</param>
+        </member>
+        <member name="T:ISE_ODL.Odl.AggiungiOdl">
+            <summary>
+            La classe AggiungiOdl rappresenta un comando per aggiungere un'istanza di Odl_VM alla lista degli Odl.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Odl.AggiungiOdl.OdlDaAggiungere">
+            <summary>
+            Rappresenta l'istanza di Odl_VM che deve essere aggiunta alla lista degli Odl.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.AggiungiOdl.CanExecute(System.Object)">
+            <summary>
+            Determina se il comando può essere eseguito. Il comando è eseguibile solo se il campo Cliente dell'istanza OdlDaAggiungere non è nullo o vuoto.
+            </summary>
+            <param name="parameter">Parametro passato al comando, non utilizzato in questo caso.</param>
+            <returns>
+            <c>true</c> se il campo Cliente di OdlDaAggiungere non è nullo o vuoto; <c>false</c> altrimenti.
+            </returns>
+        </member>
+        <member name="M:ISE_ODL.Odl.AggiungiOdl.Execute(System.Object)">
+            <summary>
+            Esegue il comando aggiungendo l'istanza di Odl_VM alla lista degli Odl.
+            </summary>
+            <param name="parameter">Parametro passato al comando, non utilizzato in questo caso.</param>
+        </member>
+        <member name="T:ISE_ODL.Odl.BaseOdl_F">
+            <summary>
+            La classe BaseOdl_F fornisce metodi statici per creare e inizializzare istanze di BaseOdl_VM. 
+            Si tratta della factory per gli elementi BaseOdl_VM
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.BaseOdl_F.Create">
+            <summary>
+            Crea una nuova istanza di BaseOdl_VM con un'istanza di BaseOdl_M predefinita.
+            Imposta i valori predefiniti per le proprietà Attivita e Stato.
+            Si tratta dell Odl posta in cima alla lista
+            </summary>
+            <returns>
+            Una nuova istanza di BaseOdl_VM con Attivita impostata su "Nessun ordine di lavoro" e Stato impostato su true.
+            </returns>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_M.Attivita">
+            <summary>
+            Proprieta che indica il nome dell'attività associata all'ordine di lavoro.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_M.Intervalli">
+            <summary>
+            Proprieta che indica la lista degli intervalli di tempo associati all'ordine di lavoro.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_M.Stato">
+            <summary>
+            Proprietà che indica lo stato dell'ordine di lavoro.
+            Quando lo stato viene impostato su <c>true</c>, viene aggiunto un nuovo intervallo alla lista.
+            Quando lo stato viene impostato su <c>false</c>, l'ultimo intervallo viene terminato.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.BaseOdl_M.UpdateIntervalli">
+            <summary>
+            Aggiorna la lista degli intervalli in base allo stato dell'ordine di lavoro.
+            Se lo stato è <c>true</c>, viene aggiunto un nuovo intervallo.
+            Se lo stato è <c>false</c>, l'ultimo intervallo viene terminato.
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Odl.BaseOdl_VM">
+            <summary>
+            La classe BaseOdl_VM rappresenta il ViewModel per un ordine di lavoro (Odl) e gestisce la logica di visualizzazione e aggiornamento dei dati relativi all'ordine di lavoro.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Odl.BaseOdl_VM.model">
+            <summary>
+            Modello di dati associato al ViewModel.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Model">
+            <summary>
+            Ottiene il Model di dati associato a questa vista.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Attivita">
+            <summary>
+            Proprieta che indica il nome dell'attività associata all'ordine di lavoro.
+            é direttamente collegata al Model
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Completata">
+            <summary>
+            Indica che l'ordine di lavoro con "Nessuna attivita" non è completato. Questa proprietà è sovrascritta nelle classi derivate.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.BaseOdl_VM.#ctor(ISE_ODL.Odl.BaseOdl_M)">
+            <summary>
+            Inizializza una nuova istanza della classe BaseOdl_VM a partire dal modello di dati.
+            Si tratta del costruttore di BaseOdl_VM
+            </summary>
+            <param name="nessunoOdl_M">Il modello di dati associato a questa vista.</param>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.EliminaIntervallo">
+            <summary>
+            Comando per eliminare un intervallo di tempo associato a questo ordine di lavoro.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Intervalli">
+            <summary>
+            Conrtiene la lista degli intervalli di tempo come una raccolta osservabile. 
+            Viene creata a partire dal Model.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Durate">
+            <summary>
+            Contiene la lista delle durate come una raccolta osservabile.
+            Ogni durata è calcolata in base agli intervalli di tempo associati a ciascun giorno.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.OrarioVisibile">
+            <summary>
+            Indica se l'orario è visibile. Questa proprietà viene utilizzata per mostrare o nascondere gli intervalli di tempo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.BaseOdl_VM.Stato">
+            <summary>
+            Proprietà che indica lo stato dell'ordine di lavoro. 
+            Quando lo stato viene cambiato, viene eseguita una serie di aggiornamenti e controlli.
+            é direttamente collegata al Model
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Odl.CreaOdl">
+            <summary>
+            La classe rappresenta un comando per creare un nuovo ordine di lavoro (Odl).
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.CreaOdl.Execute(System.Object)">
+            <summary>
+            Esegue il comando per creare un nuovo ordine di lavoro.
+            </summary>
+            <param name="parameter">Parametro passato al comando. Non utilizzato in questa implementazione.</param>
+        </member>
+        <member name="T:ISE_ODL.Odl.EliminaOdl">
+            <summary>
+            La classe rappresenta un comando per eliminare un ordine di lavoro (ODL).
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.EliminaOdl.CanExecute(System.Object)">
+            <summary>
+            Verifica se il comando può essere eseguito. Il comando può essere eseguito solo se è stato selezionato un ODL.
+            </summary>
+            <param name="parameter">Parametro passato al comando. Non utilizzato in questa implementazione.</param>
+            <returns>Restituisce <c>true</c> se un ODL è selezionato, altrimenti <c>false</c>.</returns>
+        </member>
+        <member name="M:ISE_ODL.Odl.EliminaOdl.Execute(System.Object)">
+            <summary>
+            Esegue il comando per eliminare l'ODL selezionato.
+            Mostra una finestra di conferma e, se l'utente conferma l'azione, rimuove l'ODL selezionato dalla lista.
+            </summary>
+            <param name="parameter">Parametro passato al comando. Non utilizzato in questa implementazione.</param>
+        </member>
+        <member name="T:ISE_ODL.Odl.ModificaOdl">
+            <summary>
+            La classe rappresenta un comando per modificare un ordine di lavoro (ODL) selezionato.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.ModificaOdl.CanExecute(System.Object)">
+            <summary>
+            Verifica se il comando può essere eseguito. Il comando può essere eseguito solo se è stato selezionato un ODL.
+            </summary>
+            <param name="parameter">Parametro passato al comando. Non utilizzato in questa implementazione.</param>
+            <returns>Restituisce <c>true</c> se un ODL è selezionato, altrimenti <c>false</c>.</returns>
+        </member>
+        <member name="M:ISE_ODL.Odl.ModificaOdl.Execute(System.Object)">
+            <summary>
+            Esegue il comando per modificare l'ODL selezionato.
+            Imposta l'ODL selezionato in modalità di modifica e apre una finestra di dialogo per la modifica dell'ODL.
+            </summary>
+            <param name="parameter">Parametro passato al comando. Non utilizzato in questa implementazione.</param>
+        </member>
         <member name="T:ISE_ODL.Odl.OdlInElenco">
             <summary>
             Logica di interazione per OdlInElenco.xaml
@@ -677,6 +879,40 @@
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:ISE_ODL.Odl.OdlTimer">
+            <summary>
+            La classe gestisce un timer per monitorare il tempo trascorso su un'attività.
+            Fornisce metodi per avviare, resettare e fermare il timer, nonché per mostrare notifiche quando il tempo trascorso supera una certa soglia.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Odl.OdlTimer.Timer">
+            <summary>
+            L'istanza del timer utilizzato per monitorare il tempo trascorso.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.OdlTimer.ResetTimer">
+            <summary>
+            Resetta il timer, avviandolo con la durata specificata nelle impostazioni.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.OdlTimer.Stop">
+            <summary>
+            Ferma il timer corrente.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.OdlTimer.Time_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Evento chiamato quando il timer scade.
+            Mostra una notifica se il timer è abilitato nelle impostazioni.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.OdlTimer.ShowNotifications(System.String,System.String)">
+            <summary>
+            Mostra una notifica con il messaggio e il titolo specificati.
+            </summary>
+            <param name="message">Il messaggio della notifica.</param>
+            <param name="title">Il titolo della notifica.</param>
         </member>
         <member name="T:ISE_ODL.Odl.OdlVuoto">
             <summary>
@@ -691,6 +927,61 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:ISE_ODL.Odl.Odl_F">
+            <summary>
+            La classe fornisce metodi statici per creare istanze di Odl_VM/>.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.Odl_F.Create(ISE_ODL.Odl.Odl_M)">
+            <summary>
+            Crea un'istanza dia partire dal Model .
+            Inizializza anche i comandi per aggiungere e aggiornare l'ODL.
+            </summary>
+            <param name="odl_M">Il Model di dati utilizzato per creare l'istanza di Odl_VM.</param>
+            <returns>Restituisce una nuova istanza di Odl_VM</returns>
+        </member>
+        <member name="M:ISE_ODL.Odl.Odl_F.Create">
+            <summary>
+            Crea un'istanza di Odl_VM con un nuovo Model di dati Odl_M  non completato e con un ID generato.
+            </summary>
+            <returns>Restituisce una nuova istanza di Odl_VM</returns>
+        </member>
+        <member name="T:ISE_ODL.Odl.Odl_M">
+            <summary>
+            La classe rappresenta un modello di dati per un ordine di lavoro (ODL).
+            Eredita da "BaseOdl_M e aggiunge proprietà specifiche per la gestione degli ODL.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_M._id">
+            <summary>
+            Proprietà che contiene l'identificatore unico dell'ODL. 
+            Questo valore è generato automaticamente al momento della creazione dell'istanza.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_M.OdlId">
+            <summary>
+            Proprietà che contiene l'identificativo dell'ODL.
+            Questo è un valore univoco utilizzato per identificare l'ODL.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_M.Cliente">
+            <summary>
+            Proprietà che contiene il nome del cliente associato all'ODL.
+            Questo campo rappresenta il cliente per il quale l'ODL è stato creato.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_M.Completata">
+            <summary>
+            Proprietà che contiene lo stato di completamento dell'ODL.
+            Se <c>true</c>, l'ODL è completato; altrimenti, è ancora in corso.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_M.DataCompletamento">
+            <summary>
+            Proprietà che contiene la data di completamento dell'ODL.
+            Questo campo indica quando l'ODL è stato completato.
+            </summary>
+        </member>
         <member name="T:ISE_ODL.Odl.Odl_V">
             <summary>
             Logica di interazione per Odl_V.xaml
@@ -703,6 +994,77 @@
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:ISE_ODL.Odl.Odl_VM">
+            <summary>
+            La classe il ViewModel per un ordine di lavoro (ODL).
+            Eredita da BaseOdl_VM e aggiunge funzionalità specifiche per la gestione e l'interazione con gli ODL.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.Completata">
+            <summary>
+            Proprietà che indica lo stato di completamento dell'ODL.
+            Se impostato su <c>true</c>, l'ODL è considerato completato. Aggiorna anche il filtro e lo stato degli ODL.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.Odl_VM.#ctor(ISE_ODL.Odl.Odl_M,ISE_ODL.Odl.AggiungiOdl,ISE_ODL.Odl.AggiornaOdl)">
+            <summary>
+            Inizializza una nuova istanza di Odl_VM con il modello di dati specificato e i comandi associati.
+            </summary>
+            <param name="odl_M">Il modello di dati per l'ODL.</param>
+            <param name="aggiungiOdl">Il comando per aggiungere un ODL.</param>
+            <param name="aggiornaOdl">Il comando per aggiornare un ODL.</param>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.OdlInModifica">
+            <summary>
+            Proprietà che indica se l'ODL è in fase di modifica.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.AggiungiOdl">
+            <summary>
+            Proprietà che contiene il comando per aggiungere un ODL.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.AggiornaOdl">
+            <summary>
+            Proprietà che contiene il comando per aggiornare un ODL.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.Id">
+            <summary>
+            Proprietà che indica l'identificativo dell'ODL.
+            È direttamente collegata al Model
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.DataCompletamento">
+            <summary>
+            Proprietà che indica la data di completamento.
+            È direttamente collegata al Model
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.MostraAltro">
+            <summary>
+            proprietà che indica se devono essere visualizzate ulteriori informazioni.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.Cliente">
+            <summary>
+            Proprietà che indica il cliente.
+            È direttamente collegata al Model
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Odl.Odl_VM.Filtro">
+            <summary>
+            Proprietà che indica il filtro applicato all'ODL.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Odl.Odl_VM.AttivatoIl(System.DateOnly,System.TimeSpan@)">
+            <summary>
+            Determina se l'ODL è stato attivato in una data specifica e calcola la durata totale per quella data.
+            </summary>
+            <param name="g">La data da controllare.</param>
+            <param name="durataTotale">La durata totale per la data specificata.</param>
+            <returns>Restituisce <c>true</c> se l'ODL è stato attivato nella data specificata; altrimenti, <c>false</c>.</returns>
         </member>
         <member name="T:ISE_ODL.Properties.Resources">
             <summary>
@@ -823,6 +1185,18 @@
             </summary>
             <param name="parameter">Il parametro del comando.</param>
         </member>
+        <member name="T:ISE_ODL.Resoconto.Giorno.Giorno_F">
+            <summary>
+            La classe è una factory per la creazione di istanze di Giorno_VM.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Resoconto.Giorno.Giorno_F.Create(System.DateOnly)">
+            <summary>
+            Crea una nuova istanza dGiorno_VM utilizzando la data specificata.
+            </summary>
+            <param name="date">La data da utilizzare per la creazione della vista del giorno.</param>
+            <returns>Una nuova istanza diGiorno_VM.</returns>
+        </member>
         <member name="T:ISE_ODL.Resoconto.Giorno.Giorno_V">
             <summary>
             Logica di interazione per Giorno_V.xaml
@@ -836,6 +1210,54 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:ISE_ODL.Resoconto.Giorno.Giorno_VM">
+            <summary>
+            La classe rappresenta il ViewModel per una data specifica.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Resoconto.Giorno.Giorno_VM.#ctor(System.DateOnly)">
+            <summary>
+            Inizializza una nuova istanza di Giorno_VM con la data specificata.
+            </summary>
+            <param name="data">La data associata a questa vista del giorno.</param>
+        </member>
+        <member name="P:ISE_ODL.Resoconto.Giorno.Giorno_VM.Data">
+            <summary>
+            Proprietà che indica la data per questa vista del giorno.
+            </summary>
+            <value>
+            La data associata a questa vista del giorno.
+            </value>
+        </member>
+        <member name="P:ISE_ODL.Resoconto.Giorno.Giorno_VM.OdlLavorati">
+            <summary>
+            Proprietà che indica un dizionario che associa un'istanza di Odl_VM a un TimeSpan che rappresenta il tempo lavorato.
+            </summary>
+            <value>
+            Un dizionario in cui la chiave è un'istanza di Odl_VM e il valore è un TimeSpan che rappresenta il tempo lavorato per quel ODL.
+            </value>
+        </member>
+        <member name="P:ISE_ODL.Resoconto.Giorno.Giorno_VM.DataOdierna">
+            <summary>
+            Proprietà che indica se la data è odierna.
+            </summary>
+            <value>
+            <c>true</c> se la data è la data odierna; in caso contrario, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:ISE_ODL.Resoconto.Resoconto_F">
+            <summary>
+            La classe  fornisce metodi statici per la creazione di istanze di Resoconto_VM.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Resoconto.Resoconto_F.Create">
+            <summary>
+            Crea una nuova istanza di Resoconto_VM con una lista vuota di giorni.
+            </summary>
+            <returns>
+            Una nuova istanza di Resoconto_VM con la proprietà ListaDeiGiorni inizializzata come lista vuota.
+            </returns>
+        </member>
         <member name="T:ISE_ODL.Resoconto.Resoconto_V">
             <summary>
             Logica di interazione per Resoconto_V.xaml
@@ -847,6 +1269,27 @@
         <member name="M:ISE_ODL.Resoconto.Resoconto_V.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Resoconto.Resoconto_VM">
+            <summary>
+            La classe rappresenta il ViewModel per la visualizzazione del riepilogo dei giorni.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Resoconto.Resoconto_VM.ListaDeiGiorni">
+            <summary>
+            Proprietà che indica la lista di giorni.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Resoconto.Resoconto_VM.MostraCompletate">
+            <summary>
+            Proprietà che indica se devono essere mostrati anche gli ordini di lavoro completati.
+            Quando viene impostato, il metodo CreaGiorni viene chiamato per aggiornare la lista dei giorni.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Resoconto.Resoconto_VM.CreaGiorni">
+            <summary>
+            Crea e aggiorna la lista di giorni con i dati degli ordini di lavoro.
             </summary>
         </member>
         <member name="T:ISE_ODL.Settings.Settings_V">
