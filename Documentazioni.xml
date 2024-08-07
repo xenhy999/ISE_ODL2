@@ -585,6 +585,76 @@
             Metodo che ordina la lista di Odl in base al loro stato di completamento.
             </summary>
         </member>
+        <member name="T:ISE_ODL.Menu.MenuPrincipale_F">
+            <summary>
+            La classe statica MenuPrincipale_F fornisce un metodo per creare una nuova istanza di Menuprincipale_VM.
+            Si tratta della factori per MenuPrincipale_VM
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Menu.MenuPrincipale_F.Create">
+            <summary>
+            Crea una nuova istanza di Menuprincipale_VM configurata con le istanze specificate di ListaOdl_VM, 
+            Settings_VM e Resoconto_VM create a partire dalle loro factory.
+            </summary>
+            <returns>
+            Una nuova istanza di Menuprincipale_VM configurata con i ViewModel per la lista degli Odl, le impostazioni 
+            e il resoconto.
+            </returns>
+        </member>
+        <member name="T:ISE_ODL.Menu.Menuprincipale_VM">
+            <summary>
+            La classe Menuprincipale_VM rappresenta il ViewModel principale per la gestione delle viste nel menu.
+            Gestisce la visualizzazione di tre diverse viste: Lista degli Odl, Impostazioni e Resoconto.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.VistaCorrente">
+            <summary>
+            Proprietà che indica la vista corrente visualizzata nel menu principale.
+            Se la vista corrente è Resoconto_VM, viene chiamato il metodo CreaGiorni per aggiornare i giorni nel resoconto.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.ListaOdl_VM">
+            <summary>
+            Proprieta GetOnly che contiene l'istanza del ViewModel per la lista degli Odl.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.Settings_VM">
+            <summary>
+            Proprieta GetOnly che contiene l'istanza del ViewModel per le impostazioni.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.Resoconto_VM">
+            <summary>
+            Proprieta GetOnly che contiene l'istanza del ViewModel per il resoconto.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.MostraSettings">
+            <summary>
+            Proprieta Booleana che indica se deve essere mostrata la vista delle impostazioni.
+            Imposta la vista corrente su Settings_VM quando il valore è true e notifica la modifica della proprietà.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.MostraResoconto">
+            <summary>
+            Proprieta Booleana che indica se deve essere mostrata la vista delresoconto.
+            Imposta la vista corrente su Settings_VM quando il valore è true e notifica la modifica della proprietà.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Menu.Menuprincipale_VM.MostraLista">
+            <summary>
+            Proprieta Booleana che indica se deve essere mostrata la vista della lista delle Odl.
+            Imposta la vista corrente su Settings_VM quando il valore è true e notifica la modifica della proprietà.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Menu.Menuprincipale_VM.#ctor(ISE_ODL.Lista_Odl.ListaOdl_VM,ISE_ODL.Settings.Settings_VM,ISE_ODL.Resoconto.Resoconto_VM)">
+            <summary>
+            Inizializza una nuova istanza di Menuprincipale_VM con i ViewModel forniti per la lista degli Odl, le impostazioni 
+            e il resoconto. Imposta le proprietà MostraSettings e MostraResoconto su false e MostraLista su true per impostazione predefinita.
+            </summary>
+            <param name="listaOdl_VM">Il ViewModel per la lista degli Odl.</param>
+            <param name="settings_VM">Il ViewModel per le impostazioni.</param>
+            <param name="resoconto_VM">Il ViewModel per il resoconto.</param>
+        </member>
         <member name="T:ISE_ODL.MenuPrincipale_V">
             <summary>
             MenuPrincipale_V
