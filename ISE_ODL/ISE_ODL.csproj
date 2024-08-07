@@ -8,6 +8,8 @@
     <UseWPF>true</UseWPF>
     <StartupObject>ISE_ODL.App</StartupObject>
     <ApplicationIcon>icons8-da-fare-96.ico</ApplicationIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Huawei\Desktop\ISE_ODL\ISE_ODL\Documentazioni.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
