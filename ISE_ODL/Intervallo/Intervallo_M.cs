@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ISE_ODL.Intervallo
+﻿namespace ISE_ODL.Intervallo
 {
     /// <summary>
     /// La classe Intervallo_M rappresenta il MOdel un intervallo di tempo con dettagli su inizio, fine e validità.

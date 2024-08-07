@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ISE_ODL.Odl;
+﻿using ISE_ODL.Odl;
 
 namespace ISE_ODL.Intervallo
 {
@@ -11,7 +6,7 @@ namespace ISE_ODL.Intervallo
     /// La classe statica Intertevallo_F fornisce metodi per la creazione e gestione degli intervalli di tempo.
     /// Si tratta della factory di Intervallo_VM
     /// </summary>
-    internal static class Intertevallo_F
+    public class Intertevallo_F
     {
         /// <summary>
         /// Crea e avvia un nuovo intervallo di tempo.

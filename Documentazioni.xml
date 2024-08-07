@@ -732,6 +732,11 @@
             Una nuova istanza di BaseOdl_VM con Attivita impostata su "Nessun ordine di lavoro" e Stato impostato su true.
             </returns>
         </member>
+        <member name="T:ISE_ODL.Odl.BaseOdl_M">
+            <summary>
+            La classe BaseOdl_M rappresentail Model di ordine di lavoro (Odl) e gestisce le proprietà relative all'attività e agli intervalli di tempo associati.
+            </summary>
+        </member>
         <member name="P:ISE_ODL.Odl.BaseOdl_M.Attivita">
             <summary>
             Proprieta che indica il nome dell'attività associata all'ordine di lavoro.
@@ -1304,6 +1309,49 @@
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:ISE_ODL.Settings.Settings_VM">
+            <summary>
+            La classe gestisce le impostazioni dell'applicazione.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Settings.Settings_VM.TimerAbilitato">
+            <summary>
+            Proprietà che indica se il timer è abilitato.
+            Il valore è memorizzato nelle impostazioni dell'applicazione.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Settings.Settings_VM.DurataDelTimer">
+            <summary>
+            Proprietà che indica la durata del timer.
+            Il valore è memorizzato nelle impostazioni dell'applicazione.
+            Quando il valore viene impostato, viene notificato il cambiamento e il timer viene ripristinato.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Settings.Settings_VM.DurataMinimaOdl">
+            <summary>
+            Proprietà che indica la durata minima di un ordine di lavoro (ODL).
+            Il valore è memorizzato nelle impostazioni dell'applicazione.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Settings.Settings_VM.IntervalloInModifica">
+            <summary>
+            Proprietà che indica l'intervallo di modifica per l'ODL.
+            Il valore è memorizzato nelle impostazioni dell'applicazione.
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Settings.Setting_F">
+            <summary>
+            La classe fornisce metodi statici per la creazione di istanze di Settings_VM.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Settings.Setting_F.Create">
+            <summary>
+            Crea una nuova istanza di Settings_VM.
+            </summary>
+            <returns>
+            Una nuova istanza di Settings_VM.
+            </returns>
         </member>
         <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
             <summary>

@@ -2,10 +2,11 @@
 using ISE_ODL.Intervallo;
 namespace ISE_ODL.Odl
 {
-    [JsonDerivedType(typeof(Odl_M))]
+
     /// <summary>
     /// La classe BaseOdl_M rappresentail Model di ordine di lavoro (Odl) e gestisce le proprietà relative all'attività e agli intervalli di tempo associati.
     /// </summary>
+    [JsonDerivedType(typeof(Odl_M))]
     public class BaseOdl_M
     {
         /// <summary>
