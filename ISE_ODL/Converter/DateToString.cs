@@ -6,7 +6,7 @@ namespace ISE_ODL.Converter
     /// La classe DateToString implementa l'interfaccia IValueConverter
     /// per convertire valori DateOnly in valori di Stringa (string) in WPF.
     /// </summary>
-    internal class DateToString : IValueConverter
+    public class DateToString : IValueConverter
     {
         /// <summary>
         /// Converte un valore DateOnly in una Stringa.

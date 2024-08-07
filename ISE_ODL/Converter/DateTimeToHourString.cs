@@ -6,7 +6,7 @@ namespace ISE_ODL.Converter
     /// La classe DateTimeToHourString implementa l'interfaccia IValueConverter
     /// per convertire valori DateTime in valori di Stringa (string) che indicano solo l'ora in WPF.
     /// </summary>
-    class DateTimeToHourString : IValueConverter
+    public class DateTimeToHourString : IValueConverter
     {
         /// <summary>
         /// Converte un valore DateTime in una stringa.

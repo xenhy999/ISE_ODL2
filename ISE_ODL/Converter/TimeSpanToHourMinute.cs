@@ -6,7 +6,7 @@ namespace ISE_ODL.Converter
     /// La classe TimeSpanToHourMinute implementa l'interfaccia IValueConverter
     /// per convertire valori TimeSpan in stringhe che rappresentano ore e minuti.
     /// </summary>
-    class TimeSpanToHourMinute : IValueConverter
+    public class TimeSpanToHourMinute : IValueConverter
     {
         /// <summary>
         /// Converte un valore TimeSpan in una stringa che rappresenta l'ora e i minuti.

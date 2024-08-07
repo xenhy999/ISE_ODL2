@@ -6,7 +6,7 @@ namespace ISE_ODL.Converter
  /// La classe DateTimeToDate implementa l'interfaccia IValueConverter
  /// per convertire valori DateTime in valori di Stringa (string) in WPF.
  /// </summary>
-    internal class DateTimeToDate : IValueConverter
+    public class DateTimeToDate : IValueConverter
     {
         /// <summary>
         /// Converte un valore DateTime in una Stringa.

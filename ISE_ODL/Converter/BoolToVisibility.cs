@@ -7,7 +7,7 @@ namespace ISE_ODL.Converter
     /// La classe BoolToVisibility implementa l'interfaccia IValueConverter
     /// per convertire valori booleani in valori di visibilità (Visibility) in WPF.
     /// </summary>
-    internal class BoolToVisibility : IValueConverter
+    public class BoolToVisibility : IValueConverter
     {
         /// <summary>
         /// Converte un valore booleano in un valore di visibilità.

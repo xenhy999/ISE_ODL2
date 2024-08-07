@@ -7,7 +7,7 @@ namespace ISE_ODL.Converter
     /// La classe FiltroToVisibility implementa l'interfaccia IValueConverter
     /// per convertire valori Booleani in valori di Stringa (string) in WPF.
     /// </summary>
-    class FiltroToVisibility : IValueConverter
+    public class FiltroToVisibility : IValueConverter
     {
         /// <summary>
         /// Converte un valore Booleano in una Visibilità.

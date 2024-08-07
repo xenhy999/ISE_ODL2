@@ -280,6 +280,125 @@
             </returns>
             <exception cref="T:System.NotImplementedException">Viene sempre lanciata poiché il metodo non è implementato.</exception>
         </member>
+        <member name="T:ISE_ODL.Intervallo.Durata.Durata_F">
+            <summary>
+            La classe statica Durata_F fornisce un metodo per creare istanze di Durata_VM.
+            Si tratta della factory di Durata_VM
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.Durata.Durata_F.Create(System.DateOnly,System.TimeSpan)">
+            <summary>
+            Crea una nuova istanza di Durata_VM con la data e le ore specificate.
+            </summary>
+            <param name="data">La data associata alla durata.</param>
+            <param name="ore">Il periodo di tempo associato alla durata.</param>
+            <returns>Restituisce una nuova istanza di Durata_VM con i valori specificati.</returns>
+        </member>
+        <member name="T:ISE_ODL.Intervallo.Durata.Durata_VM">
+            <summary>
+            La classe Durata_VM rappresenta un modello di visualizzazione (ViewModel) per la durata,
+            derivata dalla classe BaseBinding.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Durata.Durata_VM.Ore">
+            <summary>
+            Proprietà che indica il periodo di tempo associato alla durata.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Durata.Durata_VM.Data">
+            <summary>
+            Proprietà che indica la data associata alla durata.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Durata.Durata_VM.Scaricato">
+            <summary>
+            Proprietà che indica se la durata è stata scaricata.
+            </summary>
+        </member>
+        <member name="T:ISE_ODL.Intervallo.EliminaIntervallo">
+            <summary>
+            La classe EliminaIntervallo rappresenta un comando per eliminare un intervallo di tempo associato a un Odl.
+            Deriva dalla classe BaseCommand.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.EliminaIntervallo.OdlDellIntervallo">
+            <summary>
+            Proprieta relativa all'istanza di BaseOdl_VM che contiene l'intervallo da eliminare.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.EliminaIntervallo.IntervalloDaEliminare">
+            <summary>
+            Proprietà che indica l'intervallo di tempo da eliminare.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.EliminaIntervallo.Execute(System.Object)">
+            <summary>
+            Esegue il metodo per eliminare l'intervallo di tempo specificato.
+            </summary>
+            <param name="parameter">Il parametro del comando (non utilizzato).</param>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.EliminaIntervallo.Elimina(ISE_ODL.Odl.BaseOdl_VM,ISE_ODL.Intervallo.Intervallo_M)">
+            <summary>
+            Elimina l'intervallo di tempo specificato dall'Odl.
+            </summary>
+            <param name="OdlDellIntervallo">L'istanza di BaseOdl_VM che contiene l'intervallo da eliminare.</param>
+            <param name="IntervalloDaEliminare">L'intervallo di tempo da eliminare.</param>
+        </member>
+        <member name="T:ISE_ODL.Intervallo.Intertevallo_F">
+            <summary>
+            La classe statica Intertevallo_F fornisce metodi per la creazione e gestione degli intervalli di tempo.
+            Si tratta della factory di Intervallo_VM
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.Intertevallo_F.StartNew">
+            <summary>
+            Crea e avvia un nuovo intervallo di tempo.
+            </summary>
+            <returns>Restituisce una nuova istanza di Intervallo_M con la data e l'orario di inizio impostati all'ora corrente e OrarioCompleto impostato su false.</returns>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.Intertevallo_F.Create(ISE_ODL.Intervallo.Intervallo_M,ISE_ODL.Odl.BaseOdl_VM)">
+            <summary>
+            Crea un nuovo ViewModel dell'intervallo di tempo (Intervallo_VM) e inizializza i comandi per l'eliminazione e la modifica dell'intervallo.
+            </summary>
+            <param name="intervallo_M">L'istanza di Intervallo_M da associare al ViewModel.</param>
+            <param name="baseOdl_VM">L'istanza di BaseOdl_VM a cui l'intervallo appartiene.</param>
+            <returns>Restituisce una nuova istanza di Intervallo_VM a partire dal MOdel configurata con i comandi di eliminazione e modifica.</returns>
+        </member>
+        <member name="T:ISE_ODL.Intervallo.Intervallo_M">
+            <summary>
+            La classe Intervallo_M rappresenta il MOdel un intervallo di tempo con dettagli su inizio, fine e validità.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_M.OrarioCompleto">
+            <summary>
+            Proprietà che indica se l'orario è completo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_M.OrarioInizio">
+            <summary>
+            Proprietà che indica la data e l'ora di inizio dell'interavllo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_M.OrarioFine">
+            <summary>
+            Proprietà che indica la data e l'ora di fine dell'interavllo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_M.Giorno">
+            <summary>
+            Proprietà che indica il giorno dell'interavllo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_M.IntervalloValido">
+            <summary>
+            Proprietà che indica se l'intervallo è valido o no.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.Intervallo_M.EndThis">
+            <summary>
+            Imposta l'orario di fine dell'intervallo all'orario corrente e segna l'intervallo come completo se non è già stato impostato.
+            </summary>
+        </member>
         <member name="T:ISE_ODL.Intervallo.Intervallo_V">
             <summary>
             Logica di interazione per Intervallo_V.xaml
@@ -292,6 +411,94 @@
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:ISE_ODL.Intervallo.Intervallo_VM">
+            <summary>
+            La classe Intervallo_VM rappresenta il ViewModel per l'intervallo di tempo, 
+            e fornisce una rappresentazione dell'intervallo.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Intervallo.Intervallo_VM.model">
+            <summary>
+            Il Model di dati sottostante che rappresenta l'intervallo di tempo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.Model">
+            <summary>
+            Ottiene il modello di dati sottostante a partire dall'attributo privato model.
+            </summary>
+        </member>
+        <member name="F:ISE_ODL.Intervallo.Intervallo_VM.IntervalloModifica">
+            <summary>
+            Durata predefinita per la modifica dell'intervallo, impostata di default a 10 minuti.
+            Il valore è direttamente collegato a quello del Model.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.Intervallo_VM.#ctor(ISE_ODL.Intervallo.Intervallo_M,ISE_ODL.Intervallo.EliminaIntervallo,ISE_ODL.Intervallo.ModificaIntervallo)">
+            <summary>
+            Costruttore che inizializza una nuova istanza di Intervallo_VM a partire dal Model e dai comandi per l'eliminazione e la modifica.
+            </summary>
+            <param name="mode">Il Model di dati dell'intervallo di tempo.</param>
+            <param name="eliminaIntervallo">Il comando per eliminare l'intervallo.</param>
+            <param name="modificaIntervallo">Il comando per modificare l'intervallo.</param>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.EliminaIntervallo">
+            <summary>
+            Proprietà  che contine l'istanza del comando per eliminare l'intervallo di tempo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.ModificaIntervallo">
+            <summary>
+            Proprietà  che contine l'istanza del comando per modificare l'intervallo di tempo.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.OrarioCompleto">
+            <summary>
+            Prorieta Booleana che indica che indica se l'orario di fine è stato impostato e se l'intervallo è completo.
+            Il valore è direttamente collegato a quello del Model.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.OrarioInizio">
+            <summary>
+            Proprietà che indica la data e l'orario di inizio dell'intervallo.
+            Il valore è direttamente collegato a quello del Model.
+            Notifica la modifica della proprietà quando il valore cambia.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.OrarioFine">
+            <summary>
+            Proprietà che indica la data e l'orario di fine dell'intervallo.
+            Il valore è direttamente collegato a quello del Model.
+            Notifica la modifica della proprietà quando il valore cambia.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.Durata">
+            <summary>
+            Calcola la durata dell'intervallo come la differenza tra OrarioFine e OrarioInizio.
+            Restituisce un intervallo vuoto se OrarioFine è minore di OrarioInizio.
+            Il valore è direttamente collegato a quello del Model.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.Intervallo_VM.Giorno">
+            <summary>
+            Restituisce la data del giorno come oggetto DateOnly, convertito dal valore di Giorno del Model.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.ModificaIntervallo.OdlDellIntervallo">
+            <summary>
+            Proprieta relativa all'istanza di BaseOdl_VM che contiene l'intervallo da modificare.
+            </summary>
+        </member>
+        <member name="P:ISE_ODL.Intervallo.ModificaIntervallo.IntervalloDaModificare">
+            <summary>
+            Proprietà che indica l'intervallo di tempo da modificare.
+            </summary>
+        </member>
+        <member name="M:ISE_ODL.Intervallo.ModificaIntervallo.Execute(System.Object)">
+            <summary>
+            Esegue il comando per modificare l'intervallo di tempo basato sul parametro fornito.
+            </summary>
+            <param name="parameter">Il parametro che indica l'operazione da eseguire, che può essere "ai" (aumenta inizio), "ri" (riduci inizio), "af" (aumenta fine) o "rf" (riduci fine).</param>
         </member>
         <member name="T:ISE_ODL.Lista_Odl.ListaOdl_V">
             <summary>
