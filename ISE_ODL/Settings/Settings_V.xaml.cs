@@ -13,41 +13,24 @@ namespace ISE_ODL.Settings
         /// Costruttore della classe ListaOdl_V.
         /// Inizializza i componenti della vista.
         /// </summary>
-        public Settings_V()
-        {
-            InitializeComponent();
-        }
+        public Settings_V() => InitializeComponent();
         /// <summary>
         /// Gestisce il click del bottone per impostare la durata minima dell'ODL.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl = new TimeSpan(0, 5, 0);
-        }
+        private void Button_Click(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl = new TimeSpan(0, 5, 0);
         /// <summary>
         /// Gestisce il click del bottone per impostare la durata del timer.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
-        }
+        private void Button_Click_1(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
         /// <summary>
         /// Gestisce il click del bottone per impostare l'intervallo in modifica.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            ObjContainer.Menuprincipale_VM.Settings_VM.UriDatabase = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.6";
-        }
+        private void Button_Click_2(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
     }
 }
