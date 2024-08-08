@@ -19,7 +19,7 @@ namespace ISE_ODL.Report
         /// <param name="parameter">Il parametro del comando.</param>
         public override void Execute(object parameter)
         {
-            List<string> creaFileTxt()
+            List<string> CreaFileTxt()
             {
                 List<string> ReportFinale = [];
                 foreach (Odl_M Odl_M in ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList().Cast<Odl_M>())
@@ -43,7 +43,7 @@ namespace ISE_ODL.Report
                 }
                 return ReportFinale;
             }
-            List<string> creaFileCsv()
+            List<string> CreaFileCsv()
             {
                 List<string> ReportFinale = [];
                 foreach (Odl_M Odl_M in ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList().Cast<Odl_M>())
@@ -82,7 +82,7 @@ namespace ISE_ODL.Report
             try
             {
                 Esplora.ShowDialog();
-                File.WriteAllLines(Esplora.FileName, Esplora.FileName.Last() == 't' ? creaFileTxt() : creaFileCsv());
+                File.WriteAllLines(Esplora.FileName, Esplora.FileName.Last() == 't' ? CreaFileTxt() : CreaFileCsv());
                 MessageBox.Show("Report creato con successo", "Report", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception)
