@@ -75,9 +75,7 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" Value="{StaticResource Palette_3}"/>
                     <Setter Property="BorderThickness" Value="3"/>
-                    <!--<Setter Property="Background" Value="{StaticResource White_Neutral}"/>-->
                     <Setter Property="FontSize" Value="19"/>
-
                 </Trigger>
                 <Trigger Property="IsKeyboardFocused" Value="True">
                     <Setter Property="BorderBrush" Value="{StaticResource Palette_2}"/>
@@ -102,61 +100,61 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition />
+            <RowDefinition Height="80"/>
 
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Impostazioni" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource  title}"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Reminder" Style="{StaticResource impo}"/>
+            <CheckBox Grid.Row="0" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Intervallo" Style="{StaticResource impo}" />
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding DurataDelTimer}"/>
+            <Button Grid.Row="1" Grid.Column="3" Click="Button_Click_1" Background="Transparent" BorderBrush="Transparent">
+                <Button.Content>
+                    <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
+                </Button.Content>
+            </Button>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Durata Minima" Style="{StaticResource impo}" />
+            <TextBox Grid.Row="2" Grid.Column="2"  Text="{Binding DurataMinimaOdl}"/>
+            <Button Grid.Row="2" Grid.Column="3" Click="Button_Click" Background="Transparent" BorderBrush="Transparent">
+                <Button.Content>
+                    <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
+                </Button.Content>
+            </Button>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="Passo intervallo" Style="{StaticResource impo}" />
+            <TextBox Grid.Row="3" Grid.Column="2"   Text="{Binding IntervalloInModifica}"/>
+            <Button Grid.Row="3" Grid.Column="3" Click="Button_Click_2" Background="Transparent" BorderBrush="Transparent">
+                <Button.Content>
+                    <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
+                </Button.Content>
+            </Button>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="250"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="35"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="80"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Reminder" Style="{StaticResource impo}"/>
-                <CheckBox Grid.Row="0" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="Intervallo" Style="{StaticResource impo}" />
-                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding DurataDelTimer}"/>
-                <Button Grid.Row="1" Grid.Column="3" Click="Button_Click_1" Background="Transparent" BorderBrush="Transparent">
-                    <Button.Content>
-                        <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
-                    </Button.Content>
-                </Button>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="Durata Minima" Style="{StaticResource impo}" />
-                <TextBox Grid.Row="2" Grid.Column="2"  Text="{Binding DurataMinimaOdl}"/>
-                <Button Grid.Row="2" Grid.Column="3" Click="Button_Click" Background="Transparent" BorderBrush="Transparent">
-                    <Button.Content>
-                        <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
-                    </Button.Content>
-                </Button>
-                <TextBlock Grid.Row="3" Grid.Column="1" Text="Passo intervallo" Style="{StaticResource impo}" />
-                <TextBox Grid.Row="3" Grid.Column="2"   Text="{Binding IntervalloInModifica}"/>
-                <Button Grid.Row="3" Grid.Column="3" Click="Button_Click_2" Background="Transparent" BorderBrush="Transparent">
-                    <Button.Content>
-                        <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
-                    </Button.Content>
-                </Button>
-                <Grid Grid.Row="5" Grid.ColumnSpan="5" Background="{StaticResource White_Neutral}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition Width="300"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                <Button  Grid.Column="1" Style="{StaticResource Annulla_Eliminazione}" Click="Button_Click_4">Salva</Button>
-                    <Button  Grid.Column="2" Style="{StaticResource Conferma_Eliminazione}" Click="Button_Click_3" >Reset</Button>
-                </Grid>
-            </Grid>
+        </Grid>
         </ScrollViewer>
+        <Grid Grid.Row="2" Background="{StaticResource White_Neutral}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button  Grid.Column="1" Style="{StaticResource Annulla_Eliminazione}" Click="Button_Click_4">Salva</Button>
+            <Button  Grid.Column="2" Style="{StaticResource Conferma_Eliminazione}" Click="Button_Click_3" >Reset</Button>
+        </Grid>
     </Grid>
 </UserControl>
