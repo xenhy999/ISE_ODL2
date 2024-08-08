@@ -50,6 +50,7 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
@@ -62,15 +63,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="{StaticResource Palette_2}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
+                                <Setter Property="Background" Value="White"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Background" Value="White"/>
                                 <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
+                                <Setter Property="Background" Value="{StaticResource White_Neutral}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -150,7 +148,7 @@
                 <TextBlock Text="{Binding Attivita}"/>
             </StackPanel>
             <RadioButton Grid.Column="4" Margin="30,5" Style="{StaticResource In_Attivita}" IsChecked="{Binding Stato}" IsEnabled="{Binding Completata,Converter={StaticResource NotBool}}" GroupName="activ" Cursor="Hand" ToolTip="Attiva/Disattiva ODL" />
-            <StackPanel Grid.Column="5" Margin="0">
+            <StackPanel Grid.Column="5" Margin="0" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
                 <ToggleButton IsChecked="{Binding MostraAltro}" Content="Orari" IsEnabled="{Binding OrarioVisibile}"/>
             </StackPanel>
         </Grid>

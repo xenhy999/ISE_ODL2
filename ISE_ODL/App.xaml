@@ -122,8 +122,8 @@
                             </Trigger>
 
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="White" />
-                                <Setter Property="Foreground" Value="{StaticResource Black_Neutral}" />
+                                <Setter Property="Background" Value="{StaticResource Palette_1}" />
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Background" Value="{StaticResource Grigio}" />
