@@ -70,5 +70,18 @@ namespace ISE_ODL.Properties {
                 this["IntervalloInModifica"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&ap" +
+            "pName=mongosh+1.10.6")]
+        public string UriDatabase {
+            get {
+                return ((string)(this["UriDatabase"]));
+            }
+            set {
+                this["UriDatabase"] = value;
+            }
+        }
     }
 }

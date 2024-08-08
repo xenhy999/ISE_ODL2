@@ -14,5 +14,8 @@
     <Setting Name="IntervalloInModifica" Type="System.TimeSpan" Scope="User">
       <Value Profile="(Default)">00:10:00</Value>
     </Setting>
+    <Setting Name="UriDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mongodb://127.0.0.1:27017/?directConnection=true&amp;serverSelectionTimeoutMS=2000&amp;appName=mongosh+1.10.6</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -1,7 +1,6 @@
 ﻿using ISE_ODL.Lista_Odl;
 using ISE_ODL.Resoconto;
 using ISE_ODL.Settings;
-
 namespace ISE_ODL.Menu
 {
     /// <summary>

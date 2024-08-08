@@ -26,7 +26,7 @@ namespace ISE_ODL
         /// </summary>
         private void LoadFromDataBase()
         {
-            List<Odl_M> ListaOdlDaDataBase = new MongoClient(ObjContainer.connectionUri).GetDatabase("Odl").GetCollection<Odl_M>("odl").Find(new BsonDocument()).ToList();
+            List<Odl_M> ListaOdlDaDataBase = new MongoClient(ObjContainer.Menuprincipale_VM.Settings_VM.UriDatabase).GetDatabase("Odl").GetCollection<Odl_M>("odl").Find(new BsonDocument()).ToList();
             foreach (Odl_M OdlDaDataBase in ListaOdlDaDataBase)
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(Odl_F.Create(OdlDaDataBase));
         }

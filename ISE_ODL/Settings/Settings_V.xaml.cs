@@ -44,5 +44,10 @@ namespace ISE_ODL.Settings
         {
             ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.Settings_VM.UriDatabase = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.6";
+        }
     }
 }

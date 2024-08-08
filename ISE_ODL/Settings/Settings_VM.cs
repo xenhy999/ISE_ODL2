@@ -51,5 +51,17 @@
                 Properties.Settings.Default["IntervalloInModifica"] = value;
             }
         }
+        /// <summary>
+        /// URI di connessione al database MongoDB.
+        /// </summary>
+        public string UriDatabase
+        {
+            get => Properties.Settings.Default.UriDatabase;
+            set
+            {
+                OnPropertyChanged(nameof(UriDatabase));
+                Properties.Settings.Default["UriDatabase"] = value;
+            }
+        }
     }
 }

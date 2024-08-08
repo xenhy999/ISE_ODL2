@@ -35,7 +35,7 @@ namespace ISE_ODL
             foreach (BaseOdl_VM a in ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni)
                 a.Stato = false;
             List<BaseOdl_M> OdlDaSerializzare = ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Where(c => c is Odl_VM).Select(cvm => cvm.Model).ToList();
-            IMongoCollection<BsonDocument> collection = new MongoClient(ObjContainer.connectionUri).GetDatabase("Odl").GetCollection<BsonDocument>("odl");
+            IMongoCollection<BsonDocument> collection = new MongoClient(ObjContainer.Menuprincipale_VM.Settings_VM.UriDatabase).GetDatabase("Odl").GetCollection<BsonDocument>("odl");
             collection.Database.DropCollection("odl");
             foreach (BaseOdl_M odl in OdlDaSerializzare)
             {

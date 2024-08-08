@@ -15,11 +15,7 @@ namespace ISE_ODL
         /// Istanza di OdlTimer utilizzata per gestire i timer delle attività.
         /// </summary>
         public static OdlTimer OdlTimer { get; set; }
-        /// <summary>
-        /// URI di connessione al database MongoDB.
-        /// </summary>
-        public const string connectionUri = "mongodb+srv://veronesimatteo2007:6CoPE4CbN6sOgVC0@iseodl.bbf2tvm.mongodb.net/?retryWrites=true&w=majority&appName=IseODL";
-        /// <summary>
+         /// <summary>
         /// Metodo per inizializzare le istanze principali dell'applicazione.
         /// </summary>
         public static void Init()
