@@ -57,7 +57,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="8">
+                                CornerRadius="12">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -168,7 +168,7 @@
                             <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate >
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="23" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Padding="0" Margin="0">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ri"  Height="23"  Style="{StaticResource PerImmagine}">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -182,7 +182,7 @@
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ai" Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="ai" Height="25" Style="{StaticResource PerImmagine}" HorizontalAlignment="Center">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>
@@ -196,7 +196,7 @@
                             <DataGridTemplateColumn Header="" Width="30"  >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="23" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Padding="0">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="rf"  Height="23" Style="{StaticResource PerImmagine}" HorizontalAlignment="Right" Padding="0">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.sottrai}}"/>
@@ -210,7 +210,7 @@
                             <DataGridTemplateColumn Header="" Width="30" >
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
-                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="af"  Height="25" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+                                        <Button Command="{ Binding ModificaIntervallo}" CommandParameter="af"  Height="25" Style="{StaticResource PerImmagine}" HorizontalAlignment="Center">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.aggiungi}}"/>
@@ -223,7 +223,7 @@
                             <DataGridTemplateColumn Header="" Width="50" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Command="{ Binding EliminaIntervallo}"  Background="Transparent" BorderBrush="Transparent" ToolTip="Elimina intervallo">
+                                        <Button Command="{ Binding EliminaIntervallo}"  Style="{StaticResource PerImmagine}" ToolTip="Elimina intervallo">
                                             <Button.Content>
                                                 <StackPanel Orientation="Horizontal" >
                                                     <Image Source="{Binding Source={x:Static properties:Resources.cestino}}" Width="30" />

@@ -15,31 +15,39 @@ namespace ISE_ODL.Settings
         /// </summary>
         public Settings_V() => InitializeComponent();
         /// <summary>
-        /// Gestisce il click del bottone per impostare la durata minima dell'ODL.
+        /// Gestisce il click del bottone per resettare la durata minima dell'ODL.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl = new TimeSpan(0, 5, 0);
         /// <summary>
-        /// Gestisce il click del bottone per impostare la durata del timer.
+        /// Gestisce il click del bottone per resettare la durata del timer.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
         /// <summary>
-        /// Gestisce il click del bottone per impostare l'intervallo in modifica.
+        /// Gestisce il click del bottone per resettare l'intervallo in modifica.
         /// </summary>
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click_2(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
-
+        /// <summary>
+        /// Gestisce il click del bottone per resettare tutti i valori .
+        /// </summary>
+        /// <param name="sender">L'oggetto che ha generato l'evento.</param>
+        /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
             ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
             ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl = new TimeSpan(0, 5, 0);
         }
-
+        /// <summary>
+        /// Gestisce il click del bottone per ritornare alla home.
+        /// </summary>
+        /// <param name="sender">L'oggetto che ha generato l'evento.</param>
+        /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             ObjContainer.Menuprincipale_VM.VistaCorrente = ObjContainer.Menuprincipale_VM.ListaOdl_VM;
