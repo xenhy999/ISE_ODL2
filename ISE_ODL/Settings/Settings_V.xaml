@@ -29,23 +29,33 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="29"/>
+        <Style TargetType="TextBlock" x:Key="impo">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalAlignment" Value="left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,0,15"/>
-            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="title">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Width" Value="150"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="42"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Margin" Value="0"/>
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">
@@ -54,7 +64,7 @@
                         <Border Background="{TemplateBinding Background}" 
                         BorderBrush="{TemplateBinding BorderBrush}" 
                         BorderThickness="{TemplateBinding BorderThickness}" 
-                        CornerRadius="3">
+                        CornerRadius="10">
                             <ScrollViewer Margin="0" 
                                   x:Name="PART_ContentHost"/>
                         </Border>
@@ -63,10 +73,15 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="BorderBrush" Value="DarkGray"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Palette_3}"/>
+                    <Setter Property="BorderThickness" Value="3"/>
+                    <!--<Setter Property="Background" Value="{StaticResource White_Neutral}"/>-->
+                    <Setter Property="FontSize" Value="19"/>
+
                 </Trigger>
                 <Trigger Property="IsKeyboardFocused" Value="True">
-                    <Setter Property="BorderBrush" Value="Blue"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Palette_2}"/>
+                    <Setter Property="BorderThickness" Value="3"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -83,19 +98,20 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="{StaticResource Grigio}" Height="700" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0">
+    <Grid Background="{StaticResource Palette_1}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="400"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition />
+
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="IMPOSTAZIONI" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Text="Impostazioni" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource  title}"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
 
-            <Grid Height="400" >
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
+                    <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="35"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
@@ -104,30 +120,42 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Reminder" FontSize="22" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="Reminder" Style="{StaticResource impo}"/>
                 <CheckBox Grid.Row="0" Grid.Column="2" IsChecked="{Binding TimerAbilitato}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="Intervallo" FontSize="22" />
-                <TextBox Grid.Row="1" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataDelTimer}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Intervallo" Style="{StaticResource impo}" />
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding DurataDelTimer}"/>
                 <Button Grid.Row="1" Grid.Column="3" Click="Button_Click_1" Background="Transparent" BorderBrush="Transparent">
                     <Button.Content>
                         <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
                     </Button.Content>
                 </Button>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="Durata Minima" FontSize="22" />
-                <TextBox Grid.Row="2" Grid.Column="2" Width="120" Height="33" Text="{Binding DurataMinimaOdl}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Durata Minima" Style="{StaticResource impo}" />
+                <TextBox Grid.Row="2" Grid.Column="2"  Text="{Binding DurataMinimaOdl}"/>
                 <Button Grid.Row="2" Grid.Column="3" Click="Button_Click" Background="Transparent" BorderBrush="Transparent">
                     <Button.Content>
                         <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
                     </Button.Content>
                 </Button>
-                <TextBlock Grid.Row="3" Grid.Column="1" Text="Passo intervallo" FontSize="22" />
-                <TextBox Grid.Row="3" Grid.Column="2" Width="120" Height="33" Text="{Binding IntervalloInModifica}"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="Passo intervallo" Style="{StaticResource impo}" />
+                <TextBox Grid.Row="3" Grid.Column="2"   Text="{Binding IntervalloInModifica}"/>
                 <Button Grid.Row="3" Grid.Column="3" Click="Button_Click_2" Background="Transparent" BorderBrush="Transparent">
                     <Button.Content>
                         <Image Source="{Binding Source={x:Static properties:Resources.ricarica}}" Width="35" VerticalAlignment="Center" Visibility="Visible"/>
                     </Button.Content>
                 </Button>
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Background="{StaticResource White_Neutral}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                <Button  Grid.Column="1" Style="{StaticResource Annulla_Eliminazione}" Click="Button_Click_4">Salva</Button>
+                    <Button  Grid.Column="2" Style="{StaticResource Conferma_Eliminazione}" Click="Button_Click_3" >Reset</Button>
+                </Grid>
             </Grid>
         </ScrollViewer>
     </Grid>

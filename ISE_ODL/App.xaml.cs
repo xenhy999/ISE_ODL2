@@ -17,7 +17,7 @@ namespace ISE_ODL
         {
             ObjContainer.Init();
             LoadFromDataBase();
-            MenuPrincipale_V menuPrincipale_V = new MenuPrincipale_V { DataContext = ObjContainer.Menuprincipale_VM };
+            MenuPrincipale_V menuPrincipale_V = new() { DataContext = ObjContainer.Menuprincipale_VM };
             menuPrincipale_V.Show();
         }
         /// <summary>
@@ -28,7 +28,9 @@ namespace ISE_ODL
         {
             List<Odl_M> ListaOdlDaDataBase = new MongoClient(ObjContainer.Menuprincipale_VM.Settings_VM.UriDatabase).GetDatabase("Odl").GetCollection<Odl_M>("odl").Find(new BsonDocument()).ToList();
             foreach (Odl_M OdlDaDataBase in ListaOdlDaDataBase)
+            {
                 ObjContainer.Menuprincipale_VM.ListaOdl_VM.Commisioni.Add(Odl_F.Create(OdlDaDataBase));
+            }
         }
     }
 }

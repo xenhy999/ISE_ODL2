@@ -68,7 +68,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Background="{StaticResource White_Neutral}" Width="150" HorizontalAlignment="Left">
+            <Border Grid.Column="0" Background="White" Width="150" HorizontalAlignment="Left">
                 <Image Source="{Binding Source={x:Static properties:Resources.logo_ise}}" Width="100" VerticalAlignment="Center"/>
             </Border>
             <TextBlock  Grid.Column="1"  Text="DEFINISCI" Style="{StaticResource Odl_V}" FontSize="32" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="{Binding  OdlInModifica, Converter={StaticResource NotBoolToVisibility}}"/>

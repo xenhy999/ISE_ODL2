@@ -65,11 +65,11 @@
                                 <Setter TargetName="border" Property="Background" Value="{StaticResource Palette_2}"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+                                <Setter Property="Foreground" Value="White"/>
                                 <Setter Property="Background" Value="{StaticResource Grigio_Chiaro}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Background" Value="{StaticResource White_Neutral}"/>
+                                <Setter Property="Background" Value="White"/>
                                 <Setter Property="Foreground" Value="{StaticResource Black_Neutral}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -94,7 +94,7 @@
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{StaticResource Grigio}"/>
-            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -155,14 +155,14 @@
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}" >
-            <Grid Margin="20" Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
+            <Grid  Visibility="{Binding MostraAltro,Converter={StaticResource BoolToVisibility}}" HorizontalAlignment="Center" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="290">
-                    <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}" IsReadOnly="True">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="290" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}">
+                    <DataGrid ItemsSource="{Binding Intervalli}" AutoGenerateColumns="False" SelectionMode="Single" Visibility="{Binding OrarioVisibile,Converter={StaticResource BoolToVisibility}}" IsReadOnly="True" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Giorno " Binding="{Binding Giorno,Converter={StaticResource DateToString}}" Width="150"/>
                             <DataGridTemplateColumn Header="" Width="30"  >

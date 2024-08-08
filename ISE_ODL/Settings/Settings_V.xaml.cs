@@ -32,5 +32,18 @@ namespace ISE_ODL.Settings
         /// <param name="sender">L'oggetto che ha generato l'evento.</param>
         /// <param name="e">Gli argomenti dell'evento di click.</param>
         private void Button_Click_2(object sender, RoutedEventArgs e) => ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.Settings_VM.IntervalloInModifica = new TimeSpan(0, 10, 0);
+            ObjContainer.Menuprincipale_VM.Settings_VM.DurataDelTimer = new TimeSpan(1, 0, 0);
+            ObjContainer.Menuprincipale_VM.Settings_VM.DurataMinimaOdl = new TimeSpan(0, 5, 0);
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            ObjContainer.Menuprincipale_VM.VistaCorrente = ObjContainer.Menuprincipale_VM.ListaOdl_VM;
+            ObjContainer.Menuprincipale_VM.MostraLista = true;
+        }
     }
 }

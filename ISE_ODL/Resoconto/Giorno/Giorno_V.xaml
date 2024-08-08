@@ -58,7 +58,7 @@
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{StaticResource Palette_1}"/>
-            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -85,7 +85,7 @@
         </Style>
         <Style TargetType="Expander">
             <Setter Property="Background" Value="{StaticResource Grigio}"/>
-            <Setter Property="Foreground" Value="{StaticResource White_Neutral}"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
