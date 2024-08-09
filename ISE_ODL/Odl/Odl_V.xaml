@@ -16,15 +16,17 @@
             <Setter Property="FontSize" Value="25" />
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Width" Value="200"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="42"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="Padding" Value="3"/>
             <Setter Property="Margin" Value="0"/>
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Template">
@@ -33,7 +35,7 @@
                         <Border Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="3">
+                                CornerRadius="16">
                             <ScrollViewer Margin="0" 
                                           x:Name="PART_ContentHost"/>
                         </Border>
@@ -45,7 +47,8 @@
                     <Setter Property="BorderBrush" Value="DarkGray"/>
                 </Trigger>
                 <Trigger Property="IsKeyboardFocused" Value="True">
-                    <Setter Property="BorderBrush" Value="Blue"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Palette_3}"/>
+                    <Setter Property="BorderThickness" Value="3"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
